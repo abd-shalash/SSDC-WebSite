@@ -10,9 +10,5 @@ namespace ClassLibrary.Abstract
    public interface IPersonRepository
     {
         IEnumerable<Person> People { get; }
-        //sadad
-        
-        //jtiejarklsd
-        //sadas
     }
 }
