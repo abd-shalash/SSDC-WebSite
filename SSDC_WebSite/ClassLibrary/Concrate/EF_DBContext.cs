@@ -11,5 +11,6 @@ namespace ClassLibrary.Concrate
     class EF_DBContext:DbContext
     {       
         public DbSet<Person> People { get; set; }
+        //testing
     }
 }

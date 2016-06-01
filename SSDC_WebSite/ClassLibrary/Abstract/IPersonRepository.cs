@@ -14,7 +14,11 @@ namespace ClassLibrary.Abstract
         //this changes made by nasser
         
         //this is a new change
+<<<<<<< Updated upstream
         
         ///jkhkjh
+=======
+        // this change was make on mac
+>>>>>>> Stashed changes
     }
 }
