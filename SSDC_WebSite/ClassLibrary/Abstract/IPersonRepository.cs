@@ -17,8 +17,13 @@ namespace ClassLibrary.Abstract
 <<<<<<< Updated upstream
         
         ///jkhkjh
+<<<<<<< HEAD
 =======
         // this change was make on mac
 >>>>>>> Stashed changes
+=======
+        //abd
+        //third test
+>>>>>>> origin/master
     }
 }
