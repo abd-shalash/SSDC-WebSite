@@ -11,19 +11,5 @@ namespace ClassLibrary.Abstract
     {
         IEnumerable<Person> People { get; }
         
-        //this changes made by nasser
-        
-        //this is a new change
-<<<<<<< Updated upstream
-        
-        ///jkhkjh
-<<<<<<< HEAD
-=======
-        // this change was make on mac
->>>>>>> Stashed changes
-=======
-        //abd
-        //third test
->>>>>>> origin/master
     }
 }
