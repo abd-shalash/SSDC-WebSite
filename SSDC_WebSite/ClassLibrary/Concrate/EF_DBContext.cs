@@ -12,5 +12,6 @@ namespace ClassLibrary.Concrate
     {       
         public DbSet<Person> People { get; set; }
         //testing
+        //test 2
     }
 }
