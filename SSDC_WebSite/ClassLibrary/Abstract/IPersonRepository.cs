@@ -11,5 +11,7 @@ namespace ClassLibrary.Abstract
     {
         IEnumerable<Person> People { get; }
         
+        
+        //jtiejarklsd
     }
 }
