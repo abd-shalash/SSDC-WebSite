@@ -14,5 +14,6 @@ namespace ClassLibrary.Entities
         public string Mname { get; set; }
         public string Lname { get; set; }
         //this is a comment 
+        // haha i win
     }
 }
