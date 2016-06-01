@@ -10,5 +10,7 @@ namespace ClassLibrary.Abstract
    public interface IPersonRepository
     {
         IEnumerable<Person> People { get; }
+        
+        //this changes made by nasser
     }
 }
