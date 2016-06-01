@@ -12,5 +12,7 @@ namespace ClassLibrary.Abstract
         IEnumerable<Person> People { get; }
         
         //this changes made by nasser
+        
+        //this is a new change
     }
 }
