@@ -10,7 +10,10 @@ namespace WebSiteUI.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
-
+    using Moq;
+    using ClassLibrary.Abstract;
+    using ClassLibrary.Entities;
+    using System.Collections.Generic;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
@@ -61,6 +64,14 @@ namespace WebSiteUI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            Mock<IPersonRepository> mock = new Mock<IPersonRepository>();
+            mock.Setup(m => m.People).Returns(new List<Person> { 
+                new Person { Fname = "abdulrahman" , Mname = "amin",Lname = "shalash",id=1,password="123"},
+                new Person { Fname = "nasser" , Mname = "bin",Lname = "abeed",id=2,password="123"}
+                 });
+            kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
+                    
+                
         }        
     }
 }
