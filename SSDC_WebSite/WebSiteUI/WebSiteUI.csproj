@@ -924,6 +924,17 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Static\about.html" />
+    <Content Include="Static\Calender.html" />
+    <Content Include="Static\event-signup.html" />
+    <Content Include="Static\event.html" />
+    <Content Include="Static\events.html" />
+    <Content Include="Static\facilities.html" />
+    <Content Include="Static\facility-signup.html" />
+    <Content Include="Static\facility.html" />
+    <Content Include="Static\index.html" />
+    <Content Include="Static\login.html" />
+    <Content Include="Static\signup.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
