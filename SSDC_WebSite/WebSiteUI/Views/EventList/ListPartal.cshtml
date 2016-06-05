@@ -1,0 +1,18 @@
+﻿@model WebSiteUI.Models.EventListViewModel
+@{
+    Layout = "";
+}
+  
+@foreach (var item in Model.Events)
+{
+    <div class="horizontal well">
+
+        <strong class=" panel panel-primary">Event Name:  @item.EvName</strong>
+        <br />
+        <span>Event Description: @item.EvDescription</span>
+
+        <br />
+    </div>
+}
+
+

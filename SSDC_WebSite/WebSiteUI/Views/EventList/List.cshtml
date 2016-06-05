@@ -1,0 +1,25 @@
+﻿@model WebSiteUI.Models.EventListViewModel
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@foreach (var p in Model.Events)
+{
+    <div class="well">
+        
+           <strong class=" panel panel-primary">Event Name:  @p.EvName</strong>  
+            <br />
+        
+           <span >Event Dicription: @p.EvDescription</span>  
+        
+            <br />
+    
+       
+         <span class="badge">Event ID:  @p.ID</span>  
+        
+    </div>
+}
+

@@ -985,10 +985,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EventListController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EventListViewModel.cs" />
     <Compile Include="Models\ListUserViewModel.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1002,6 +1005,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ListUser\List.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\EventList\List.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\EventList\ListPartal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

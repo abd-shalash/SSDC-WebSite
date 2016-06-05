@@ -70,10 +70,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAuthentication.cs" />
+    <Compile Include="Abstract\IEventRepository.cs" />
+    <Compile Include="Abstract\IFacilityRepository.cs" />
     <Compile Include="Abstract\IPersonRepository.cs" />
     <Compile Include="Concrate\EF_DBContext.cs" />
+    <Compile Include="Concrate\EF_EventRepository.cs" />
+    <Compile Include="Concrate\EF_FacilityRepository.cs" />
     <Compile Include="Concrate\EF_PersonRepository.cs" />
     <Compile Include="Concrate\FormsAuthenticationProvider.cs" />
+    <Compile Include="Entities\Event.cs" />
+    <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
