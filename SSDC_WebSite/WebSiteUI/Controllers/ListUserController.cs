@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebSiteUI.Models;
 
 namespace WebSiteUI.Controllers
 {
@@ -14,10 +15,16 @@ namespace WebSiteUI.Controllers
         {
             repository = repo;
         }
+
         // GET: ListUser
         public ActionResult List()
         {
-            return View(repository.People);
+            ListUserViewModel model = new ListUserViewModel
+            {
+                people = repository.People
+                .OrderBy(p => p.id)
+            };
+            return View(model);
         }
     }
 }

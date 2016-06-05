@@ -13,8 +13,8 @@ namespace ClassLibrary.Concrate
         private readonly EF_DBContext context = new EF_DBContext();
 
         public IEnumerable<Person> People
-        {
+        {//dfdf
             get { return context.People; }
-        }
-    }//sdfs
+        }//dfsfs
+    }
 }
