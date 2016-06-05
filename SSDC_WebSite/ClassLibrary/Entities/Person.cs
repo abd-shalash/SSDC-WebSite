@@ -13,8 +13,6 @@ namespace ClassLibrary.Entities
         public string Fname { get; set; }
         public string Mname { get; set; }
         public string Lname { get; set; }
-        //this is a comment 
-        // haha i win
-        //h
+        public string Username { get; set; }
     }
 }
