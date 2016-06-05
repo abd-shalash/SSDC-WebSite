@@ -22,7 +22,7 @@ namespace WebSiteUI.Controllers
             ListUserViewModel model = new ListUserViewModel
             {
                 people = repository.People
-                .OrderBy(p => p.id)
+                .OrderBy(p => p.ID)
             };
             return View(model);
         }
