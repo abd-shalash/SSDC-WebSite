@@ -11,6 +11,7 @@ namespace WebSiteUI.Controllers
     public class EventListController : Controller
     {   
         private readonly IEventRepository repository;
+        public int PageSize = 2;
         public EventListController(IEventRepository repo)
         {
             repository = repo;
@@ -24,11 +25,20 @@ namespace WebSiteUI.Controllers
             };
             return View(model);
         }
-        public ViewResult ListPartal()
+        public ViewResult ListPartal(int page = 1)
         {
             EventListViewModel model = new EventListViewModel
             {
-                Events = repository.Events.OrderBy(p => p.EvName)
+                Events = repository.Events
+                .OrderBy(p => p.EvName)
+                .Skip((page - 1) * PageSize)
+                .Take(PageSize),
+                pageinfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalItems = repository.Events.Count()
+                }
             };
             return View(model);
         }

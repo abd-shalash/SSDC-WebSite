@@ -73,7 +73,8 @@ namespace WebSiteUI.App_Start
             Mock<IEventRepository> mockEvent = new Mock<IEventRepository>();
             mockEvent.Setup(m => m.Events).Returns(new List<Event> {
                 new Event {ID = 1 , EvDescription = "this is evrn one" , EvName = "event 1" },
-                new Event {ID = 2 , EvDescription = "this is evrn two" , EvName = "event 2" }
+                new Event {ID = 2 , EvDescription = "this is evrn two" , EvName = "event 2" },
+                new Event {ID = 3 , EvDescription = "this is evrn three" , EvName = "event 3" }
 
             });
             Mock<IFacilityRepository> mockFacility = new Mock<IFacilityRepository>();
