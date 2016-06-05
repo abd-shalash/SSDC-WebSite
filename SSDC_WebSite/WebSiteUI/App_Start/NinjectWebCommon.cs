@@ -72,7 +72,7 @@ namespace WebSiteUI.App_Start
                  });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
 
-            kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
+         //   kernel.Bind<IPersonRepository>().To<EF_PersonRepository>(); // use this bind when implimenting the full database otherwise you will get injection error 
             
 
         }        
