@@ -5,7 +5,6 @@ using System.Web;
 using System.Web.Mvc;
 using WebSiteUI.Models;
 using ClassLibrary.Abstract;
-using System.Web.Security;
 
 namespace WebSiteUI.Controllers
 {
@@ -31,10 +30,8 @@ namespace WebSiteUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (auth.Authenticate(model.UserName, model.Password))
+                if (true)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false);
-                    return Redirect(returnUrl ?? Url.Action("Index", "Admin"));
 
                 }
                 else
