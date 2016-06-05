@@ -15,6 +15,6 @@ namespace ClassLibrary.Concrate
         public IEnumerable<Person> People
         {//dfdf
             get { return context.People; }
-        }
+        }//dfsfs
     }
 }
