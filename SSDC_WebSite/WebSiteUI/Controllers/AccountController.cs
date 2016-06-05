@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace WebSiteUI.Controllers
 {
+    //To allow the authozied users to access the controller, prevents anyone from changing the behaviour of the system.
     [Authorize]
     public class AccountController : Controller
     {
@@ -19,18 +20,25 @@ namespace WebSiteUI.Controllers
             this.auth = auth;
         }
 
+        //create the login view
+
+        //to allow everyone to use the login
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
+
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginViewModel model, string returnUrl)
         {
+            
+            // if the model is loaded correctly
             if (ModelState.IsValid)
             {
+                // if the correct username and password is valid
                 if (auth.Authenticate(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
