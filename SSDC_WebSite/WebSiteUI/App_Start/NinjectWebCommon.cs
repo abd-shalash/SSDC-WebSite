@@ -71,6 +71,7 @@ namespace WebSiteUI.App_Start
                 new Person { Fname = "nasser" , Mname = "bin",Lname = "abeed",ID=2,Password="123"}
                  });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
+            kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
 
             // use this bind when implimenting the full database otherwise you will get injection error
             // kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();  
