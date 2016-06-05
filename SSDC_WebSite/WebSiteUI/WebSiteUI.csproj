@@ -979,7 +979,7 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\ListUser\ListUsers.cshtml" />
+    <Content Include="Views\ListUser\List.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
