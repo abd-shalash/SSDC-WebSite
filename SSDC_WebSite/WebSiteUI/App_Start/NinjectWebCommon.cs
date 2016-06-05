@@ -76,8 +76,15 @@ namespace WebSiteUI.App_Start
                 new Event {ID = 2 , EvDescription = "this is evrn two" , EvName = "event 2" }
 
             });
+            Mock<IFacilityRepository> mockFacility = new Mock<IFacilityRepository>();
+            mockFacility.Setup(m => m.facilities).Returns(new List<Facility> {
+                new Facility {ID = 1 , FaDescription = "this is Facility one" , FaName = "Facility 1" },
+                new Facility {ID = 2 , FaDescription = "this is Facility two" , FaName = "Facility 2" }
+
+            });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
             kernel.Bind<IEventRepository>().ToConstant(mockEvent.Object);
+            kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
             kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
 
             // use this bind when implimenting the full database otherwise you will get injection error

@@ -9,7 +9,7 @@ namespace WebSiteUI.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Home()
+        public ActionResult index()
         {
             return View();
         }

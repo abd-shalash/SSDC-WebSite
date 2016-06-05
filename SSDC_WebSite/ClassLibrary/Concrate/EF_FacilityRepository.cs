@@ -14,7 +14,7 @@ namespace ClassLibrary.Concrate
         private readonly EF_DBContext context = new EF_DBContext();
  
 
-        IEnumerable<Facility> IFacilityRepository.facilities
+       public IEnumerable<Facility> facilities
         {
             get
             {
