@@ -67,10 +67,11 @@ namespace WebSiteUI.App_Start
         {
             Mock<IPersonRepository> mock = new Mock<IPersonRepository>();
             mock.Setup(m => m.People).Returns(new List<Person> {
-                new Person { Fname = "abdulrahman" , Mname = "amin",Lname = "shalash",ID=1,Password="123"},
-                new Person { Fname = "nasser" , Mname = "bin",Lname = "abeed",ID=2,Password="123"}
+                new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", Username = "shalash@pnu.edu", ID = 1, Password = "123"},
+                new Person { Fname = "nasser" , Mname = "bin", Lname = "abeed", Username = "nasser@pnu.edu", ID=2, Password = "123"}
                  });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
+            kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
 
             // use this bind when implimenting the full database otherwise you will get injection error
             // kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();  
