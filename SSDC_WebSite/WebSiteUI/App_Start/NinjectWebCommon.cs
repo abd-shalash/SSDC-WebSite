@@ -15,20 +15,20 @@ namespace WebSiteUI.App_Start
     using ClassLibrary.Entities;
     using ClassLibrary.Concrate;
     using System.Collections.Generic;
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -36,7 +36,7 @@ namespace WebSiteUI.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -66,15 +66,15 @@ namespace WebSiteUI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             Mock<IPersonRepository> mock = new Mock<IPersonRepository>();
-            mock.Setup(m => m.People).Returns(new List<Person> { 
-                new Person { Fname = "abdulrahman" , Mname = "amin",Lname = "shalash",id=1,password="123"},
-                new Person { Fname = "nasser" , Mname = "bin",Lname = "abeed",id=2,password="123"}
+            mock.Setup(m => m.People).Returns(new List<Person> {
+                new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", Username = "shalash@pnu.edu", ID = 1, Password = "123"},
+                new Person { Fname = "nasser" , Mname = "bin", Lname = "abeed", Username = "nasser@pnu.edu", ID=2, Password = "123"}
                  });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
+            kernel.Bind<IAuthentication>().To<FormsAuthenticationProvider>();
 
-         //   kernel.Bind<IPersonRepository>().To<EF_PersonRepository>(); // use this bind when implimenting the full database otherwise you will get injection error 
-            
-
-        }        
+            // use this bind when implimenting the full database otherwise you will get injection error
+            // kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();  
+        }
     }
 }

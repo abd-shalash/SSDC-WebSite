@@ -8,8 +8,8 @@ namespace ClassLibrary.Entities
 {
     public class Person
     {
-        public int id { get; set; }
-        public string password { get; set; }
+        public int ID { get; set; }
+        public string Password { get; set; }
         public string Fname { get; set; }
         public string Mname { get; set; }
         public string Lname { get; set; }
