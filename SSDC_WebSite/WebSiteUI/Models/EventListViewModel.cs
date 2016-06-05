@@ -9,6 +9,6 @@ namespace WebSiteUI.Models
     public class EventListViewModel
     {   
       public  IEnumerable<Event> Events { get; set; }
-
+      public PagingInfo pageinfo { set; get; }
     }
 }
