@@ -10,7 +10,7 @@ namespace ClassLibrary.Entities
     {
         public int ID { get; set; }
         public string EvName {get; set;}
-        public string EvDescription { get; set; }
+        public string eventDescription { get; set; }
         
 
     }
