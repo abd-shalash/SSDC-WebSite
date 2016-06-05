@@ -1,0 +1,26 @@
+﻿@model IEnumerable< ClassLibrary.Entities.Person>
+
+@{
+    ViewBag.Title = "ListOFUsers";
+   
+}
+
+<h2>ListOFUsers</h2>
+@foreach (var p in Model)
+{
+    <div>
+        <h3>
+            @p.Fname
+        </h3>
+        <h4>
+            @p.Mname
+        </h4>
+        <h4>
+            @p.Lname
+        </h4>
+        <h4>
+            @p.id
+        </h4>
+    </div>
+}
+
