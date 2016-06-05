@@ -15,7 +15,7 @@ namespace WebSiteUI.Controllers
             repository = repo;
         }
         // GET: ListUser
-        public ActionResult ListUsers()
+        public ActionResult List()
         {
             return View(repository.People);
         }

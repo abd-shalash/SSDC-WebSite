@@ -13,6 +13,7 @@ namespace WebSiteUI.App_Start
     using Moq;
     using ClassLibrary.Abstract;
     using ClassLibrary.Entities;
+    using ClassLibrary.Concrate;
     using System.Collections.Generic;
     public static class NinjectWebCommon 
     {
@@ -70,8 +71,10 @@ namespace WebSiteUI.App_Start
                 new Person { Fname = "nasser" , Mname = "bin",Lname = "abeed",id=2,password="123"}
                  });
             kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
-                    
-                
+
+            kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
+            
+
         }        
     }
 }

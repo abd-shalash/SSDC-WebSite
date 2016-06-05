@@ -14,14 +14,14 @@
 <body>
     <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation">
     <div class="w-container">
-        <a href="index.html" class="w-nav-brand brand-link">
+        <a href="~/Static/index.html" class="w-nav-brand brand-link">
             <div class="logo-text">
                 Princess Noura University
                 <br>Simulation &amp; Skills Development Center
             </div>
         </a>
         <nav role="navigation" class="w-nav-menu nav-menu">
-            <a href="index.html" class="w-nav-link nav-link">Home</a><a href="#facility" class="w-nav-link nav-link">Facility</a><a href="#events" class="w-nav-link nav-link">Events</a><a href="#calendar" class="w-nav-link nav-link">Calendar</a><a href="signup.html" class="w-nav-link nav-link">Sign Up</a><a href="login.html" class="w-nav-link nav-link">Login</a>
+            <a href="~/Static/index.html" class="w-nav-link nav-link">Home</a><a href="#facility" class="w-nav-link nav-link">Facility</a><a href="#events" class="w-nav-link nav-link">Events</a><a href="#calendar" class="w-nav-link nav-link">Calendar</a><a href="~/Static/signup.html" class="w-nav-link nav-link">Sign Up</a><a href="~/Static/login.html" class="w-nav-link nav-link">Login</a>
         </nav>
         <div class="w-nav-button nav-link menu">
             <div class="w-icon-nav-menu"></div>
@@ -76,7 +76,7 @@
             </div>
         </div>
     </div>
-
+    @RenderBody()
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
