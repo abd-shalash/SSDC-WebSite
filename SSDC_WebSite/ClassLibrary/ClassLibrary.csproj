@@ -81,9 +81,25 @@
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Migrations\201606060725272_InitialCreate.cs" />
+    <Compile Include="Migrations\201606060725272_InitialCreate.Designer.cs">
+      <DependentUpon>201606060725272_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606060751254_initial.cs" />
+    <Compile Include="Migrations\201606060751254_initial.Designer.cs">
+      <DependentUpon>201606060751254_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201606060725272_InitialCreate.resx">
+      <DependentUpon>201606060725272_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606060751254_initial.resx">
+      <DependentUpon>201606060751254_initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
