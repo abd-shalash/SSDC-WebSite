@@ -7,7 +7,7 @@ using ClassLibrary.Abstract;
 
 namespace ClassLibrary.Concrate
 {
-    public class FormsAuthenticationProvider : IAuthentication
+    public class LoginAuthenticationProvider : IAuthentication
     {
         private readonly EF_DBContext context = new EF_DBContext();
 

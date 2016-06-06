@@ -77,7 +77,7 @@
     <Compile Include="Concrate\EF_EventRepository.cs" />
     <Compile Include="Concrate\EF_FacilityRepository.cs" />
     <Compile Include="Concrate\EF_PersonRepository.cs" />
-    <Compile Include="Concrate\FormsAuthenticationProvider.cs" />
+    <Compile Include="Concrate\LoginAuthenticationProvider.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
     <Compile Include="Entities\Person.cs" />
