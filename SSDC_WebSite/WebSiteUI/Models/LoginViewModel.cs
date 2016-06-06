@@ -12,7 +12,7 @@ namespace WebSiteUI.Models
         [Required(ErrorMessage = "Username is required.")]
         public string UserName { get; set; }
         [Required(ErrorMessage = "Password is required.")]
-        [StringLength(50, MinimumLength = 6)]
+        [StringLength(20, MinimumLength = 3)]
         public string Password { get; set; }
     }
 }

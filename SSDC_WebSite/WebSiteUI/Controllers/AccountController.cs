@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebSiteUI.Models;
-using ClassLibrary.Abstract;
+using ClassLibrary.Concrate;
 using System.Web.Security;
 
 namespace WebSiteUI.Controllers
@@ -13,9 +13,9 @@ namespace WebSiteUI.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        IAuthentication auth;
+        LoginAuthenticationProvider auth;
 
-        public AccountController(IAuthentication auth)
+        public AccountController(LoginAuthenticationProvider auth)
         {
             this.auth = auth;
         }
@@ -42,7 +42,7 @@ namespace WebSiteUI.Controllers
                 if (auth.Authenticate(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
-                    return Redirect(returnUrl ?? Url.Action("Index","Admin"));
+                    return Redirect(returnUrl ?? Url.Action("index", "Home"));
                 }
                 else
                 {
