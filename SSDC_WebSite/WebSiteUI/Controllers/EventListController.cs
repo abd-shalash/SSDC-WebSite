@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Abstract;
+using ClassLibrary.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace WebSiteUI.Controllers
         {
             EventListViewModel model = new EventListViewModel
             {
-                Events = repository.Events.OrderBy(p=>p.EvName)
+                Events = repository.Events.OrderBy(p=>p.eventName)
             };
             return View(model);
         }
@@ -30,7 +31,7 @@ namespace WebSiteUI.Controllers
             EventListViewModel model = new EventListViewModel
             {
                 Events = repository.Events
-                .OrderBy(p => p.EvName)
+                .OrderBy(p => p.eventName)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
                 pageinfo = new PagingInfo
@@ -41,6 +42,19 @@ namespace WebSiteUI.Controllers
                 }
             };
             return View(model);
+        }
+        public ViewResult details(int id) {
+
+            Event tempEvent = new Event();
+
+
+
+            tempEvent = repository.Events.FirstOrDefault(e => e.ID == id);
+
+           
+            
+        
+            return View(tempEvent);
         }
     }
 }

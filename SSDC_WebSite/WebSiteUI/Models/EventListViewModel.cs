@@ -10,5 +10,6 @@ namespace WebSiteUI.Models
     {   
       public  IEnumerable<Event> Events { get; set; }
       public PagingInfo pageinfo { set; get; }
+      public Event tempEvent = new Event();
     }
 }

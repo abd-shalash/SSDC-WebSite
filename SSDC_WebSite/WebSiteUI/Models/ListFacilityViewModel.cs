@@ -9,5 +9,6 @@ namespace WebSiteUI.Models
     public class ListFacilityViewModel
     {
         public IEnumerable<Facility> Facilities { get; set; }
+        public PagingInfo pageinfo { set; get; }
     }
 }

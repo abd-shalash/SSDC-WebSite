@@ -1014,6 +1014,8 @@
     <Content Include="Views\FacilityList\ListFacilities.cshtml" />
     <Content Include="Views\FacilityList\ListPartal.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
+    <Content Include="Views\EventList\EventSummery.cshtml" />
+    <Content Include="Views\EventList\details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
