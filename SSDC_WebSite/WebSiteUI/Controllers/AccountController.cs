@@ -50,10 +50,7 @@ namespace WebSiteUI.Controllers
                     return View();
                 }
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
     }
 }
