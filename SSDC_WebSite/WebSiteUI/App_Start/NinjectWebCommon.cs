@@ -74,7 +74,6 @@ namespace WebSiteUI.App_Start
             kernel.Bind<IPersonRepository>().ToConstant(mockPerson.Object);
 
 
-
             kernel.Bind<IEventRepository>().To<EF_EventRepository>();
             //Mock<IEventRepository> mockEvent = new Mock<IEventRepository>();
             //mockEvent.Setup(m => m.Events).Returns(new List<Event> {
@@ -94,6 +93,8 @@ namespace WebSiteUI.App_Start
                 new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
             });
             kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
+
+            kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
         }
     }
 }
