@@ -8,7 +8,7 @@ using ClassLibrary.Entities;
 
 namespace ClassLibrary.Concrate
 {
-    class EF_EventRepository : IEventRepository
+    public class EF_EventRepository : IEventRepository
     {
         private readonly EF_DBContext context = new EF_DBContext();
         public IEnumerable<Event> Events
