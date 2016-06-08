@@ -65,13 +65,14 @@ namespace WebSiteUI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            //kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
-            Mock<IPersonRepository> mockPerson = new Mock<IPersonRepository>();
-            mockPerson.Setup(m => m.People).Returns(new List<Person> {
-                new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", ID=1, Password="123", Username="shalash@pnu.edu"},
-                new Person { Fname = "nasser", Mname = "bin", Lname = "obied", ID=2, Password="123", Username="nasser@pnu.edu"}
-                 });
-            kernel.Bind<IPersonRepository>().ToConstant(mockPerson.Object);
+            kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
+            kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
+            //Mock<IPersonRepository> mockPerson = new Mock<IPersonRepository>();
+            //mockPerson.Setup(m => m.People).Returns(new List<Person> {
+            //    new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", ID=1, Password="123", Username="shalash@pnu.edu"},
+            //    new Person { Fname = "nasser", Mname = "bin", Lname = "obied", ID=2, Password="123", Username="nasser@pnu.edu"}
+            //     });
+            //kernel.Bind<IPersonRepository>().ToConstant(mockPerson.Object);
 
 
             kernel.Bind<IEventRepository>().To<EF_EventRepository>();
@@ -93,8 +94,6 @@ namespace WebSiteUI.App_Start
                 new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
             });
             kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
-
-            kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
         }
     }
 }
