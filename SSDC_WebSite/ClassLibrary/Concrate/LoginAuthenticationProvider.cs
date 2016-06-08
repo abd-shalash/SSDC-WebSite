@@ -13,7 +13,7 @@ namespace ClassLibrary.Concrate
 
         public bool Authenticate(string username, string password)
         {
-            var result = context.People.FirstOrDefault(p => p.Username == username && p.Password == password);
+            var result = context.People.Where(p => p.Username == username && p.Password == password);
 
             if (result == null)
                 return false;
