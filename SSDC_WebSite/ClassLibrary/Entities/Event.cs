@@ -11,7 +11,5 @@ namespace ClassLibrary.Entities
         public int ID { get; set; }
         public string eventName {get; set;}
         public string eventDescription { get; set; }
-        
-
     }
 }

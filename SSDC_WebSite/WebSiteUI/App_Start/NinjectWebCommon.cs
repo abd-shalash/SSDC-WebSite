@@ -65,36 +65,36 @@ namespace WebSiteUI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            Mock<IPersonRepository> mock = new Mock<IPersonRepository>();
-            mock.Setup(m => m.People).Returns(new List<Person> {
+            //kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
+            Mock<IPersonRepository> mockPerson = new Mock<IPersonRepository>();
+            mockPerson.Setup(m => m.People).Returns(new List<Person> {
                 new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", ID=1, Password="123", Username="shalash@pnu.edu"},
                 new Person { Fname = "nasser", Mname = "bin", Lname = "obied", ID=2, Password="123", Username="nasser@pnu.edu"}
                  });
+            kernel.Bind<IPersonRepository>().ToConstant(mockPerson.Object);
+
+
             kernel.Bind<IEventRepository>().To<EF_EventRepository>();
             //Mock<IEventRepository> mockEvent = new Mock<IEventRepository>();
-            ////mockEvent.Setup(m => m.Events).Returns(new List<Event> {
-            //    new Event {ID = 1 , eventDescription = "this is evrn one" , eventName = "event 1" },
-            //    new Event {ID = 2 , eventDescription = "this is evrn two" , eventName = "event 2" },
-            //    new Event {ID = 3 , eventDescription = "this is evrn three" , eventName = "event 3" }
-
-            //});
+            //mockEvent.Setup(m => m.Events).Returns(new List<Event> {
+            //new Event { ID = 1, eventDescription = "this is evrn one", eventName = "event 1" },
+            //    new Event { ID = 2, eventDescription = "this is evrn two", eventName = "event 2" },
+            //    new Event { ID = 3, eventDescription = "this is evrn three", eventName = "event 3" }
+            //      });
             //kernel.Bind<IEventRepository>().ToConstant(mockEvent.Object);
 
+
+            //kernel.Bind<IFacilityRepository>().To<EF_FacilityRepository>();
             Mock<IFacilityRepository> mockFacility = new Mock<IFacilityRepository>();
             mockFacility.Setup(m => m.facilities).Returns(new List<Facility> {
                 new Facility {ID = 1 , FaDescription = "this is Facility one" , FaName = "Facility 1" },
                 new Facility {ID = 2 , FaDescription = "this is Facility two" , FaName = "Facility 2" },
                 new Facility {ID = 3 , FaDescription = "this is Facility three" , FaName = "Facility 3" },
                 new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
-
             });
-            kernel.Bind<IPersonRepository>().ToConstant(mock.Object);
-            
             kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
-            kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
 
-            // use this bind when implimenting the full database otherwise you will get injection error
-            // kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();  
+            kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
         }
     }
 }
