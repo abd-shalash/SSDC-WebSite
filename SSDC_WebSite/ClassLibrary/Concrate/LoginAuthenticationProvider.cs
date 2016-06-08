@@ -13,11 +13,20 @@ namespace ClassLibrary.Concrate
 
         public bool Authenticate(string username, string password)
         {
-            var result = context.People.Where(p => p.Username == username && p.Password == password);
+            try
+            {
+                var result = context.People.FirstOrDefault(p => p.Username == string.Concat(username) && p.Password == string.Concat(password));
 
-            if (result == null)
-                return false;
-            return true;
+                if (result == null)
+                    return false;
+                return true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public bool Logout()
