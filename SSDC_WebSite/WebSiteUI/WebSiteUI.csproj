@@ -951,17 +951,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Static\about.html" />
-    <Content Include="Static\Calender.html" />
     <Content Include="Static\css\nassers-stupendous-site.webflow.css" />
     <Content Include="Static\css\normalize.css" />
     <Content Include="Static\css\webflow.css" />
-    <Content Include="Static\event-signup.html" />
-    <Content Include="Static\event.html" />
-    <Content Include="Static\events.html" />
-    <Content Include="Static\facilities.html" />
-    <Content Include="Static\facility-signup.html" />
-    <Content Include="Static\facility.html" />
+    <Content Include="Static\HtmlPage1.html" />
     <Content Include="Static\images\04f14af5199093cdd29a89eb295febf5.jpeg" />
     <Content Include="Static\images\analytics-graphic2.png" />
     <Content Include="Static\images\bryant-square.jpg" />
@@ -972,11 +965,8 @@
     <Content Include="Static\images\sergie-square.jpg" />
     <Content Include="Static\images\town.jpg" />
     <Content Include="Static\images\twitter-icon.svg" />
-    <Content Include="Static\index.html" />
     <Content Include="Static\js\modernizr.js" />
     <Content Include="Static\js\webflow.js" />
-    <Content Include="Static\login.html" />
-    <Content Include="Static\signup.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -985,6 +975,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EventListController.cs" />
     <Compile Include="Controllers\FacilityListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1017,6 +1008,12 @@
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\EventList\EventSummery.cshtml" />
     <Content Include="Views\EventList\details.cshtml" />
+    <Content Include="Views\UserView\UserProfile.cshtml" />
+    <Content Include="Views\UserView\ViewRequest.cshtml" />
+    <Content Include="Views\Admin\ViewRequests.cshtml" />
+    <Content Include="Views\Admin\Calender.cshtml" />
+    <Content Include="Views\Admin\AdminProfile.cshtml" />
+    <Content Include="Views\Account\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1026,7 +1023,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\UserView\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">

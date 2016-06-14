@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace WebSiteUI.Controllers
 {
-    public class UserViewController : Controller
+    public class AdminController : Controller
     {
-        // GET: UserView
+        // GET: Admin
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult UserProfile()
+        public ActionResult ViewRequests()
         {
             return View();
         }
@@ -21,11 +21,7 @@ namespace WebSiteUI.Controllers
         {
             return View();
         }
-        public ActionResult ViewRequest()
-        {
-            return View();
-        }
-        public ActionResult SubmitForm()
+        public ActionResult AdminProfile()
         {
             return View();
         }
