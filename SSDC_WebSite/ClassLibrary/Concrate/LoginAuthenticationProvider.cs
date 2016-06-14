@@ -12,21 +12,22 @@ namespace ClassLibrary.Concrate
         private readonly EF_DBContext context = new EF_DBContext();
 
         public bool Authenticate(string username, string password)
-        {
+        {   
             try
             {
-                var result = context.People.FirstOrDefault(p => p.Username == string.Concat(username) && p.Password == string.Concat(password));
-
+                var result = context.People.FirstOrDefault(p =>( p.Password == (password) && p.Username == (username)));
+               
                 if (result == null)
                     return false;
-                return true;
-            }
-            catch (Exception)
-            {
+                
 
-                throw;
             }
-           
+            catch (Exception e)
+            {
+                Console.WriteLine("Login error with ",e);
+            
+            }
+            return true;
         }
 
         public bool Logout()
