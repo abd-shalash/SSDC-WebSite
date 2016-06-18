@@ -8,5 +8,7 @@ namespace ClassLibrary.Entities
 {
     class item_type
     {
+        public int item_type_id { get; set; }
+        public string item_type_name { get; set; }
     }
 }
