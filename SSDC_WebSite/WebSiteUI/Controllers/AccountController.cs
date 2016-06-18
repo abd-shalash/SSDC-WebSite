@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using WebSiteUI.Models;
 using ClassLibrary.Concrate;
 using System.Web.Security;
+using ClassLibrary.Entities;
 
 namespace WebSiteUI.Controllers
 {
@@ -41,6 +42,7 @@ namespace WebSiteUI.Controllers
                 // if the correct username and password is valid
                 if (auth.Authenticate(model.UserName, model.Password))
                 {
+                    Session["user"] = new Person() { Fname = model.UserName };
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return Redirect(returnUrl ?? Url.Action("index", "Home"));
                 }

@@ -980,6 +980,7 @@
     <Compile Include="Controllers\FacilityListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListUserController.cs" />
+    <Compile Include="Controllers\LoginInfoController.cs" />
     <Compile Include="Controllers\UserViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1014,6 +1015,8 @@
     <Content Include="Views\Admin\Calender.cshtml" />
     <Content Include="Views\Admin\AdminProfile.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\LoginPartal\Index.cshtml" />
+    <Content Include="Views\LoginInfo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
