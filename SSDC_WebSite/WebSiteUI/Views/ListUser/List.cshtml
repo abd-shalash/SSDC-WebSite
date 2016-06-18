@@ -1,0 +1,26 @@
+﻿@model WebSiteUI.Models.ListUserViewModel
+
+@{
+    ViewBag.Title = "ListOFUsers";
+   
+}
+
+<h2>ListOFUsers</h2>
+@foreach (var p in Model.people)
+{
+    <div class="well">
+        
+           <strong class="panel panel-primary">First Name:  @p.Fname</strong>  
+            <br />
+        
+           <span >Middle Name: @p.Mname</span>  
+        
+            <br />
+          <span>Last Name:  @p.Lname</span>  
+            <br />
+       
+         <span class="badge">User ID:  @p.ID</span>  
+        
+    </div>
+}
+

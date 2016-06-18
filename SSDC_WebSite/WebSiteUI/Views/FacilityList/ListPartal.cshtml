@@ -1,0 +1,19 @@
+﻿
+@model WebSiteUI.Models.ListFacilityViewModel
+@{
+    Layout = "";
+}
+
+@foreach (var item in Model.Facilities)
+{
+    <div class="horizontal well">
+
+        <strong class="panel panel-primary">Event Name:  @item.FaName</strong>
+        <br />
+        <span>Event Description: @item.FaDescription</span>
+        
+        <br />
+    </div>
+}
+
+
