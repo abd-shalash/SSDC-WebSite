@@ -8,5 +8,6 @@ namespace ClassLibrary.Entities
 {
     class booking_item
     {
+        
     }
 }

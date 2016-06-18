@@ -10,7 +10,7 @@ namespace ClassLibrary.Entities
     {
         public int booking_id { get; set; }
         public int user_id { get; set; }
-        public DateTime booking_date { get; set; }//should be of type time date 
+        public DateTime booking_date { get; set; } //should be of type time date 
         public DateTime start_date { get; set; }
         public DateTime end_date { get; set; }
         public string topic { get; set; }
@@ -21,6 +21,5 @@ namespace ClassLibrary.Entities
         public string code_no { get; set; }
         public string booking_status { get; set; }
         public int status_updated_by { get; set; }
-
     }
 }
