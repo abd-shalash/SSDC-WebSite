@@ -10,8 +10,7 @@ namespace ClassLibrary.Concrate
     public class LoginAuthenticationProvider : IAuthentication
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        string fName = "";
-        string lName = "";
+
        
         public bool Authenticate(string username, string password)
         {   
@@ -22,8 +21,7 @@ namespace ClassLibrary.Concrate
                 if (result == null)
                     return false;
 
-                fName = result.Fname;
-                lName = result.Lname;
+  
             }
             catch (Exception e)
             {
@@ -33,12 +31,7 @@ namespace ClassLibrary.Concrate
            
             return true;
         }
-        public string getName()
-        {
-            string full = "";
-            full = fName + lName;
-            return full;
-        }
+
         public bool Logout()
         {
             return true;

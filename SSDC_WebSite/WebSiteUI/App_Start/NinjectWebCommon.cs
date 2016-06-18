@@ -69,7 +69,7 @@ namespace WebSiteUI.App_Start
             kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
             //Mock<IPersonRepository> mockPerson = new Mock<IPersonRepository>();
             //mockPerson.Setup(m => m.People).Returns(new List<Person> {
-            //    new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", ID=1, Password="123", Username="shalash@pnu.edu"},
+            //    new Person { Fname = "abdulrahman", Mname = "amin", Lname = "shalash", ID=1, Password="123", Username="abd"},
             //    new Person { Fname = "nasser", Mname = "bin", Lname = "obied", ID=2, Password="123", Username="nasser@pnu.edu"}
             //     });
             //kernel.Bind<IPersonRepository>().ToConstant(mockPerson.Object);

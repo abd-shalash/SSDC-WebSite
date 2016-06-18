@@ -42,7 +42,8 @@ namespace WebSiteUI.Controllers
                 // if the correct username and password is valid
                 if (auth.Authenticate(model.UserName, model.Password))
                 {
-                    Session["user"] = new Person() { Fname = model.UserName };
+                    Session["user"] = (string)model.UserName;
+                        //new Person() { Fname = model.UserName };
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return Redirect(returnUrl ?? Url.Action("index", "Home"));
                 }
