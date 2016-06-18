@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Entities
 {
-    class booking_item
+    public class booking_item
     {
+
     }
 }
