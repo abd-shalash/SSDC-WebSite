@@ -8,8 +8,8 @@ namespace WebSiteUI.Controllers
 {
     public class LoginInfoController : Controller
     {
-        string fName = "";
-        string lName = "";
+        //string fName = "";
+        //string lName = "";
         // GET: LoginInfo
         public PartialViewResult Index()
         {   
