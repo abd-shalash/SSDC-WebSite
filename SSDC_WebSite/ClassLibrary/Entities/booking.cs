@@ -10,11 +10,7 @@ namespace ClassLibrary.Entities
     {
         public int booking_id { get; set; }
         public int user_id { get; set; }
-<<<<<<< HEAD
-        public DateTime booking_date { get; set; } //should be of type time date 
-=======
         public DateTime booking_date { get; set; }
->>>>>>> 7ad1d65ec373e1ff0f18ed4a168b96f667b18c16
         public DateTime start_date { get; set; }
         public DateTime end_date { get; set; }
         public string topic { get; set; }
