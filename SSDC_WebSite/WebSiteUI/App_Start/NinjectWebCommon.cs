@@ -85,15 +85,15 @@ namespace WebSiteUI.App_Start
             //kernel.Bind<IEventRepository>().ToConstant(mockEvent.Object);
 
 
-            //kernel.Bind<IFacilityRepository>().To<EF_FacilityRepository>();
-            Mock<IFacilityRepository> mockFacility = new Mock<IFacilityRepository>();
-            mockFacility.Setup(m => m.facilities).Returns(new List<Facility> {
-                new Facility {ID = 1 , FaDescription = "this is Facility one" , FaName = "Facility 1" },
-                new Facility {ID = 2 , FaDescription = "this is Facility two" , FaName = "Facility 2" },
-                new Facility {ID = 3 , FaDescription = "this is Facility three" , FaName = "Facility 3" },
-                new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
-            });
-            kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
+            kernel.Bind<IFacilityRepository>().To<EF_FacilityRepository>();
+            //Mock<IFacilityRepository> mockFacility = new Mock<IFacilityRepository>();
+            //mockFacility.Setup(m => m.facilities).Returns(new List<Facility> {
+            //    new Facility {ID = 1 , FaDescription = "this is Facility one" , FaName = "Facility 1" },
+            //    new Facility {ID = 2 , FaDescription = "this is Facility two" , FaName = "Facility 2" },
+            //    new Facility {ID = 3 , FaDescription = "this is Facility three" , FaName = "Facility 3" },
+            //    new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
+            //});
+            //kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
         }
     }
 }

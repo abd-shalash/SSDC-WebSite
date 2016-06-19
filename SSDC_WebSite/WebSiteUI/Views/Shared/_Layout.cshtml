@@ -32,6 +32,12 @@
             <a href="#calendar" class="w-nav-link nav-link">Calendar</a>
             <a href="~/Static/signup.html" class="w-nav-link nav-link">Sign Up</a>
             <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
+                        @if (Session["user"] != null)
+                        {
+                            <a class="w-nav-link nav-link">loged in as: @Session["user"] </a>
+                        }
+                            
+            
         </nav>
         <div class="w-nav-button nav-link menu">
             <div class="w-icon-nav-menu"></div>
@@ -80,7 +86,7 @@
                             <br>kaauh-simulation@pnu.edu.sa
                             <br>Telephone
                             <br>+966 11 8239733
-                            <br>@Session["user"]
+                            
                         </div>
                     </div>
                 </div>
