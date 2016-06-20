@@ -14,96 +14,106 @@
     <link rel="stylesheet" type="text/css" href="~/Static/css/nassers-stupendous-site.webflow.css">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
-    WebFont.load({
-      google: {
-        families: ["Roboto:300,regular,500","Roboto Condensed:300,regular,700","Roboto Slab:300,regular,700","Arbutus Slab:regular"]
-      }
-    });
+        WebFont.load({
+            google: {
+                families: ["Roboto:300,regular,500", "Roboto Condensed:300,regular,700", "Roboto Slab:300,regular,700", "Arbutus Slab:regular"]
+            }
+        });
     </script>
     <script type="text/javascript" src="~/Static/js/modernizr.js"></script>
     <link rel="shortcut icon" type="image/x-icon" href="~/Static/images/New icon.ico">
     <link rel="apple-touch-icon" href="~/Static/images/metric-webclip.png">
 </head>
 <body>
+    <div id="fullbox">
 
-    <div data-animation="slide" data-duration="500" data-infinite="1" class="w-slider slider">
-        <div class="w-slider-mask">
-            <div class="w-slide slide _1">
-                <div class="w-container"></div>
-            </div>
-            <div class="w-slide slide _2">
-                <div class="w-container"></div>
-            </div>
-            <div class="w-slide slide _3">
-                <div class="w-container"></div>
+        <div class="w-section section footer copyright">
+            <div class="w-container">
+                <div>Copyright 2014 Metric. All Rights Reserved. Brand logos for demonstration purposes only.</div>
             </div>
         </div>
-        <div class="w-slider-arrow-left">
-            <div class="w-icon-slider-left"></div>
-        </div>
-        <div class="w-slider-arrow-right">
-            <div class="w-icon-slider-right"></div>
-        </div>
-        <div class="w-slider-nav w-round"></div>
-    </div>
-    <div class="w-section section footer copyright">
-        <div class="w-container">
-            <div>Copyright 2014 Metric. All Rights Reserved. Brand logos for demonstration purposes only.</div>
-        </div>
-    </div>
-    <div id="news" class="w-section section blue">
-        <div class="w-container">
-            <div data-animation="slide" data-duration="500" data-infinite="1" class="w-slider testimonial-slider">
-                <div class="w-slider-mask">
-                    <div class="w-slide testimony-slide">
-                        <p class="testimony-text">“Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.”</p><img width="64" src="images/04f14af5199093cdd29a89eb295febf5.jpeg" class="person">
-                        <div class="name">Kyle Killit</div>
-                        <div class="title">Designer at Tiempo Labs</div>
-                    </div>
-                    <div class="w-slide testimony-slide">
-                        <p class="testimony-text">“Ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna”</p><img width="100" src="images/sergie-square.jpg" class="person">
-                        <div class="name">Sergie Kalashnikov</div>
-                        <div class="title">CEO at BentoBox</div>
-                    </div>
-                    <div class="w-slide testimony-slide">
-                        <p class="testimony-text">“Nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.”</p><img width="100" src="images/bryant-square.jpg" class="person">
-                        <div class="name">Bryant Chou</div>
-                        <div class="title">CTO at Slapper Labs</div>
-                    </div>
-                </div>
-                <div class="w-slider-arrow-left slider-arrow">
-                    <div class="w-icon-slider-left"></div>
-                </div>
-                <div class="w-slider-arrow-right slider-arrow">
-                    <div class="w-icon-slider-right"></div>
-                </div>
-                <div class="w-slider-nav w-round slide-nav"></div>
-            </div>
-        </div>
-    </div>
-    <div id="facility" class="w-section section">
-        <div class="w-container">
-            <h2>Facility</h2>
-            <div class="w-row">
-                @Html.Action("ListPartal", "FacilityList")
-            </div>
-        </div>
-    </div>
-    <div id="events" class="w-section section blue">
-        <div id="partalEvents" class="w-container">
-            <h2>Events</h2>
-            @Html.Action("ListPartal", "EventList")
-            
-        </div>
-    </div>
-    <div id="calendar" class="w-section section">
-        <div class="w-container">
-            <h2>Calendar</h2>
+        <h2>What our customers say</h2>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
+                </div>
+                <div class="item">
+                    <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
+                </div>
+                <div class="item">
+                    <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div id="facility" class="w-section section">
+            <div class="w-container">
+                <h2>Facility</h2>
+                <div class="w-row">
+                    @Html.Action("ListPartal", "FacilityList")
+                </div>
+            </div>
+        </div>
+        <div id="events" class="w-section section blue">
+            <div id="partalEvents" class="w-container">
+                <h2>Events</h2>
+                @Html.Action("ListPartal", "EventList")
+
+            </div>
+        </div>
+        <div id="calendar" class="w-section section">
+            <div class="w-container">
+                <h2>Calendar</h2>
+                <!-- Set height and width with CSS -->
+                <div id="googleMap" style="height:400px;width:100%;"></div>
+
+                <!-- Add Google Maps -->
+                <script src="http://maps.googleapis.com/maps/api/js"></script>
+                <script>
+                    var myCenter = new google.maps.LatLng(24.839757, 46.722465);
+
+                    function initialize() {
+                        var mapProp = {
+                            center: myCenter,
+                            zoom: 12,
+                            scrollwheel: false,
+                            draggable: false,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+
+                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+                        var marker = new google.maps.Marker({
+                            position: myCenter,
+                        });
+
+                        marker.setMap(map);
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+            </div>
         </div>
     </div>
-
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-   
+
     <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>

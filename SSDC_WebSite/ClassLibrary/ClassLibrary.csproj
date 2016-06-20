@@ -62,6 +62,7 @@
       <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,12 +79,39 @@
     <Compile Include="Concrate\EF_FacilityRepository.cs" />
     <Compile Include="Concrate\EF_PersonRepository.cs" />
     <Compile Include="Concrate\LoginAuthenticationProvider.cs" />
+    <Compile Include="Entities\booking.cs" />
+    <Compile Include="Entities\booking_assignde_user.cs" />
+    <Compile Include="Entities\booking_item.cs" />
+    <Compile Include="Entities\booking_room.cs" />
+    <Compile Include="Entities\booking_simulation.cs" />
+    <Compile Include="Entities\department.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
+    <Compile Include="Entities\field.cs" />
+    <Compile Include="Entities\field_option.cs" />
+    <Compile Include="Entities\form.cs" />
+    <Compile Include="Entities\full_simulation_booking.cs" />
+    <Compile Include="Entities\group.cs" />
+    <Compile Include="Entities\group_operation.cs" />
+    <Compile Include="Entities\item.cs" />
+    <Compile Include="Entities\item_type.cs" />
+    <Compile Include="Entities\loginInfo.cs" />
+    <Compile Include="Entities\operation.cs" />
+    <Compile Include="Entities\orgnization.cs" />
+    <Compile Include="Entities\participant_level.cs" />
     <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\room.cs" />
+    <Compile Include="Entities\room_item.cs" />
+    <Compile Include="Entities\room_type.cs" />
+    <Compile Include="Entities\simulation_type.cs" />
+    <Compile Include="Entities\standardized_patient_request.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\user_group.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Binders\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
