@@ -60,5 +60,21 @@ namespace WebSiteUI.Controllers
         {
             return View();
         }
+        public ActionResult Logout()
+        {
+          
+                Request.Cookies.Remove("user");
+                FormsAuthentication.SignOut();
+
+                Session.Abandon();
+                Session.Clear();
+                Response.Cookies.Clear();
+                Session.RemoveAll();
+                Session["user"] = null;
+                return RedirectToAction("Index", "Home");
+                //Redirect(Url.Action("index", "Home"));
+            
+            
+        }
     }
 }

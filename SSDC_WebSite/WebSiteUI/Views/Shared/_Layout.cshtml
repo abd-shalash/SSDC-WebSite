@@ -37,7 +37,7 @@
 
             <div id="myLogout">
                 <a class="w-nav-link nav-link "> logged in as: @Session["user"] </a>
-                <input type="button" class="btn btn-danger w-nav-link nav-link" value="Logout">
+                <a href="@Url.Action("Logout", "Account")"  class="w-nav-link nav-link " value="Logout"> logout</a>
             </div>
     }
 
