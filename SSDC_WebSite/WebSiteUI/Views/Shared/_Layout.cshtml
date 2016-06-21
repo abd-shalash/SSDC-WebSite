@@ -35,8 +35,9 @@
     @if (Session["user"] != null)
     {
 
-            <div id="myLogout">
-                <a class="w-nav-link nav-link "> logged in as: @Session["user"] </a>
+            <div class="dropdown" id="myLogout">
+                
+                <a class="w-nav-link nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">logged in as: @Session["user"]<span class="caret"></span> </a>
                 <a href="@Url.Action("Logout", "Account")"  class="w-nav-link nav-link " value="Logout"> logout</a>
             </div>
     }
