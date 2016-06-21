@@ -66,6 +66,8 @@ namespace WebSiteUI.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IAuthentication>().To<LoginAuthenticationProvider>();
+
+
             kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
             //Mock<IPersonRepository> mockPerson = new Mock<IPersonRepository>();
             //mockPerson.Setup(m => m.People).Returns(new List<Person> {

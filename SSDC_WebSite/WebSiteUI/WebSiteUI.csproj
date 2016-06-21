@@ -1003,9 +1003,11 @@
     <Content Include="Views\ListUser\List.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\EventList\List.cshtml" />
-    <Content Include="Views\EventList\ListPartal.cshtml" />
+    <Content Include="Views\EventList\ListPartial.cshtml">
+      <BrowseToURL>~/EventList/ListPartial</BrowseToURL>
+    </Content>
     <Content Include="Views\FacilityList\ListFacilities.cshtml" />
-    <Content Include="Views\FacilityList\ListPartal.cshtml" />
+    <Content Include="Views\FacilityList\ListPartial.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\EventList\EventSummery.cshtml" />
     <Content Include="Views\EventList\details.cshtml" />

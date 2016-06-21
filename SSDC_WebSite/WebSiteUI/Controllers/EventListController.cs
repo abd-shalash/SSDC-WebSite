@@ -12,7 +12,7 @@ namespace WebSiteUI.Controllers
     public class EventListController : Controller
     {   
         private readonly IEventRepository repository;
-        public int PageSize = 2;
+        public int PageSize = 3;
         public EventListController(IEventRepository repo)
         {
             repository = repo;
@@ -26,7 +26,7 @@ namespace WebSiteUI.Controllers
             };
             return View(model);
         }
-        public ViewResult ListPartal(int page = 1)
+        public ViewResult ListPartial(int page = 1)
         {
             EventListViewModel model = new EventListViewModel
             {
@@ -47,13 +47,8 @@ namespace WebSiteUI.Controllers
 
             Event tempEvent = new Event();
 
-
-
             tempEvent = repository.Events.FirstOrDefault(e => e.ID == id);
-
-           
             
-        
             return View(tempEvent);
         }
     }

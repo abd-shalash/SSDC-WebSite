@@ -25,19 +25,18 @@ namespace WebSiteUI.Controllers
             };
             return View(model);
         }
-        public ViewResult ListPartal(int page = 1)
+        public ViewResult ListPartial(int page = 1)
         {
             ListFacilityViewModel model = new ListFacilityViewModel
             {
-                Facilities = repository.facilities
-                .OrderBy(p => p.FaName)
+                Facilities = repository.facilities.OrderBy(p => p.FaName)
                 .Skip((page-1) * PageSize)
                 .Take(PageSize),
                 pageinfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.facilities.Count()
+                  //  TotalItems = repository.facilities.Count()
                 }
             };
             return View(model);
