@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+SSDC_WebSite/WebSiteUI/App_Data/ClassLibrary.Concrate.EF_DBContext.mdf
