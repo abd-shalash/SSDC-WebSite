@@ -1,0 +1,21 @@
+﻿@model WebSiteUI.Models.ListFacilityViewModel
+
+@{
+    ViewBag.Title = "ListFacilities";
+}
+
+<h2>ListFacilities</h2>
+
+@foreach (var p in Model.Facilities)
+{
+    <div class="well">
+
+        <strong class="panel panel-primary">Facility Name:  @p.FaName</strong>
+        <br />
+
+        <span>Facility Description: @p.FaDescription</span>
+
+        <br />
+    </div>
+}
+
