@@ -12,8 +12,7 @@ namespace WebSiteUI.Controllers
         //string lName = "";
         // GET: LoginInfo
         public PartialViewResult Index()
-        {   
-
+        {
             return PartialView("Index");
         }
     }
