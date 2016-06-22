@@ -16,8 +16,12 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation">
-    <div class="w-container">
+    <br />
+    <br />
+    <br />
+
+    <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation bg-info">
+    <div class="w-container bg-info">
         <a href="@Url.Action("Index", "Home")" class="w-nav-brand brand-link">
             <div class="logo-text">
                 Princess Noura University
@@ -25,17 +29,17 @@
             </div>
           
         </a>
-        <nav role="navigation" class="w-nav-menu nav-menu">
+        <nav role="navigation" class="w-nav-menu nav-menu ">
     <a href="@Url.Action("Index", "Home")" class="w-nav-link nav-link">Home</a>
     <a href="@Url.Action("ListFacilities", "FacilityList")" class="w-nav-link nav-link">Facility</a>
     <a href="@Url.Action("List", "EventList")" class="w-nav-link nav-link">Events</a>
-    <a href="#calendar" class="w-nav-link nav-link">Calendar</a>
+    <a href="#calendar" class="w-nav-link nav-link">Location</a>
     <a href="~/Static/signup.html" class="w-nav-link nav-link">Sign Up</a>
     <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
     @if (Session["user"] != null)
     {
 
-            <div class="dropdown" id="myLogout">
+            <div  id="myLogout">
                 
                 <a class="w-nav-link nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">logged in as: @Session["user"]<span class="caret"></span> </a>
                 <a href="@Url.Action("Logout", "Account")"  class="w-nav-link nav-link " value="Logout"> logout</a>
