@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebSiteUI.Controllers
 {
-    public class UserViewController : Controller
+    public class UserController : Controller
     {
         // GET: UserView
         public ActionResult Index()

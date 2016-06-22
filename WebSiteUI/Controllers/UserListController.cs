@@ -8,10 +8,10 @@ using WebSiteUI.Models;
 
 namespace WebSiteUI.Controllers
 {
-    public class ListUserController : Controller
+    public class UserListController : Controller
     {
         private readonly IPersonRepository repository;
-        public ListUserController(IPersonRepository repo)
+        public UserListController(IPersonRepository repo)
         {
             repository = repo;
         }
@@ -19,7 +19,7 @@ namespace WebSiteUI.Controllers
         // GET: ListUser
         public ActionResult List()
         {
-            ListUserViewModel model = new ListUserViewModel
+            UserModel model = new UserModel
             {
                 people = repository.People
                 .OrderBy(p => p.ID)

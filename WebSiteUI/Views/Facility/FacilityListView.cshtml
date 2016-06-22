@@ -1,0 +1,6 @@
+﻿@model WebSiteUI.Models.FacilityModel
+
+@foreach (var p in Model.Facilities)
+{
+    @Html.Partial("FacilitySummaryView", p)
+}

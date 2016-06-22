@@ -9,41 +9,44 @@ using WebSiteUI.Models;
 
 namespace WebSiteUI.Controllers
 {
-    public class EventListController : Controller
+    public class EventController : Controller
     {   
         private readonly IEventRepository repository;
-        public int PageSize = 3;
-        public EventListController(IEventRepository repo)
+        public int pageSize = 3;
+
+        public EventController(IEventRepository repo)
         {
             repository = repo;
         }
-        // GET: EventList
-        public ViewResult List()
+
+        public ViewResult EventListView()
         {
-            EventListViewModel model = new EventListViewModel
+            EventModel eventModel = new EventModel
             {
                 Events = repository.Events.OrderBy(p=>p.eventName)
             };
-            return View(model);
+            return View(eventModel);
         }
-        public ViewResult ListPartial(int page = 1)
+
+        public ViewResult EventPartialView(int page = 1)
         {
-            EventListViewModel model = new EventListViewModel
+            EventModel eventModel = new EventModel
             {
                 Events = repository.Events
                 .OrderBy(p => p.eventName)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize),
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize),
                 pageinfo = new PagingInfo
                 {
                     CurrentPage = page,
-                    ItemsPerPage = PageSize,
+                    ItemsPerPage = pageSize,
                     TotalItems = repository.Events.Count()
                 }
             };
-            return View(model);
+            return View(eventModel);
         }
-        public ViewResult details(int id) {
+
+        public ViewResult EventDetailsView(int id) {
 
             Event tempEvent = new Event();
 

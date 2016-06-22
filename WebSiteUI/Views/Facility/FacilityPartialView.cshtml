@@ -1,4 +1,4 @@
-﻿@model WebSiteUI.Models.ListFacilityViewModel
+﻿@model WebSiteUI.Models.FacilityModel
 @{
     Layout = "";
 }
@@ -8,7 +8,7 @@
     <div class="horizontal well">
         <strong class="panel panel-primary">Facility Name:  @item.FaName</strong>
         <br />
-        <span>Event Description: @Html.ActionLink(item.FaDescription, "details", new { item.ID })</span>                                           
+        <span>Event Description: @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })</span>                                           
         <br />
     </div>
 }

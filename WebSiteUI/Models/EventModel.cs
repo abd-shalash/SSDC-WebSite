@@ -6,10 +6,9 @@ using System.Web;
 
 namespace WebSiteUI.Models
 {
-    public class EventListViewModel
+    public class EventModel
     {   
       public IEnumerable<Event> Events { get; set; }
       public PagingInfo pageinfo { set; get; }
-      public Event tempEvent = new Event();
     }
 }

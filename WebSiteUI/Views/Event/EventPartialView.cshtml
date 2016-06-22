@@ -1,4 +1,4 @@
-﻿@model WebSiteUI.Models.EventListViewModel
+﻿@model WebSiteUI.Models.EventModel
 @{
     Layout = "";
 }
@@ -8,7 +8,7 @@
     <div class="horizontal well">
         <strong class="panel panel-primary">Event Name:  @item.eventName</strong>
         <br />
-        <span>Event Description: @Html.ActionLink(item.eventDescription, "details", new { item.ID })</span>                                           
+        <span>Event Description: @Html.ActionLink(item.eventDescription, "EventDetailsView", new { item.ID })</span>                                           
         <br />
     </div>
 }

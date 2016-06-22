@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebSiteUI.Models
 {
-    public class ListFacilityViewModel
+    public class FacilityModel
     {
         public IEnumerable<Facility> Facilities { get; set; }
         public PagingInfo pageinfo { set; get; }

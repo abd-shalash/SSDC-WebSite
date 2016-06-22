@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebSiteUI.Models
 {
-    public class LoginViewModel
+    public class LoginModel
     {
         //annotation: required input rules and the error message
         [Required(ErrorMessage = "Username is required.")]

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebSiteUI.Controllers
 {
-    public class LoginInfoController : Controller
+    public class LoginController : Controller
     {
         //string fName = "";
         //string lName = "";

@@ -28,7 +28,7 @@
     <div id="fullbox">
         <h2>What our customers say</h2>
         <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
-            
+
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -63,15 +63,16 @@
             <div class="w-container">
                 <h2>Facility</h2>
                 <div class="w-row">
-                    @Html.Action("ListPartial", "FacilityList")
+                    @Html.Action("FacilityPartialView", "Facility")
                 </div>
             </div>
         </div>
         <div id="events" class="w-section section blue">
             <div id="partalEvents" class="w-container">
                 <h2>Events</h2>
-                @Html.Action("ListPartial", "EventList")
-
+                <div class="w-row">
+                    @Html.Action("EventPartialView", "Event")
+                </div>
             </div>
         </div>
         <div id="calendar" class="w-section section">

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace WebSiteUI.Models
 {
-    public class ListUserViewModel
+    public class UserModel
     {   
         public IEnumerable<Person> people { set; get; }
     }
