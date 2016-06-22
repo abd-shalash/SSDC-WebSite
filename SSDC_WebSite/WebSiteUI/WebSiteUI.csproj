@@ -1007,7 +1007,7 @@
       <BrowseToURL>~/EventList/ListPartial</BrowseToURL>
     </Content>
     <Content Include="Views\FacilityList\ListFacilities.cshtml" />
-    <Content Include="Views\FacilityList\ListPartial.cshtml" />
+    <Content Include="Views\ListUser\ListPartial.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\EventList\EventSummery.cshtml" />
     <Content Include="Views\EventList\details.cshtml" />

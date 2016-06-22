@@ -10,5 +10,7 @@ namespace ClassLibrary.Abstract
     {
         bool Authenticate(string username, string password);
         bool Logout();
+
+        //Test (PC) after revert
     }
 }
