@@ -1017,6 +1017,10 @@
     <Content Include="Views\Admin\Calender.cshtml" />
     <Content Include="Views\Admin\AdminProfile.cshtml" />
     <Content Include="Views\Account\SignUp.cshtml" />
+    <Content Include="Views\FacilityList\details.cshtml" />
+    <Content Include="Views\FacilityList\FacilitySummery.cshtml" />
+    <Content Include="Views\FacilityList\List.cshtml" />
+    <Content Include="Views\FacilityList\ListPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
