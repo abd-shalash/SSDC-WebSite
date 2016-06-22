@@ -1,9 +1,9 @@
-﻿@model ClassLibrary.Entities.Event
+﻿@model ClassLibrary.Entities.Facility
 
 <div class="well">
-    <strong class="panel-default">Event name: @Model.eventName </strong>
+    <strong class="panel-default">Facility name: @Model.FaName </strong>
     <br />
-    <span class="lead">Event Description:  @Model.eventDescription</span>
-    @Html.ActionLink(Model.eventDescription, "details", new { Model.ID })
+    <span class="lead">@Model.FaDescription</span>
+    @Html.ActionLink(Model.FaDescription, "details", new { Model.ID })
     <br />
 </div>

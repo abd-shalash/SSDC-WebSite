@@ -1,14 +1,14 @@
-﻿@model WebSiteUI.Models.EventListViewModel
+﻿@model WebSiteUI.Models.ListFacilityViewModel
 @{
     Layout = "";
 }
 
-@foreach (var item in Model.Events)
+@foreach (var item in Model.Facilities)
 {
     <div class="horizontal well">
-        <strong class="panel panel-primary">Event Name:  @item.eventName</strong>
+        <strong class="panel panel-primary">Facility Name:  @item.FaName</strong>
         <br />
-        <span>Event Description: @Html.ActionLink(item.eventDescription, "details", new { item.ID })</span>                                           
+        <span>Event Description: @Html.ActionLink(item.FaDescription, "details", new { item.ID })</span>                                           
         <br />
     </div>
 }

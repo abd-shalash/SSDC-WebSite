@@ -3,7 +3,7 @@
 <div class="well">
     <strong class="panel-default">Event name: @Model.eventName </strong>
     <br />
-    <span class="lead">Event Description:  @Model.eventDescription</span>
+    <span class="lead">@Model.eventDescription</span>
     @Html.ActionLink(Model.eventDescription, "details", new { Model.ID })
     <br />
 </div>
