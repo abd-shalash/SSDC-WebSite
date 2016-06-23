@@ -33,7 +33,7 @@ namespace WebSiteUI.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginModel model, string returnUrl)
         {
             
             // if the model is loaded correctly
@@ -65,16 +65,12 @@ namespace WebSiteUI.Controllers
           
                 Request.Cookies.Remove("user");
                 FormsAuthentication.SignOut();
-
                 Session.Abandon();
                 Session.Clear();
                 Response.Cookies.Clear();
                 Session.RemoveAll();
                 Session["user"] = null;
                 return RedirectToAction("Index", "Home");
-                //Redirect(Url.Action("index", "Home"));
-            
-            
         }
     }
 }

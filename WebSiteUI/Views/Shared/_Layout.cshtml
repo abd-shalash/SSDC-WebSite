@@ -5,52 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-
     <link href="~/Static/css/webflow.css" rel="stylesheet" type="text/css" />
     <link href="~/Static/css/nassers-stupendous-site.webflow.css" rel="stylesheet" type="text/css" />
     <link href="~/Static/css/normalize.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation">
-    <div class="w-container">
-        <a href="@Url.Action("Index", "Home")" class="w-nav-brand brand-link">
-            <div class="logo-text">
-                Princess Noura University
-                <br>Simulation &amp; Skills Development Center
+    <br />
+    <br />
+    <br />
+    <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navigation bg-info">
+        <div class="w-container bg-info">
+            <a href="@Url.Action("Index", "Home")" class="w-nav-brand brand-link">
+                <div class="logo-text">
+                    Princess Noura University
+                    <br>Simulation &amp; Skills Development Center
+                </div>
+            </a>
+            <nav role="navigation" class="w-nav-menu nav-menu ">
+                <a href="@Url.Action("Index", "Home")" class="w-nav-link nav-link">Home</a>
+                <a href="@Url.Action("FacilityListView", "Facility")" class="w-nav-link nav-link">Facility</a>
+                <a href="@Url.Action("EventListView", "Event")" class="w-nav-link nav-link">Events</a>
+                <a href="#calendar" class="w-nav-link nav-link">Location</a>
+                <a href="~/Static/signup.html" class="w-nav-link nav-link">Sign Up</a>
+                <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
+                @if (Session["user"] != null)
+                {
+                    <div id="myLogout">
+                        <a class="w-nav-link nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">logged in as: @Session["user"]<span class="caret"></span> </a>
+                        <a href="@Url.Action("Logout", "Account")" class="w-nav-link nav-link " value="Logout"> logout</a>
+                    </div>
+                }
+            </nav>
+            <div class="w-nav-button nav-link menu">
+                <div class="w-icon-nav-menu"></div>
             </div>
-          
-        </a>
-        <nav role="navigation" class="w-nav-menu nav-menu">
-    <a href="@Url.Action("Index", "Home")" class="w-nav-link nav-link">Home</a>
-    <a href="@Url.Action("ListFacilities", "FacilityList")" class="w-nav-link nav-link">Facility</a>
-    <a href="@Url.Action("List", "EventList")" class="w-nav-link nav-link">Events</a>
-    <a href="#calendar" class="w-nav-link nav-link">Calendar</a>
-    <a href="~/Static/signup.html" class="w-nav-link nav-link">Sign Up</a>
-    <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
-    @if (Session["user"] != null)
-    {
-
-            <div class="dropdown" id="myLogout">
-                
-                <a class="w-nav-link nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">logged in as: @Session["user"]<span class="caret"></span> </a>
-                <a href="@Url.Action("Logout", "Account")"  class="w-nav-link nav-link " value="Logout"> logout</a>
-            </div>
-    }
-
-
-                                    </nav>
-        <div class="w-nav-button nav-link menu">
-            <div class="w-icon-nav-menu"></div>
         </div>
     </div>
-</div>
-
-
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -91,14 +86,12 @@
                             <br>kaauh-simulation@pnu.edu.sa
                             <br>Telephone
                             <br>+966 11 8239733
-                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

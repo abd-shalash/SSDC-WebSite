@@ -1,0 +1,6 @@
+﻿@model WebSiteUI.Models.EventModel
+
+@foreach (var p in Model.Events)
+{
+    @Html.Partial("EventSummaryView", p)
+}

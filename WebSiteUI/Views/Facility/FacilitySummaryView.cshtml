@@ -1,0 +1,9 @@
+﻿@model ClassLibrary.Entities.Facility
+
+<div class="well">
+    <strong class="panel-default">Facility name: @Model.FaName </strong>
+    <br />
+    <span class="lead">@Model.FaDescription</span>
+    @Html.ActionLink(Model.FaDescription, "FacilityDetailsView", new { Model.ID })
+    <br />
+</div>
