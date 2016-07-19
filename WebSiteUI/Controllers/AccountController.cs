@@ -58,7 +58,7 @@ namespace WebSiteUI.Controllers
 
         public ActionResult SignUp()
         {
-            return View();
+            return RedirectToAction("Index", "SignUp");
         }
         public ActionResult Logout()
         {
