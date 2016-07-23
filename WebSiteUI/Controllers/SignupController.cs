@@ -49,7 +49,7 @@ namespace WebSiteUI.Controllers
                     return RedirectToAction("Login", "Account");
                 }
             }
-            ModelState.AddModelError("","user name already taken");
+            ModelState.AddModelError("","error user name already taken try another one ");
             //model.Lname.
             return View(model);
         }
