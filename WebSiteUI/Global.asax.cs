@@ -15,8 +15,12 @@ namespace WebSiteUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-
-           // ModelBinders.Binders.Add(typeof(loginInfo),new LoginInfoModelBinder());
+//            routes.MapRoute(
+//"Default",                                       // Route name  
+//"{controller}/{action}/{name}",                    // URL w/ params  
+//new { controller = "User", action = "Index", name = "tab" }  // Param defaults  
+//);
+            // ModelBinders.Binders.Add(typeof(loginInfo),new LoginInfoModelBinder());
         }
     }
 }

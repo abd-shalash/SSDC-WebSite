@@ -9,5 +9,6 @@ namespace WebSiteUI.Models
     public class UserModel
     {   
         public IEnumerable<Person> people { set; get; }
+        public string SelectedTab { set; get; }
     }
 }

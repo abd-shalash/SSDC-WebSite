@@ -979,10 +979,12 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\FacilityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NAVUserController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\UserListController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ViewsUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -993,6 +995,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\UserProfileModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1023,6 +1026,12 @@
     <Content Include="Views\Facility\FacilityListView.cshtml" />
     <Content Include="Views\Facility\FacilityPartialView.cshtml" />
     <Content Include="Views\Signup\CreateUser.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\NAVUser\userNAV.cshtml" />
+    <Content Include="Views\ViewsUser\SubmitForm.cshtml" />
+    <Content Include="Views\ViewsUser\ViewRequest.cshtml" />
+    <Content Include="Views\ViewsUser\Calender.cshtml" />
+    <Content Include="Views\ViewsUser\UserProfile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

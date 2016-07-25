@@ -31,15 +31,15 @@
                 <a href="@Url.Action("FacilityListView", "Facility")" class="w-nav-link nav-link">Facility</a>
                 <a href="@Url.Action("EventListView", "Event")" class="w-nav-link nav-link">Events</a>
                 <a href="#calendar" class="w-nav-link nav-link">Location</a>
-                <a href="@Url.Action("CreateUser", "SignUp")" class="w-nav-link nav-link">signup</a>
-                
-                <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
-                @if (Session["user"] != null)
+                @if (Session["user"] == null)
                 {
-                    <div id="myLogout">
-                        <a class="w-nav-link nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">logged in as: @Session["user"]<span class="caret"></span> </a>
-                        <a href="@Url.Action("Logout", "Account")" class="w-nav-link nav-link " value="Logout"> logout</a>
-                    </div>
+                <a href="@Url.Action("CreateUser", "SignUp")" class="w-nav-link nav-link">signup</a>
+                <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
+                }
+                @if (Session["user"] != null)
+                {              
+                <a href="@Url.Action("Index", "User")" class="w-nav-link nav-link ">logged in as: @Session["user"]</a>             
+                <a href="@Url.Action("Logout", "Account")" class="w-nav-link nav-link " value="Logout"> logout</a>
                 }
             </nav>
             <div class="w-nav-button nav-link menu">

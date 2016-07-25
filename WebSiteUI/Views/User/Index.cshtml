@@ -1,0 +1,34 @@
+﻿@model WebSiteUI.Models.UserModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Index</h2>
+@Html.Action("userNAV", "NAVUser")
+
+<div class="well">
+@if ( Model.SelectedTab == "Profile")
+{
+    <p>profile</p>
+    @Html.Action("UserProfile","ViewsUser")
+}
+else if (Model.SelectedTab == "Calender")
+{
+    <p>calender</p>
+}
+else if (Model.SelectedTab == "View Request")
+{
+    <p>view request</p>
+    @Html.Action("ViewRequest", "ViewsUser")
+}
+else if (Model.SelectedTab == "Submit form")
+{
+    <p>submitforom</p>
+}
+else
+{
+   <p>default</p>
+}
+</div>

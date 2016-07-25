@@ -1,0 +1,39 @@
+﻿@model WebSiteUI.Models.UserProfileModel
+@using ClassLibrary.Entities
+@using ClassLibrary.Concrate
+
+@{
+    EF_PersonRepository repo = new EF_PersonRepository();
+
+    string temps = Session["user"].ToString();
+    Person p = new Person();
+    p = repo.People.FirstOrDefault(u => u.Username == temps);
+
+}
+<div class="panel panel-default">
+    @using (@Html.BeginForm())
+    {
+        <div class="form-group">
+            <label>User Name:</label>
+            <label class="label label-info">@p.Username</label>        
+        </div>
+
+        <div class="form-group ">
+            <label>User password:</label>
+            <label class="label label-info">@p.Password</label>        
+        </div>
+        <div class="form-group ">
+            <label>User first Name:</label>
+            <label class="label label-info">@p.Fname</label>        
+        </div>
+        <div class="form-group ">
+            <label>User MName:</label>
+            <label class="label label-info">@p.Mname</label>       
+        </div>
+        <div class="form-group ">
+            <label>User Last Name:</label>
+             <label class="label label-info">@p.Lname</label>     
+            
+        </div>
+    }
+</div>
