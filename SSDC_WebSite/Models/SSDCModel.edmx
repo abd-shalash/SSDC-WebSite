@@ -1,0 +1,1786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SSDCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="additional_service">
+          <Key>
+            <PropertyRef Name="additional_service_id" />
+          </Key>
+          <Property Name="additional_service_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="additional_sevice_name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="booking">
+          <Key>
+            <PropertyRef Name="booking_id" />
+          </Key>
+          <Property Name="booking_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="booking_date" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="start_date" Type="datetime" Nullable="false" />
+          <Property Name="end_date" Type="datetime" Nullable="false" />
+          <Property Name="topic" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="no_of_participant" Type="int" Nullable="false" />
+          <Property Name="participant_level_id" Type="int" Nullable="false" />
+          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="organization_id" Type="int" Nullable="false" />
+          <Property Name="code_no" Type="varchar" MaxLength="50" />
+          <Property Name="booking_status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="status_updated_by" Type="int" Nullable="false" />
+          <Property Name="meeting_date" Type="datetime" />
+          <Property Name="dryrun_date" Type="datetime" />
+          <Property Name="notes" Type="text" />
+          <Property Name="event_type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="staff_needed" Type="text" />
+          <Property Name="additional_requirement" Type="text" />
+        </EntityType>
+        <EntityType Name="booking_assigned_user">
+          <Key>
+            <PropertyRef Name="booking_assigned_user_id" />
+          </Key>
+          <Property Name="booking_assigned_user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="booking_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="booking_object">
+          <Key>
+            <PropertyRef Name="booking_object_id" />
+          </Key>
+          <Property Name="booking_object_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="booking_id" Type="int" Nullable="false" />
+          <Property Name="object_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="department_id" />
+          </Key>
+          <Property Name="department_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="department_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="organization_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="field">
+          <Key>
+            <PropertyRef Name="field_id" />
+          </Key>
+          <Property Name="field_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="template_id" Type="int" Nullable="false" />
+          <Property Name="field_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="field_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="field_desc" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="field_option">
+          <Key>
+            <PropertyRef Name="field_option_id" />
+          </Key>
+          <Property Name="field_option_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="field_id" Type="int" Nullable="false" />
+          <Property Name="field_option_name" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="field_result">
+          <Key>
+            <PropertyRef Name="field_result_id" />
+          </Key>
+          <Property Name="field_result_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="field_id" Type="int" Nullable="false" />
+          <Property Name="booking_id" Type="int" Nullable="false" />
+          <Property Name="result" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="form">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="form_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="form_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="group">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="group_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="group_operation">
+          <Key>
+            <PropertyRef Name="group_operation_id" />
+          </Key>
+          <Property Name="group_operation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="group_id" Type="int" Nullable="false" />
+          <Property Name="operation_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="object">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="object_type_id" Type="int" Nullable="false" />
+          <Property Name="object_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="object_capacity" Type="int" />
+          <Property Name="object_image" Type="varbinary(max)" />
+          <Property Name="object_description" Type="text" />
+          <Property Name="object_brand" Type="varchar" MaxLength="100" />
+          <Property Name="object_location" Type="varchar" MaxLength="50" />
+          <Property Name="template_id" Type="int" />
+        </EntityType>
+        <EntityType Name="object_property">
+          <Key>
+            <PropertyRef Name="object_property_id" />
+          </Key>
+          <Property Name="object_property_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="object_id" Type="int" Nullable="false" />
+          <Property Name="property_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="object_type">
+          <Key>
+            <PropertyRef Name="object_type_id" />
+          </Key>
+          <Property Name="object_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="object_type" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="quantity_of_object" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="operation">
+          <Key>
+            <PropertyRef Name="operation_id" />
+          </Key>
+          <Property Name="operation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="operation_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="form_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="organization">
+          <Key>
+            <PropertyRef Name="organization_id" />
+          </Key>
+          <Property Name="organization_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organization_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="organization_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="organization_type">
+          <Key>
+            <PropertyRef Name="organization_type_id" />
+          </Key>
+          <Property Name="organization_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organization_type_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="participant_level">
+          <Key>
+            <PropertyRef Name="participant_level_id" />
+          </Key>
+          <Property Name="participant_level_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="participant_type" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="participant_level_name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="position_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="property_id" />
+          </Key>
+          <Property Name="property_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="property_name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="property_description" Type="text" />
+          <Property Name="property_brand" Type="varchar" MaxLength="255" />
+          <Property Name="property_type_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="property_type">
+          <Key>
+            <PropertyRef Name="property_type_id" />
+          </Key>
+          <Property Name="property_type_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="property_type_name" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="service_cost">
+          <Key>
+            <PropertyRef Name="service_cost_id" />
+          </Key>
+          <Property Name="service_cost_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="organization_id" Type="int" />
+          <Property Name="department_id" Type="int" />
+          <Property Name="additional_level" Type="varchar" MaxLength="100" />
+          <Property Name="service_id" Type="int" Nullable="false" />
+          <Property Name="service_type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="total_cost" Type="money" Nullable="false" />
+          <Property Name="user_cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="template">
+          <Key>
+            <PropertyRef Name="template_id" />
+          </Key>
+          <Property Name="template_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="template_name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="organization_id" Type="int" Nullable="false" />
+          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="work_number" Type="int" />
+          <Property Name="mobile_number" Type="int" Nullable="false" />
+          <Property Name="gender" Type="int" Nullable="false" />
+          <Property Name="id_number" Type="int" />
+          <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="position_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_group">
+          <Key>
+            <PropertyRef Name="user_group_id" />
+          </Key>
+          <Property Name="user_group_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="group_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_booking_assigned_user_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="booking_assigned_user" Type="Self.booking_assigned_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="booking">
+              <PropertyRef Name="booking_id" />
+            </Principal>
+            <Dependent Role="booking_assigned_user">
+              <PropertyRef Name="booking_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_assigned_user_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking_assigned_user" Type="Self.booking_assigned_user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="booking_assigned_user">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="department_id" />
+            </Principal>
+            <Dependent Role="booking">
+              <PropertyRef Name="department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_object_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="booking_object" Type="Self.booking_object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="booking">
+              <PropertyRef Name="booking_id" />
+            </Principal>
+            <Dependent Role="booking_object">
+              <PropertyRef Name="booking_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_object_object">
+          <End Role="object" Type="Self.object" Multiplicity="1" />
+          <End Role="booking_object" Type="Self.booking_object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="object">
+              <PropertyRef Name="object_id" />
+            </Principal>
+            <Dependent Role="booking_object">
+              <PropertyRef Name="object_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization">
+              <PropertyRef Name="organization_id" />
+            </Principal>
+            <Dependent Role="booking">
+              <PropertyRef Name="organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_participant_level">
+          <End Role="participant_level" Type="Self.participant_level" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="participant_level">
+              <PropertyRef Name="participant_level_id" />
+            </Principal>
+            <Dependent Role="booking">
+              <PropertyRef Name="participant_level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_statusupdatedby">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="booking">
+              <PropertyRef Name="status_updated_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_booking_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="booking">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_department_organization_type">
+          <End Role="organization_type" Type="Self.organization_type" Multiplicity="1" />
+          <End Role="department" Type="Self.department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization_type">
+              <PropertyRef Name="organization_type_id" />
+            </Principal>
+            <Dependent Role="department">
+              <PropertyRef Name="organization_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_field_option_field">
+          <End Role="field" Type="Self.field" Multiplicity="1" />
+          <End Role="field_option" Type="Self.field_option" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="field">
+              <PropertyRef Name="field_id" />
+            </Principal>
+            <Dependent Role="field_option">
+              <PropertyRef Name="field_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_field_result_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="field_result" Type="Self.field_result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="booking">
+              <PropertyRef Name="booking_id" />
+            </Principal>
+            <Dependent Role="field_result">
+              <PropertyRef Name="booking_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_field_result_field">
+          <End Role="field" Type="Self.field" Multiplicity="1" />
+          <End Role="field_result" Type="Self.field_result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="field">
+              <PropertyRef Name="field_id" />
+            </Principal>
+            <Dependent Role="field_result">
+              <PropertyRef Name="field_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_field_template">
+          <End Role="template" Type="Self.template" Multiplicity="1" />
+          <End Role="field" Type="Self.field" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="template">
+              <PropertyRef Name="template_id" />
+            </Principal>
+            <Dependent Role="field">
+              <PropertyRef Name="template_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_group_operation_group">
+          <End Role="group" Type="Self.group" Multiplicity="1" />
+          <End Role="group_operation" Type="Self.group_operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="group_operation">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_group_operation_operation">
+          <End Role="operation" Type="Self.operation" Multiplicity="1" />
+          <End Role="group_operation" Type="Self.group_operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="operation">
+              <PropertyRef Name="operation_id" />
+            </Principal>
+            <Dependent Role="group_operation">
+              <PropertyRef Name="operation_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_object_object_type">
+          <End Role="object_type" Type="Self.object_type" Multiplicity="1" />
+          <End Role="object" Type="Self.object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="object_type">
+              <PropertyRef Name="object_type_id" />
+            </Principal>
+            <Dependent Role="object">
+              <PropertyRef Name="object_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_object_property_object">
+          <End Role="object" Type="Self.object" Multiplicity="1" />
+          <End Role="object_property" Type="Self.object_property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="object">
+              <PropertyRef Name="object_id" />
+            </Principal>
+            <Dependent Role="object_property">
+              <PropertyRef Name="object_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_object_template">
+          <End Role="template" Type="Self.template" Multiplicity="0..1" />
+          <End Role="object" Type="Self.object" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="template">
+              <PropertyRef Name="template_id" />
+            </Principal>
+            <Dependent Role="object">
+              <PropertyRef Name="template_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_operation_form">
+          <End Role="form" Type="Self.form" Multiplicity="1" />
+          <End Role="operation" Type="Self.operation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="form">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="operation">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_organization_organization_type">
+          <End Role="organization_type" Type="Self.organization_type" Multiplicity="1" />
+          <End Role="organization" Type="Self.organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization_type">
+              <PropertyRef Name="organization_type_id" />
+            </Principal>
+            <Dependent Role="organization">
+              <PropertyRef Name="organization_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_property_property_type">
+          <End Role="property_type" Type="Self.property_type" Multiplicity="1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property_type">
+              <PropertyRef Name="property_type_id" />
+            </Principal>
+            <Dependent Role="property">
+              <PropertyRef Name="property_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_cost_department">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="service_cost" Type="Self.service_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="department_id" />
+            </Principal>
+            <Dependent Role="service_cost">
+              <PropertyRef Name="department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_service_cost_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="0..1" />
+          <End Role="service_cost" Type="Self.service_cost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization">
+              <PropertyRef Name="organization_id" />
+            </Principal>
+            <Dependent Role="service_cost">
+              <PropertyRef Name="organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="department_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="department_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_group_group">
+          <End Role="group" Type="Self.group" Multiplicity="1" />
+          <End Role="user_group" Type="Self.user_group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="user_group">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_group_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="user_group" Type="Self.user_group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="user_id" />
+            </Principal>
+            <Dependent Role="user_group">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="organization">
+              <PropertyRef Name="organization_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="organization_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_position">
+          <End Role="position" Type="Self.position" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="position">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="object_property_property_fk">
+          <End Role="property" Type="Self.property" Multiplicity="1" />
+          <End Role="object_property" Type="Self.object_property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="property">
+              <PropertyRef Name="property_id" />
+            </Principal>
+            <Dependent Role="object_property">
+              <PropertyRef Name="property_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SSDCModelStoreContainer">
+          <EntitySet Name="additional_service" EntityType="Self.additional_service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="booking" EntityType="Self.booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="booking_assigned_user" EntityType="Self.booking_assigned_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="booking_object" EntityType="Self.booking_object" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="field" EntityType="Self.field" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="field_option" EntityType="Self.field_option" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="field_result" EntityType="Self.field_result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="form" EntityType="Self.form" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="group" EntityType="Self.group" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="group_operation" EntityType="Self.group_operation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="object" EntityType="Self.object" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="object_property" EntityType="Self.object_property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="object_type" EntityType="Self.object_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="operation" EntityType="Self.operation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="organization" EntityType="Self.organization" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="organization_type" EntityType="Self.organization_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="participant_level" EntityType="Self.participant_level" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="position" EntityType="Self.position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="property" EntityType="Self.property" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="property_type" EntityType="Self.property_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="service_cost" EntityType="Self.service_cost" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="template" EntityType="Self.template" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_group" EntityType="Self.user_group" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_booking_assigned_user_booking" Association="Self.FK_booking_assigned_user_booking">
+            <End Role="booking" EntitySet="booking" />
+            <End Role="booking_assigned_user" EntitySet="booking_assigned_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_assigned_user_user" Association="Self.FK_booking_assigned_user_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="booking_assigned_user" EntitySet="booking_assigned_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_department" Association="Self.FK_booking_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="booking" EntitySet="booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_object_booking" Association="Self.FK_booking_object_booking">
+            <End Role="booking" EntitySet="booking" />
+            <End Role="booking_object" EntitySet="booking_object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_object_object" Association="Self.FK_booking_object_object">
+            <End Role="object" EntitySet="object" />
+            <End Role="booking_object" EntitySet="booking_object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_organization" Association="Self.FK_booking_organization">
+            <End Role="organization" EntitySet="organization" />
+            <End Role="booking" EntitySet="booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_participant_level" Association="Self.FK_booking_participant_level">
+            <End Role="participant_level" EntitySet="participant_level" />
+            <End Role="booking" EntitySet="booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_statusupdatedby" Association="Self.FK_booking_statusupdatedby">
+            <End Role="user" EntitySet="user" />
+            <End Role="booking" EntitySet="booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_user" Association="Self.FK_booking_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="booking" EntitySet="booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_department_organization_type" Association="Self.FK_department_organization_type">
+            <End Role="organization_type" EntitySet="organization_type" />
+            <End Role="department" EntitySet="department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_option_field" Association="Self.FK_field_option_field">
+            <End Role="field" EntitySet="field" />
+            <End Role="field_option" EntitySet="field_option" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_result_booking" Association="Self.FK_field_result_booking">
+            <End Role="booking" EntitySet="booking" />
+            <End Role="field_result" EntitySet="field_result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_result_field" Association="Self.FK_field_result_field">
+            <End Role="field" EntitySet="field" />
+            <End Role="field_result" EntitySet="field_result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_template" Association="Self.FK_field_template">
+            <End Role="template" EntitySet="template" />
+            <End Role="field" EntitySet="field" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_operation_group" Association="Self.FK_group_operation_group">
+            <End Role="group" EntitySet="group" />
+            <End Role="group_operation" EntitySet="group_operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_operation_operation" Association="Self.FK_group_operation_operation">
+            <End Role="operation" EntitySet="operation" />
+            <End Role="group_operation" EntitySet="group_operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_object_type" Association="Self.FK_object_object_type">
+            <End Role="object_type" EntitySet="object_type" />
+            <End Role="object" EntitySet="object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_property_object" Association="Self.FK_object_property_object">
+            <End Role="object" EntitySet="object" />
+            <End Role="object_property" EntitySet="object_property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_template" Association="Self.FK_object_template">
+            <End Role="template" EntitySet="template" />
+            <End Role="object" EntitySet="object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_operation_form" Association="Self.FK_operation_form">
+            <End Role="form" EntitySet="form" />
+            <End Role="operation" EntitySet="operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_organization_organization_type" Association="Self.FK_organization_organization_type">
+            <End Role="organization_type" EntitySet="organization_type" />
+            <End Role="organization" EntitySet="organization" />
+          </AssociationSet>
+          <AssociationSet Name="FK_property_property_type" Association="Self.FK_property_property_type">
+            <End Role="property_type" EntitySet="property_type" />
+            <End Role="property" EntitySet="property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_cost_department" Association="Self.FK_service_cost_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="service_cost" EntitySet="service_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_cost_organization" Association="Self.FK_service_cost_organization">
+            <End Role="organization" EntitySet="organization" />
+            <End Role="service_cost" EntitySet="service_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="Self.FK_user_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_group_group" Association="Self.FK_user_group_group">
+            <End Role="group" EntitySet="group" />
+            <End Role="user_group" EntitySet="user_group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_group_user" Association="Self.FK_user_group_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="user_group" EntitySet="user_group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_organization" Association="Self.FK_user_organization">
+            <End Role="organization" EntitySet="organization" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_position" Association="Self.FK_user_position">
+            <End Role="position" EntitySet="position" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="object_property_property_fk" Association="Self.object_property_property_fk">
+            <End Role="property" EntitySet="property" />
+            <End Role="object_property" EntitySet="object_property" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSDCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="additional_service">
+          <Key>
+            <PropertyRef Name="additional_service_id" />
+          </Key>
+          <Property Name="additional_service_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="additional_sevice_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="booking">
+          <Key>
+            <PropertyRef Name="booking_id" />
+          </Key>
+          <Property Name="booking_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="booking_date" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="start_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="end_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="topic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="no_of_participant" Type="Int32" Nullable="false" />
+          <Property Name="code_no" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="booking_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="meeting_date" Type="DateTime" Precision="3" />
+          <Property Name="dryrun_date" Type="DateTime" Precision="3" />
+          <Property Name="notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="event_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staff_needed" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="additional_requirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="booking_assigned_user" Relationship="Self.FK_booking_assigned_user_booking" FromRole="booking" ToRole="booking_assigned_user" />
+          <NavigationProperty Name="department" Relationship="Self.FK_booking_department" FromRole="booking" ToRole="department" />
+          <NavigationProperty Name="booking_object" Relationship="Self.FK_booking_object_booking" FromRole="booking" ToRole="booking_object" />
+          <NavigationProperty Name="organization" Relationship="Self.FK_booking_organization" FromRole="booking" ToRole="organization" />
+          <NavigationProperty Name="participant_level" Relationship="Self.FK_booking_participant_level" FromRole="booking" ToRole="participant_level" />
+          <NavigationProperty Name="user" Relationship="Self.FK_booking_statusupdatedby" FromRole="booking" ToRole="user" />
+          <NavigationProperty Name="user1" Relationship="Self.FK_booking_user" FromRole="booking" ToRole="user" />
+          <NavigationProperty Name="field_result" Relationship="Self.FK_field_result_booking" FromRole="booking" ToRole="field_result" />
+        </EntityType>
+        <EntityType Name="booking_assigned_user">
+          <Key>
+            <PropertyRef Name="booking_assigned_user_id" />
+          </Key>
+          <Property Name="booking_assigned_user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="booking" Relationship="Self.FK_booking_assigned_user_booking" FromRole="booking_assigned_user" ToRole="booking" />
+          <NavigationProperty Name="user" Relationship="Self.FK_booking_assigned_user_user" FromRole="booking_assigned_user" ToRole="user" />
+        </EntityType>
+        <EntityType Name="booking_object">
+          <Key>
+            <PropertyRef Name="booking_object_id" />
+          </Key>
+          <Property Name="booking_object_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="booking" Relationship="Self.FK_booking_object_booking" FromRole="booking_object" ToRole="booking" />
+          <NavigationProperty Name="object" Relationship="Self.FK_booking_object_object" FromRole="booking_object" ToRole="object" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="department_id" />
+          </Key>
+          <Property Name="department_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="department_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bookings" Relationship="Self.FK_booking_department" FromRole="department" ToRole="booking" />
+          <NavigationProperty Name="organization_type" Relationship="Self.FK_department_organization_type" FromRole="department" ToRole="organization_type" />
+          <NavigationProperty Name="service_cost" Relationship="Self.FK_service_cost_department" FromRole="department" ToRole="service_cost" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_department" FromRole="department" ToRole="user" />
+        </EntityType>
+        <EntityType Name="field">
+          <Key>
+            <PropertyRef Name="field_id" />
+          </Key>
+          <Property Name="field_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="field_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="field_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="field_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="field_option" Relationship="Self.FK_field_option_field" FromRole="field" ToRole="field_option" />
+          <NavigationProperty Name="field_result" Relationship="Self.FK_field_result_field" FromRole="field" ToRole="field_result" />
+          <NavigationProperty Name="template" Relationship="Self.FK_field_template" FromRole="field" ToRole="template" />
+        </EntityType>
+        <EntityType Name="field_option">
+          <Key>
+            <PropertyRef Name="field_option_id" />
+          </Key>
+          <Property Name="field_option_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="field_option_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="field" Relationship="Self.FK_field_option_field" FromRole="field_option" ToRole="field" />
+        </EntityType>
+        <EntityType Name="field_result">
+          <Key>
+            <PropertyRef Name="field_result_id" />
+          </Key>
+          <Property Name="field_result_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="result" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="booking" Relationship="Self.FK_field_result_booking" FromRole="field_result" ToRole="booking" />
+          <NavigationProperty Name="field" Relationship="Self.FK_field_result_field" FromRole="field_result" ToRole="field" />
+        </EntityType>
+        <EntityType Name="form">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="form_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="form_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="operations" Relationship="Self.FK_operation_form" FromRole="form" ToRole="operation" />
+        </EntityType>
+        <EntityType Name="group">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="group_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="group_operation" Relationship="Self.FK_group_operation_group" FromRole="group" ToRole="group_operation" />
+          <NavigationProperty Name="user_group" Relationship="Self.FK_user_group_group" FromRole="group" ToRole="user_group" />
+        </EntityType>
+        <EntityType Name="group_operation">
+          <Key>
+            <PropertyRef Name="group_operation_id" />
+          </Key>
+          <Property Name="group_operation_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="group" Relationship="Self.FK_group_operation_group" FromRole="group_operation" ToRole="group" />
+          <NavigationProperty Name="operation" Relationship="Self.FK_group_operation_operation" FromRole="group_operation" ToRole="operation" />
+        </EntityType>
+        <EntityType Name="object">
+          <Key>
+            <PropertyRef Name="object_id" />
+          </Key>
+          <Property Name="object_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="object_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="object_capacity" Type="Int32" />
+          <Property Name="object_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="object_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="object_brand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="object_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="booking_object" Relationship="Self.FK_booking_object_object" FromRole="object" ToRole="booking_object" />
+          <NavigationProperty Name="object_type" Relationship="Self.FK_object_object_type" FromRole="object" ToRole="object_type" />
+          <NavigationProperty Name="object_property" Relationship="Self.FK_object_property_object" FromRole="object" ToRole="object_property" />
+          <NavigationProperty Name="template" Relationship="Self.FK_object_template" FromRole="object" ToRole="template" />
+        </EntityType>
+        <EntityType Name="object_property">
+          <Key>
+            <PropertyRef Name="object_property_id" />
+          </Key>
+          <Property Name="object_property_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="object" Relationship="Self.FK_object_property_object" FromRole="object_property" ToRole="object" />
+          <NavigationProperty Name="property" Relationship="Self.object_property_property_fk" FromRole="object_property" ToRole="property" />
+        </EntityType>
+        <EntityType Name="object_type">
+          <Key>
+            <PropertyRef Name="object_type_id" />
+          </Key>
+          <Property Name="object_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="object_type1" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity_of_object" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="objects" Relationship="Self.FK_object_object_type" FromRole="object_type" ToRole="object" />
+        </EntityType>
+        <EntityType Name="operation">
+          <Key>
+            <PropertyRef Name="operation_id" />
+          </Key>
+          <Property Name="operation_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="operation_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="form" Relationship="Self.FK_operation_form" FromRole="operation" ToRole="form" />
+          <NavigationProperty Name="group_operation" Relationship="Self.FK_group_operation_operation" FromRole="operation" ToRole="group_operation" />
+        </EntityType>
+        <EntityType Name="organization">
+          <Key>
+            <PropertyRef Name="organization_id" />
+          </Key>
+          <Property Name="organization_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organization_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bookings" Relationship="Self.FK_booking_organization" FromRole="organization" ToRole="booking" />
+          <NavigationProperty Name="organization_type" Relationship="Self.FK_organization_organization_type" FromRole="organization" ToRole="organization_type" />
+          <NavigationProperty Name="service_cost" Relationship="Self.FK_service_cost_organization" FromRole="organization" ToRole="service_cost" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_organization" FromRole="organization" ToRole="user" />
+        </EntityType>
+        <EntityType Name="organization_type">
+          <Key>
+            <PropertyRef Name="organization_type_id" />
+          </Key>
+          <Property Name="organization_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="organization_type_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="departments" Relationship="Self.FK_department_organization_type" FromRole="organization_type" ToRole="department" />
+          <NavigationProperty Name="organizations" Relationship="Self.FK_organization_organization_type" FromRole="organization_type" ToRole="organization" />
+        </EntityType>
+        <EntityType Name="participant_level">
+          <Key>
+            <PropertyRef Name="participant_level_id" />
+          </Key>
+          <Property Name="participant_level_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="participant_type" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="participant_level_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bookings" Relationship="Self.FK_booking_participant_level" FromRole="participant_level" ToRole="booking" />
+        </EntityType>
+        <EntityType Name="position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="position_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK_user_position" FromRole="position" ToRole="user" />
+        </EntityType>
+        <EntityType Name="property">
+          <Key>
+            <PropertyRef Name="property_id" />
+          </Key>
+          <Property Name="property_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="property_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="property_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="property_brand" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="object_property" Relationship="Self.object_property_property_fk" FromRole="property" ToRole="object_property" />
+          <NavigationProperty Name="property_type" Relationship="Self.FK_property_property_type" FromRole="property" ToRole="property_type" />
+        </EntityType>
+        <EntityType Name="property_type">
+          <Key>
+            <PropertyRef Name="property_type_id" />
+          </Key>
+          <Property Name="property_type_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="property_type_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="properties" Relationship="Self.FK_property_property_type" FromRole="property_type" ToRole="property" />
+        </EntityType>
+        <EntityType Name="service_cost">
+          <Key>
+            <PropertyRef Name="service_cost_id" />
+          </Key>
+          <Property Name="service_cost_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="additional_level" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="service_id" Type="Int32" Nullable="false" />
+          <Property Name="service_type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="total_cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="user_cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="department" Relationship="Self.FK_service_cost_department" FromRole="service_cost" ToRole="department" />
+          <NavigationProperty Name="organization" Relationship="Self.FK_service_cost_organization" FromRole="service_cost" ToRole="organization" />
+        </EntityType>
+        <EntityType Name="template">
+          <Key>
+            <PropertyRef Name="template_id" />
+          </Key>
+          <Property Name="template_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="template_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="fields" Relationship="Self.FK_field_template" FromRole="template" ToRole="field" />
+          <NavigationProperty Name="objects" Relationship="Self.FK_object_template" FromRole="template" ToRole="object" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="work_number" Type="Int32" />
+          <Property Name="mobile_number" Type="Int32" Nullable="false" />
+          <Property Name="gender" Type="Int32" Nullable="false" />
+          <Property Name="id_number" Type="Int32" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="bookings" Relationship="Self.FK_booking_statusupdatedby" FromRole="user" ToRole="booking" />
+          <NavigationProperty Name="bookings1" Relationship="Self.FK_booking_user" FromRole="user" ToRole="booking" />
+          <NavigationProperty Name="booking_assigned_user" Relationship="Self.FK_booking_assigned_user_user" FromRole="user" ToRole="booking_assigned_user" />
+          <NavigationProperty Name="department" Relationship="Self.FK_user_department" FromRole="user" ToRole="department" />
+          <NavigationProperty Name="organization" Relationship="Self.FK_user_organization" FromRole="user" ToRole="organization" />
+          <NavigationProperty Name="position" Relationship="Self.FK_user_position" FromRole="user" ToRole="position" />
+          <NavigationProperty Name="user_group" Relationship="Self.FK_user_group_user" FromRole="user" ToRole="user_group" />
+        </EntityType>
+        <EntityType Name="user_group">
+          <Key>
+            <PropertyRef Name="user_group_id" />
+          </Key>
+          <Property Name="user_group_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="group" Relationship="Self.FK_user_group_group" FromRole="user_group" ToRole="group" />
+          <NavigationProperty Name="user" Relationship="Self.FK_user_group_user" FromRole="user_group" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_booking_assigned_user_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="booking_assigned_user" Type="Self.booking_assigned_user" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_object_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="booking_object" Type="Self.booking_object" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_participant_level">
+          <End Role="participant_level" Type="Self.participant_level" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_statusupdatedby">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking" Type="Self.booking" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_field_result_booking">
+          <End Role="booking" Type="Self.booking" Multiplicity="1" />
+          <End Role="field_result" Type="Self.field_result" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_assigned_user_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="booking_assigned_user" Type="Self.booking_assigned_user" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_booking_object_object">
+          <End Role="object" Type="Self.object" Multiplicity="1" />
+          <End Role="booking_object" Type="Self.booking_object" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_department_organization_type">
+          <End Role="organization_type" Type="Self.organization_type" Multiplicity="1" />
+          <End Role="department" Type="Self.department" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_service_cost_department">
+          <End Role="department" Type="Self.department" Multiplicity="0..1" />
+          <End Role="service_cost" Type="Self.service_cost" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_user_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_field_option_field">
+          <End Role="field" Type="Self.field" Multiplicity="1" />
+          <End Role="field_option" Type="Self.field_option" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_field_result_field">
+          <End Role="field" Type="Self.field" Multiplicity="1" />
+          <End Role="field_result" Type="Self.field_result" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_field_template">
+          <End Role="template" Type="Self.template" Multiplicity="1" />
+          <End Role="field" Type="Self.field" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_operation_form">
+          <End Role="form" Type="Self.form" Multiplicity="1" />
+          <End Role="operation" Type="Self.operation" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_group_operation_group">
+          <End Role="group" Type="Self.group" Multiplicity="1" />
+          <End Role="group_operation" Type="Self.group_operation" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_user_group_group">
+          <End Role="group" Type="Self.group" Multiplicity="1" />
+          <End Role="user_group" Type="Self.user_group" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_group_operation_operation">
+          <End Role="operation" Type="Self.operation" Multiplicity="1" />
+          <End Role="group_operation" Type="Self.group_operation" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_object_object_type">
+          <End Role="object_type" Type="Self.object_type" Multiplicity="1" />
+          <End Role="object" Type="Self.object" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_object_property_object">
+          <End Role="object" Type="Self.object" Multiplicity="1" />
+          <End Role="object_property" Type="Self.object_property" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_object_template">
+          <End Role="template" Type="Self.template" Multiplicity="0..1" />
+          <End Role="object" Type="Self.object" Multiplicity="*" />
+        </Association>
+        <Association Name="object_property_property_fk">
+          <End Role="property" Type="Self.property" Multiplicity="1" />
+          <End Role="object_property" Type="Self.object_property" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_organization_organization_type">
+          <End Role="organization_type" Type="Self.organization_type" Multiplicity="1" />
+          <End Role="organization" Type="Self.organization" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_service_cost_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="0..1" />
+          <End Role="service_cost" Type="Self.service_cost" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_user_organization">
+          <End Role="organization" Type="Self.organization" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_user_position">
+          <End Role="position" Type="Self.position" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_property_property_type">
+          <End Role="property_type" Type="Self.property_type" Multiplicity="1" />
+          <End Role="property" Type="Self.property" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_user_group_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="user_group" Type="Self.user_group" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SSDCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="additional_service" EntityType="Self.additional_service" />
+          <EntitySet Name="bookings" EntityType="Self.booking" />
+          <EntitySet Name="booking_assigned_user" EntityType="Self.booking_assigned_user" />
+          <EntitySet Name="booking_object" EntityType="Self.booking_object" />
+          <EntitySet Name="departments" EntityType="Self.department" />
+          <EntitySet Name="fields" EntityType="Self.field" />
+          <EntitySet Name="field_option" EntityType="Self.field_option" />
+          <EntitySet Name="field_result" EntityType="Self.field_result" />
+          <EntitySet Name="forms" EntityType="Self.form" />
+          <EntitySet Name="groups" EntityType="Self.group" />
+          <EntitySet Name="group_operation" EntityType="Self.group_operation" />
+          <EntitySet Name="objects" EntityType="Self.object" />
+          <EntitySet Name="object_property" EntityType="Self.object_property" />
+          <EntitySet Name="object_type" EntityType="Self.object_type" />
+          <EntitySet Name="operations" EntityType="Self.operation" />
+          <EntitySet Name="organizations" EntityType="Self.organization" />
+          <EntitySet Name="organization_type" EntityType="Self.organization_type" />
+          <EntitySet Name="participant_level" EntityType="Self.participant_level" />
+          <EntitySet Name="positions" EntityType="Self.position" />
+          <EntitySet Name="properties" EntityType="Self.property" />
+          <EntitySet Name="property_type" EntityType="Self.property_type" />
+          <EntitySet Name="service_cost" EntityType="Self.service_cost" />
+          <EntitySet Name="templates" EntityType="Self.template" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="user_group" EntityType="Self.user_group" />
+          <AssociationSet Name="FK_booking_assigned_user_booking" Association="Self.FK_booking_assigned_user_booking">
+            <End Role="booking" EntitySet="bookings" />
+            <End Role="booking_assigned_user" EntitySet="booking_assigned_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_department" Association="Self.FK_booking_department">
+            <End Role="department" EntitySet="departments" />
+            <End Role="booking" EntitySet="bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_object_booking" Association="Self.FK_booking_object_booking">
+            <End Role="booking" EntitySet="bookings" />
+            <End Role="booking_object" EntitySet="booking_object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_organization" Association="Self.FK_booking_organization">
+            <End Role="organization" EntitySet="organizations" />
+            <End Role="booking" EntitySet="bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_participant_level" Association="Self.FK_booking_participant_level">
+            <End Role="participant_level" EntitySet="participant_level" />
+            <End Role="booking" EntitySet="bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_statusupdatedby" Association="Self.FK_booking_statusupdatedby">
+            <End Role="user" EntitySet="users" />
+            <End Role="booking" EntitySet="bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_user" Association="Self.FK_booking_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="booking" EntitySet="bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_result_booking" Association="Self.FK_field_result_booking">
+            <End Role="booking" EntitySet="bookings" />
+            <End Role="field_result" EntitySet="field_result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_assigned_user_user" Association="Self.FK_booking_assigned_user_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="booking_assigned_user" EntitySet="booking_assigned_user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_booking_object_object" Association="Self.FK_booking_object_object">
+            <End Role="object" EntitySet="objects" />
+            <End Role="booking_object" EntitySet="booking_object" />
+          </AssociationSet>
+          <AssociationSet Name="FK_department_organization_type" Association="Self.FK_department_organization_type">
+            <End Role="organization_type" EntitySet="organization_type" />
+            <End Role="department" EntitySet="departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_cost_department" Association="Self.FK_service_cost_department">
+            <End Role="department" EntitySet="departments" />
+            <End Role="service_cost" EntitySet="service_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="Self.FK_user_department">
+            <End Role="department" EntitySet="departments" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_option_field" Association="Self.FK_field_option_field">
+            <End Role="field" EntitySet="fields" />
+            <End Role="field_option" EntitySet="field_option" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_result_field" Association="Self.FK_field_result_field">
+            <End Role="field" EntitySet="fields" />
+            <End Role="field_result" EntitySet="field_result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_field_template" Association="Self.FK_field_template">
+            <End Role="template" EntitySet="templates" />
+            <End Role="field" EntitySet="fields" />
+          </AssociationSet>
+          <AssociationSet Name="FK_operation_form" Association="Self.FK_operation_form">
+            <End Role="form" EntitySet="forms" />
+            <End Role="operation" EntitySet="operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_operation_group" Association="Self.FK_group_operation_group">
+            <End Role="group" EntitySet="groups" />
+            <End Role="group_operation" EntitySet="group_operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_group_group" Association="Self.FK_user_group_group">
+            <End Role="group" EntitySet="groups" />
+            <End Role="user_group" EntitySet="user_group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_group_operation_operation" Association="Self.FK_group_operation_operation">
+            <End Role="operation" EntitySet="operations" />
+            <End Role="group_operation" EntitySet="group_operation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_object_type" Association="Self.FK_object_object_type">
+            <End Role="object_type" EntitySet="object_type" />
+            <End Role="object" EntitySet="objects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_property_object" Association="Self.FK_object_property_object">
+            <End Role="object" EntitySet="objects" />
+            <End Role="object_property" EntitySet="object_property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_object_template" Association="Self.FK_object_template">
+            <End Role="template" EntitySet="templates" />
+            <End Role="object" EntitySet="objects" />
+          </AssociationSet>
+          <AssociationSet Name="object_property_property_fk" Association="Self.object_property_property_fk">
+            <End Role="property" EntitySet="properties" />
+            <End Role="object_property" EntitySet="object_property" />
+          </AssociationSet>
+          <AssociationSet Name="FK_organization_organization_type" Association="Self.FK_organization_organization_type">
+            <End Role="organization_type" EntitySet="organization_type" />
+            <End Role="organization" EntitySet="organizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_service_cost_organization" Association="Self.FK_service_cost_organization">
+            <End Role="organization" EntitySet="organizations" />
+            <End Role="service_cost" EntitySet="service_cost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_organization" Association="Self.FK_user_organization">
+            <End Role="organization" EntitySet="organizations" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_position" Association="Self.FK_user_position">
+            <End Role="position" EntitySet="positions" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_property_property_type" Association="Self.FK_property_property_type">
+            <End Role="property_type" EntitySet="property_type" />
+            <End Role="property" EntitySet="properties" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_group_user" Association="Self.FK_user_group_user">
+            <End Role="user" EntitySet="users" />
+            <End Role="user_group" EntitySet="user_group" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSDCModelStoreContainer" CdmEntityContainer="SSDCEntities">
+          <EntitySetMapping Name="additional_service">
+            <EntityTypeMapping TypeName="SSDCModel.additional_service">
+              <MappingFragment StoreEntitySet="additional_service">
+                <ScalarProperty Name="additional_service_id" ColumnName="additional_service_id" />
+                <ScalarProperty Name="additional_sevice_name" ColumnName="additional_sevice_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bookings">
+            <EntityTypeMapping TypeName="SSDCModel.booking">
+              <MappingFragment StoreEntitySet="booking">
+                <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+                <ScalarProperty Name="booking_date" ColumnName="booking_date" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="no_of_participant" ColumnName="no_of_participant" />
+                <ScalarProperty Name="code_no" ColumnName="code_no" />
+                <ScalarProperty Name="booking_status" ColumnName="booking_status" />
+                <ScalarProperty Name="meeting_date" ColumnName="meeting_date" />
+                <ScalarProperty Name="dryrun_date" ColumnName="dryrun_date" />
+                <ScalarProperty Name="notes" ColumnName="notes" />
+                <ScalarProperty Name="event_type" ColumnName="event_type" />
+                <ScalarProperty Name="staff_needed" ColumnName="staff_needed" />
+                <ScalarProperty Name="additional_requirement" ColumnName="additional_requirement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="booking_assigned_user">
+            <EntityTypeMapping TypeName="SSDCModel.booking_assigned_user">
+              <MappingFragment StoreEntitySet="booking_assigned_user">
+                <ScalarProperty Name="booking_assigned_user_id" ColumnName="booking_assigned_user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="booking_object">
+            <EntityTypeMapping TypeName="SSDCModel.booking_object">
+              <MappingFragment StoreEntitySet="booking_object">
+                <ScalarProperty Name="booking_object_id" ColumnName="booking_object_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="departments">
+            <EntityTypeMapping TypeName="SSDCModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="department_id" ColumnName="department_id" />
+                <ScalarProperty Name="department_name" ColumnName="department_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fields">
+            <EntityTypeMapping TypeName="SSDCModel.field">
+              <MappingFragment StoreEntitySet="field">
+                <ScalarProperty Name="field_id" ColumnName="field_id" />
+                <ScalarProperty Name="field_name" ColumnName="field_name" />
+                <ScalarProperty Name="field_type" ColumnName="field_type" />
+                <ScalarProperty Name="field_desc" ColumnName="field_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="field_option">
+            <EntityTypeMapping TypeName="SSDCModel.field_option">
+              <MappingFragment StoreEntitySet="field_option">
+                <ScalarProperty Name="field_option_id" ColumnName="field_option_id" />
+                <ScalarProperty Name="field_option_name" ColumnName="field_option_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="field_result">
+            <EntityTypeMapping TypeName="SSDCModel.field_result">
+              <MappingFragment StoreEntitySet="field_result">
+                <ScalarProperty Name="field_result_id" ColumnName="field_result_id" />
+                <ScalarProperty Name="result" ColumnName="result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="forms">
+            <EntityTypeMapping TypeName="SSDCModel.form">
+              <MappingFragment StoreEntitySet="form">
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="form_name" ColumnName="form_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="groups">
+            <EntityTypeMapping TypeName="SSDCModel.group">
+              <MappingFragment StoreEntitySet="group">
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="group_name" ColumnName="group_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="group_operation">
+            <EntityTypeMapping TypeName="SSDCModel.group_operation">
+              <MappingFragment StoreEntitySet="group_operation">
+                <ScalarProperty Name="group_operation_id" ColumnName="group_operation_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="objects">
+            <EntityTypeMapping TypeName="SSDCModel.object">
+              <MappingFragment StoreEntitySet="object">
+                <ScalarProperty Name="object_id" ColumnName="object_id" />
+                <ScalarProperty Name="object_name" ColumnName="object_name" />
+                <ScalarProperty Name="object_capacity" ColumnName="object_capacity" />
+                <ScalarProperty Name="object_image" ColumnName="object_image" />
+                <ScalarProperty Name="object_description" ColumnName="object_description" />
+                <ScalarProperty Name="object_brand" ColumnName="object_brand" />
+                <ScalarProperty Name="object_location" ColumnName="object_location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="object_property">
+            <EntityTypeMapping TypeName="SSDCModel.object_property">
+              <MappingFragment StoreEntitySet="object_property">
+                <ScalarProperty Name="object_property_id" ColumnName="object_property_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="object_type">
+            <EntityTypeMapping TypeName="SSDCModel.object_type">
+              <MappingFragment StoreEntitySet="object_type">
+                <ScalarProperty Name="object_type_id" ColumnName="object_type_id" />
+                <ScalarProperty Name="object_type1" ColumnName="object_type" />
+                <ScalarProperty Name="quantity_of_object" ColumnName="quantity_of_object" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="operations">
+            <EntityTypeMapping TypeName="SSDCModel.operation">
+              <MappingFragment StoreEntitySet="operation">
+                <ScalarProperty Name="operation_id" ColumnName="operation_id" />
+                <ScalarProperty Name="operation_name" ColumnName="operation_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="organizations">
+            <EntityTypeMapping TypeName="SSDCModel.organization">
+              <MappingFragment StoreEntitySet="organization">
+                <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+                <ScalarProperty Name="organization_name" ColumnName="organization_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="organization_type">
+            <EntityTypeMapping TypeName="SSDCModel.organization_type">
+              <MappingFragment StoreEntitySet="organization_type">
+                <ScalarProperty Name="organization_type_id" ColumnName="organization_type_id" />
+                <ScalarProperty Name="organization_type_name" ColumnName="organization_type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="participant_level">
+            <EntityTypeMapping TypeName="SSDCModel.participant_level">
+              <MappingFragment StoreEntitySet="participant_level">
+                <ScalarProperty Name="participant_level_id" ColumnName="participant_level_id" />
+                <ScalarProperty Name="participant_type" ColumnName="participant_type" />
+                <ScalarProperty Name="participant_level_name" ColumnName="participant_level_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="positions">
+            <EntityTypeMapping TypeName="SSDCModel.position">
+              <MappingFragment StoreEntitySet="position">
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+                <ScalarProperty Name="position_name" ColumnName="position_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="properties">
+            <EntityTypeMapping TypeName="SSDCModel.property">
+              <MappingFragment StoreEntitySet="property">
+                <ScalarProperty Name="property_id" ColumnName="property_id" />
+                <ScalarProperty Name="property_name" ColumnName="property_name" />
+                <ScalarProperty Name="property_description" ColumnName="property_description" />
+                <ScalarProperty Name="property_brand" ColumnName="property_brand" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="property_type">
+            <EntityTypeMapping TypeName="SSDCModel.property_type">
+              <MappingFragment StoreEntitySet="property_type">
+                <ScalarProperty Name="property_type_id" ColumnName="property_type_id" />
+                <ScalarProperty Name="property_type_name" ColumnName="property_type_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="service_cost">
+            <EntityTypeMapping TypeName="SSDCModel.service_cost">
+              <MappingFragment StoreEntitySet="service_cost">
+                <ScalarProperty Name="service_cost_id" ColumnName="service_cost_id" />
+                <ScalarProperty Name="additional_level" ColumnName="additional_level" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="service_type" ColumnName="service_type" />
+                <ScalarProperty Name="total_cost" ColumnName="total_cost" />
+                <ScalarProperty Name="user_cost" ColumnName="user_cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="templates">
+            <EntityTypeMapping TypeName="SSDCModel.template">
+              <MappingFragment StoreEntitySet="template">
+                <ScalarProperty Name="template_id" ColumnName="template_id" />
+                <ScalarProperty Name="template_name" ColumnName="template_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="SSDCModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="work_number" ColumnName="work_number" />
+                <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="id_number" ColumnName="id_number" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_group">
+            <EntityTypeMapping TypeName="SSDCModel.user_group">
+              <MappingFragment StoreEntitySet="user_group">
+                <ScalarProperty Name="user_group_id" ColumnName="user_group_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_booking_assigned_user_booking" TypeName="SSDCModel.FK_booking_assigned_user_booking" StoreEntitySet="booking_assigned_user">
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+            <EndProperty Name="booking_assigned_user">
+              <ScalarProperty Name="booking_assigned_user_id" ColumnName="booking_assigned_user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_department" TypeName="SSDCModel.FK_booking_department" StoreEntitySet="booking">
+            <EndProperty Name="department">
+              <ScalarProperty Name="department_id" ColumnName="department_id" />
+            </EndProperty>
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_object_booking" TypeName="SSDCModel.FK_booking_object_booking" StoreEntitySet="booking_object">
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+            <EndProperty Name="booking_object">
+              <ScalarProperty Name="booking_object_id" ColumnName="booking_object_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_organization" TypeName="SSDCModel.FK_booking_organization" StoreEntitySet="booking">
+            <EndProperty Name="organization">
+              <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+            </EndProperty>
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_participant_level" TypeName="SSDCModel.FK_booking_participant_level" StoreEntitySet="booking">
+            <EndProperty Name="participant_level">
+              <ScalarProperty Name="participant_level_id" ColumnName="participant_level_id" />
+            </EndProperty>
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_statusupdatedby" TypeName="SSDCModel.FK_booking_statusupdatedby" StoreEntitySet="booking">
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="status_updated_by" />
+            </EndProperty>
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_user" TypeName="SSDCModel.FK_booking_user" StoreEntitySet="booking">
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_field_result_booking" TypeName="SSDCModel.FK_field_result_booking" StoreEntitySet="field_result">
+            <EndProperty Name="booking">
+              <ScalarProperty Name="booking_id" ColumnName="booking_id" />
+            </EndProperty>
+            <EndProperty Name="field_result">
+              <ScalarProperty Name="field_result_id" ColumnName="field_result_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_assigned_user_user" TypeName="SSDCModel.FK_booking_assigned_user_user" StoreEntitySet="booking_assigned_user">
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+            <EndProperty Name="booking_assigned_user">
+              <ScalarProperty Name="booking_assigned_user_id" ColumnName="booking_assigned_user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_booking_object_object" TypeName="SSDCModel.FK_booking_object_object" StoreEntitySet="booking_object">
+            <EndProperty Name="object">
+              <ScalarProperty Name="object_id" ColumnName="object_id" />
+            </EndProperty>
+            <EndProperty Name="booking_object">
+              <ScalarProperty Name="booking_object_id" ColumnName="booking_object_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_department_organization_type" TypeName="SSDCModel.FK_department_organization_type" StoreEntitySet="department">
+            <EndProperty Name="organization_type">
+              <ScalarProperty Name="organization_type_id" ColumnName="organization_type_id" />
+            </EndProperty>
+            <EndProperty Name="department">
+              <ScalarProperty Name="department_id" ColumnName="department_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_service_cost_department" TypeName="SSDCModel.FK_service_cost_department" StoreEntitySet="service_cost">
+            <EndProperty Name="department">
+              <ScalarProperty Name="department_id" ColumnName="department_id" />
+            </EndProperty>
+            <EndProperty Name="service_cost">
+              <ScalarProperty Name="service_cost_id" ColumnName="service_cost_id" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="department_id" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_user_department" TypeName="SSDCModel.FK_user_department" StoreEntitySet="user">
+            <EndProperty Name="department">
+              <ScalarProperty Name="department_id" ColumnName="department_id" />
+            </EndProperty>
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_field_option_field" TypeName="SSDCModel.FK_field_option_field" StoreEntitySet="field_option">
+            <EndProperty Name="field">
+              <ScalarProperty Name="field_id" ColumnName="field_id" />
+            </EndProperty>
+            <EndProperty Name="field_option">
+              <ScalarProperty Name="field_option_id" ColumnName="field_option_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_field_result_field" TypeName="SSDCModel.FK_field_result_field" StoreEntitySet="field_result">
+            <EndProperty Name="field">
+              <ScalarProperty Name="field_id" ColumnName="field_id" />
+            </EndProperty>
+            <EndProperty Name="field_result">
+              <ScalarProperty Name="field_result_id" ColumnName="field_result_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_field_template" TypeName="SSDCModel.FK_field_template" StoreEntitySet="field">
+            <EndProperty Name="template">
+              <ScalarProperty Name="template_id" ColumnName="template_id" />
+            </EndProperty>
+            <EndProperty Name="field">
+              <ScalarProperty Name="field_id" ColumnName="field_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_operation_form" TypeName="SSDCModel.FK_operation_form" StoreEntitySet="operation">
+            <EndProperty Name="form">
+              <ScalarProperty Name="form_id" ColumnName="form_id" />
+            </EndProperty>
+            <EndProperty Name="operation">
+              <ScalarProperty Name="operation_id" ColumnName="operation_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_group_operation_group" TypeName="SSDCModel.FK_group_operation_group" StoreEntitySet="group_operation">
+            <EndProperty Name="group">
+              <ScalarProperty Name="group_id" ColumnName="group_id" />
+            </EndProperty>
+            <EndProperty Name="group_operation">
+              <ScalarProperty Name="group_operation_id" ColumnName="group_operation_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_user_group_group" TypeName="SSDCModel.FK_user_group_group" StoreEntitySet="user_group">
+            <EndProperty Name="group">
+              <ScalarProperty Name="group_id" ColumnName="group_id" />
+            </EndProperty>
+            <EndProperty Name="user_group">
+              <ScalarProperty Name="user_group_id" ColumnName="user_group_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_group_operation_operation" TypeName="SSDCModel.FK_group_operation_operation" StoreEntitySet="group_operation">
+            <EndProperty Name="operation">
+              <ScalarProperty Name="operation_id" ColumnName="operation_id" />
+            </EndProperty>
+            <EndProperty Name="group_operation">
+              <ScalarProperty Name="group_operation_id" ColumnName="group_operation_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_object_object_type" TypeName="SSDCModel.FK_object_object_type" StoreEntitySet="object">
+            <EndProperty Name="object_type">
+              <ScalarProperty Name="object_type_id" ColumnName="object_type_id" />
+            </EndProperty>
+            <EndProperty Name="object">
+              <ScalarProperty Name="object_id" ColumnName="object_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_object_property_object" TypeName="SSDCModel.FK_object_property_object" StoreEntitySet="object_property">
+            <EndProperty Name="object">
+              <ScalarProperty Name="object_id" ColumnName="object_id" />
+            </EndProperty>
+            <EndProperty Name="object_property">
+              <ScalarProperty Name="object_property_id" ColumnName="object_property_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_object_template" TypeName="SSDCModel.FK_object_template" StoreEntitySet="object">
+            <EndProperty Name="template">
+              <ScalarProperty Name="template_id" ColumnName="template_id" />
+            </EndProperty>
+            <EndProperty Name="object">
+              <ScalarProperty Name="object_id" ColumnName="object_id" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="template_id" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="object_property_property_fk" TypeName="SSDCModel.object_property_property_fk" StoreEntitySet="object_property">
+            <EndProperty Name="property">
+              <ScalarProperty Name="property_id" ColumnName="property_id" />
+            </EndProperty>
+            <EndProperty Name="object_property">
+              <ScalarProperty Name="object_property_id" ColumnName="object_property_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_organization_organization_type" TypeName="SSDCModel.FK_organization_organization_type" StoreEntitySet="organization">
+            <EndProperty Name="organization_type">
+              <ScalarProperty Name="organization_type_id" ColumnName="organization_type_id" />
+            </EndProperty>
+            <EndProperty Name="organization">
+              <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_service_cost_organization" TypeName="SSDCModel.FK_service_cost_organization" StoreEntitySet="service_cost">
+            <EndProperty Name="organization">
+              <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+            </EndProperty>
+            <EndProperty Name="service_cost">
+              <ScalarProperty Name="service_cost_id" ColumnName="service_cost_id" />
+            </EndProperty>
+            <Condition IsNull="false" ColumnName="organization_id" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_user_organization" TypeName="SSDCModel.FK_user_organization" StoreEntitySet="user">
+            <EndProperty Name="organization">
+              <ScalarProperty Name="organization_id" ColumnName="organization_id" />
+            </EndProperty>
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_user_position" TypeName="SSDCModel.FK_user_position" StoreEntitySet="user">
+            <EndProperty Name="position">
+              <ScalarProperty Name="position_id" ColumnName="position_id" />
+            </EndProperty>
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_property_property_type" TypeName="SSDCModel.FK_property_property_type" StoreEntitySet="property">
+            <EndProperty Name="property_type">
+              <ScalarProperty Name="property_type_id" ColumnName="property_type_id" />
+            </EndProperty>
+            <EndProperty Name="property">
+              <ScalarProperty Name="property_id" ColumnName="property_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_user_group_user" TypeName="SSDCModel.FK_user_group_user" StoreEntitySet="user_group">
+            <EndProperty Name="user">
+              <ScalarProperty Name="user_id" ColumnName="user_id" />
+            </EndProperty>
+            <EndProperty Name="user_group">
+              <ScalarProperty Name="user_group_id" ColumnName="user_group_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

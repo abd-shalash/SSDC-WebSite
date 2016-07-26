@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="52da586185eb4607b117397df554f306" Name="Diagram1" ZoomLevel="42">
+        <EntityTypeShape EntityType="SSDCModel.additional_service" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.booking" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.booking_assigned_user" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.booking_object" Width="1.5" PointX="7.5" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.department" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.field" Width="1.5" PointX="8.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.field_option" Width="1.5" PointX="10.5" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.field_result" Width="1.5" PointX="10.5" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.form" Width="1.5" PointX="12.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.group" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.group_operation" Width="1.5" PointX="17.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.object" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.object_property" Width="1.5" PointX="15.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.object_type" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.operation" Width="1.5" PointX="15" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.organization" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.organization_type" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.participant_level" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.position" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.property" Width="1.5" PointX="13" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.property_type" Width="1.5" PointX="10.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.service_cost" Width="1.5" PointX="8.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.template" Width="1.5" PointX="6" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.user" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSDCModel.user_group" Width="1.5" PointX="10.5" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="SSDCModel.FK_booking_assigned_user_booking" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_department" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_object_booking" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_organization" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_participant_level" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_statusupdatedby" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_user" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_field_result_booking" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_assigned_user_user" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_booking_object_object" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_department_organization_type" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_service_cost_department" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_user_department" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_field_option_field" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_field_result_field" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_field_template" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_operation_form" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_group_operation_group" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_user_group_group" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_group_operation_operation" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_object_object_type" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_object_property_object" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_object_template" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.object_property_property_fk" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_organization_organization_type" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_service_cost_organization" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_user_organization" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_user_position" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_property_property_type" ManuallyRouted="false" />
+        <AssociationConnector Association="SSDCModel.FK_user_group_user" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

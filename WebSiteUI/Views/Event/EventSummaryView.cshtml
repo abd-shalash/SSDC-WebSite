@@ -1,9 +1,0 @@
-﻿@model ClassLibrary.Entities.Event
-
-<div class="well">
-    <strong class="panel-default">Event name: @Model.eventName </strong>
-    <br />
-    <span class="lead">@Model.eventDescription</span>
-    @Html.ActionLink(Model.eventDescription, "EventDetailsView", new { Model.ID })
-    <br />
-</div>
