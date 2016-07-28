@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class group
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +20,7 @@ namespace SSDC_WebSite.Models
             this.group_operation = new HashSet<group_operation>();
             this.user_group = new HashSet<user_group>();
         }
-    
+        [Key]
         public int group_id { get; set; }
         public string group_name { get; set; }
     

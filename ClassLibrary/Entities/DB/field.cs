@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class field
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +20,7 @@ namespace SSDC_WebSite.Models
             this.field_option = new HashSet<field_option>();
             this.field_result = new HashSet<field_result>();
         }
-    
+        [Key]
         public int field_id { get; set; }
         public string field_name { get; set; }
         public string field_type { get; set; }

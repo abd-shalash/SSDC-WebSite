@@ -11,12 +11,13 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class object_property
     {
+        [Key]
         public int object_property_id { get; set; }
     
-        public virtual @object @object { get; set; }
+        public virtual objectt objectt { get; set; }
         public virtual property property { get; set; }
     }
 }

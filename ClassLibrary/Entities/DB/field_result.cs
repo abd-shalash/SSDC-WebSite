@@ -11,9 +11,10 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class field_result
     {
+        [Key]
         public int field_result_id { get; set; }
         public string result { get; set; }
     

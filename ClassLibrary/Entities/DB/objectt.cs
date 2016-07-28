@@ -11,16 +11,16 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class @object
+    using System.ComponentModel.DataAnnotations;
+    public partial class objectt
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public @object()
+        public objectt()
         {
             this.booking_object = new HashSet<booking_object>();
             this.object_property = new HashSet<object_property>();
         }
-    
+        [Key]
         public int object_id { get; set; }
         public string object_name { get; set; }
         public Nullable<int> object_capacity { get; set; }

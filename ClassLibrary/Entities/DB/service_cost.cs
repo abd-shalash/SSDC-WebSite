@@ -11,9 +11,10 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class service_cost
     {
+        [Key]
         public int service_cost_id { get; set; }
         public string additional_level { get; set; }
         public int service_id { get; set; }

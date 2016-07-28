@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class booking
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,17 +21,17 @@ namespace SSDC_WebSite.Models
             this.booking_object = new HashSet<booking_object>();
             this.field_result = new HashSet<field_result>();
         }
-    
+        [Key]
         public int booking_id { get; set; }
-        public byte[] booking_date { get; set; }
-        public System.DateTime start_date { get; set; }
-        public System.DateTime end_date { get; set; }
+        public DateTime booking_date { get; set; }
+        public DateTime start_date { get; set; }
+        public DateTime end_date { get; set; }
         public string topic { get; set; }
         public int no_of_participant { get; set; }
         public string code_no { get; set; }
         public string booking_status { get; set; }
-        public Nullable<System.DateTime> meeting_date { get; set; }
-        public Nullable<System.DateTime> dryrun_date { get; set; }
+        public Nullable<DateTime> meeting_date { get; set; }
+        public Nullable<DateTime> dryrun_date { get; set; }
         public string notes { get; set; }
         public string event_type { get; set; }
         public string staff_needed { get; set; }
@@ -45,7 +45,7 @@ namespace SSDC_WebSite.Models
         public virtual organization organization { get; set; }
         public virtual participant_level participant_level { get; set; }
         public virtual user user { get; set; }
-        public virtual user user1 { get; set; }
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<field_result> field_result { get; set; }
     }

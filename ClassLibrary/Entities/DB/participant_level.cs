@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class participant_level
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace SSDC_WebSite.Models
         {
             this.bookings = new HashSet<booking>();
         }
-    
+        [Key]
         public int participant_level_id { get; set; }
         public string participant_type { get; set; }
         public string participant_level_name { get; set; }

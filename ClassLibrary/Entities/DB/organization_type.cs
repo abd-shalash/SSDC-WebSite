@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class organization_type
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +20,7 @@ namespace SSDC_WebSite.Models
             this.departments = new HashSet<department>();
             this.organizations = new HashSet<organization>();
         }
-    
+        [Key]
         public int organization_type_id { get; set; }
         public string organization_type_name { get; set; }
     

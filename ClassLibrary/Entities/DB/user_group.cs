@@ -11,9 +11,10 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class user_group
     {
+        [Key]
         public int user_group_id { get; set; }
     
         public virtual group group { get; set; }

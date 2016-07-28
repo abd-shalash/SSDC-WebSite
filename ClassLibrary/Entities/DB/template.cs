@@ -11,22 +11,22 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class template
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public template()
         {
             this.fields = new HashSet<field>();
-            this.objects = new HashSet<@object>();
+            this.objects = new HashSet<objectt>();
         }
-    
+        [Key]
         public int template_id { get; set; }
         public string template_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<field> fields { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<@object> objects { get; set; }
+        public virtual ICollection<objectt> objects { get; set; }
     }
 }

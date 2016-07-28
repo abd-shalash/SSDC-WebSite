@@ -96,6 +96,63 @@ namespace WebSiteUI.App_Start
             //    new Facility {ID = 4 , FaDescription = "this is Facility fore" , FaName = "Facility 4" }
             //});
             //kernel.Bind<IFacilityRepository>().ToConstant(mockFacility.Object);
+            kernel.Bind<Iadditional_serviceRepo>().To<EF_additional_serviceRepo>();
+
+            kernel.Bind<Ibooking_assigned_userRepo>().To<EF_booking_assigned_userRepo>();
+
+            kernel.Bind<Ibooking_objectRepo>().To<EF_booking_objectRepo>();
+
+            kernel.Bind<IbookingRepo>().To<EF_bookingRepo>();
+
+            kernel.Bind<IdepartmentRepo>().To<EF_departmentRepo>();
+
+      //      kernel.Bind<IEventRepository>().To<EF_EventRepository>();
+
+       //     kernel.Bind<IFacilityRepository>().To<EF_FacilityRepository>();
+
+            kernel.Bind<Ifield_optionRepo>().To<EF_field_optionRepo>();
+
+            kernel.Bind<Ifield_resultRepo>().To<EF_field_resultRepo>();
+
+            kernel.Bind<IfieldRepo>().To<EF_fieldRepo>();
+
+            kernel.Bind<IformRepo>().To<EF_formRepo>();
+
+            kernel.Bind<IgroupRepo>().To<EF_groupRepo>();
+
+            kernel.Bind<Iobject_propertyRepo>().To<EF_object_propertyRepo>();
+
+            kernel.Bind<Iobject_typeRepo>().To<EF_object_typeRepo>();
+
+            kernel.Bind<IobjecttRepo>().To<EF_objecttRepo>();
+
+            kernel.Bind<IoperationRepo>().To<EF_operationRepo>();
+
+            kernel.Bind<Iorganization_typeRepo>().To<EF_organization_typeRepo>();
+
+            kernel.Bind<IorganizationRepo>().To<EF_organizationRepo>();
+
+            kernel.Bind<Iparticipant_levelRepo>().To<EF_participant_levelRepo>();
+
+          //  kernel.Bind<IPersonRepository>().To<EF_PersonRepository>();
+
+            kernel.Bind<IpositionRepo>().To<EF_positionRepo>();
+
+            kernel.Bind<Iproperty_typeRepo>().To<EF_property_typeRepo>();
+
+            kernel.Bind<IpropertyRepo>().To<EF_propertyRepo>();
+
+            kernel.Bind<Iservice_costRepo>().To<EF_service_costRepo>();
+
+            kernel.Bind<ItemplateRepo>().To<EF_templateRepo>();
+
+            kernel.Bind<Iuser_groupRepo>().To<EF_user_groupRepo>();
+
+            kernel.Bind<IuserRepo>().To<EF_userRepo>();
+
+            kernel.Bind<ItemplateRepo>().To<EF_templateRepo>();
+
+
         }
     }
 }

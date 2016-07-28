@@ -11,9 +11,10 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class booking_assigned_user
     {
+        [Key]
         public int booking_assigned_user_id { get; set; }
     
         public virtual booking booking { get; set; }

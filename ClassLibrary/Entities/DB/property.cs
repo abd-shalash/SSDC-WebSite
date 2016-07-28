@@ -11,7 +11,7 @@ namespace SSDC_WebSite.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class property
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace SSDC_WebSite.Models
         {
             this.object_property = new HashSet<object_property>();
         }
-    
+        [Key]
         public int property_id { get; set; }
         public string property_name { get; set; }
         public string property_description { get; set; }
