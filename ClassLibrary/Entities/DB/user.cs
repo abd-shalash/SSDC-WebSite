@@ -14,14 +14,14 @@ namespace SSDC_WebSite.Models
     using System.ComponentModel.DataAnnotations;
     public partial class user
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public user()
-        {
-            this.bookings = new HashSet<booking>();
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public user()
+        //{
+        //    this.bookings = new HashSet<booking>();
             
-            this.booking_assigned_user = new HashSet<booking_assigned_user>();
-            this.user_group = new HashSet<user_group>();
-        }
+        //    this.booking_assigned_user = new HashSet<booking_assigned_user>();
+        //    this.user_group = new HashSet<user_group>();
+        //}
         [Key]
         public int user_id { get; set; }
         public string first_name { get; set; }

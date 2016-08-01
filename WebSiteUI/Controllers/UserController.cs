@@ -34,15 +34,15 @@ namespace WebSiteUI.Controllers
 
                 return View(mod);
             }
-            else if (model.SelectedTab == "View Request" || id == "View Request")
+            else if (model.SelectedTab == "ViewRequest" || id == "ViewRequest")
             {
-                mod.SelectedTab = "View Request";
+                mod.SelectedTab = "ViewRequest";
 
                 return View(mod);
             }
-            else if (model.SelectedTab == "Submit form" || id == "Submit form")
+            else if (model.SelectedTab == "Submitform" || id == "Submitform")
             {
-                mod.SelectedTab = "Submit form";
+                mod.SelectedTab = "Submitform";
               
                 return View(mod);
             }

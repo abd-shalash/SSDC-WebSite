@@ -14,13 +14,13 @@ namespace SSDC_WebSite.Models
     using System.ComponentModel.DataAnnotations;
     public partial class department
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public department()
-        {
-            this.bookings = new HashSet<booking>();
-            this.service_cost = new HashSet<service_cost>();
-            this.users = new HashSet<user>();
-        }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public department()
+        //{
+        //    this.bookings = new HashSet<booking>();
+        //    this.service_cost = new HashSet<service_cost>();
+        //    this.users = new HashSet<user>();
+        //}
         [Key]
         public int department_id { get; set; }
         public string department_name { get; set; }

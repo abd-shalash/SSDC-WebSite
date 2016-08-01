@@ -9,10 +9,10 @@ namespace WebSiteUI.Models
     public class LoginModel
     {
         //annotation: required input rules and the error message
-        [Required(ErrorMessage = "Username is required.")]
-        public string UserName { get; set; }
+        [Required(ErrorMessage = "email is required.")]
+        public string email { get; set; }
         [Required(ErrorMessage = "Password is required.")]
         [StringLength(20, MinimumLength = 3)]
-        public string Password { get; set; }
+        public string password { get; set; }
     }
 }

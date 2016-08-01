@@ -12,11 +12,11 @@ namespace ClassLibrary.Concrate
         private readonly EF_DBContext context = new EF_DBContext();
 
        
-        public bool Authenticate(string username, string password)
+        public bool Authenticate(string Email, string password)
         {   
             try
             {
-                var result = context.People.FirstOrDefault(p =>( p.Password == (password) && p.Username == (username)));
+                var result = context.users.FirstOrDefault(p =>( p.password == (password) && p.email == (Email)));
                
                 if (result == null)
                     return false;

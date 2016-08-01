@@ -9,8 +9,13 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Concrate
 {
-    class EF_DBContext : DbContext
+   public class EF_DBContext : DbContext
     {
+        public EF_DBContext() : base("EF_DBContext")
+        {
+
+        }
+            
         public DbSet<Person> People { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Facility> Facilities { get; set; }

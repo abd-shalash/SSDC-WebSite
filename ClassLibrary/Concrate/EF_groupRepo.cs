@@ -13,10 +13,7 @@ namespace ClassLibrary.Concrate
         private readonly EF_DBContext context = new EF_DBContext();
         public IEnumerable<group> group
         {
-            get
-            {
-                return context.groups;
-            }
+            get    {   return context.groups; }
         }
     }
 }

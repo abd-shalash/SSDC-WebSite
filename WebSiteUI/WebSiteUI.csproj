@@ -982,7 +982,6 @@
     <Compile Include="Controllers\NAVUserController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\UserListController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ViewsUserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1020,7 +1019,6 @@
     <Content Include="Views\Admin\ViewRequests.cshtml" />
     <Content Include="Views\Admin\Calender.cshtml" />
     <Content Include="Views\Admin\AdminProfile.cshtml" />
-    <Content Include="Views\Account\SignUp.cshtml" />
     <Content Include="Views\Facility\FacilityDetailsView.cshtml" />
     <Content Include="Views\Facility\FacilitySummaryView.cshtml" />
     <Content Include="Views\Facility\FacilityListView.cshtml" />

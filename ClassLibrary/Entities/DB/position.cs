@@ -14,11 +14,11 @@ namespace SSDC_WebSite.Models
     using System.ComponentModel.DataAnnotations;
     public partial class position
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public position()
-        {
-            this.users = new HashSet<user>();
-        }
+        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        //public position()
+        //{
+        //    this.users = new HashSet<user>();
+        //}
         [Key]
         public int position_id { get; set; }
         public string position_name { get; set; }

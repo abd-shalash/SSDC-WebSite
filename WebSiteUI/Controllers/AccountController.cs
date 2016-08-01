@@ -40,11 +40,11 @@ namespace WebSiteUI.Controllers
             if (ModelState.IsValid)
             {
                 // if the correct username and password is valid
-                if (auth.Authenticate(model.UserName, model.Password))
+                if (auth.Authenticate(model.email, model.password))
                 {
-                    Session["user"] = (string)model.UserName;
+                    Session["user"] = (string)model.email;
                         //new Person() { Fname = model.UserName };
-                    FormsAuthentication.SetAuthCookie(model.UserName, false);
+                    FormsAuthentication.SetAuthCookie(model.email, false);
                     return Redirect(returnUrl ?? Url.Action("index", "Home"));
                 }
                 else
@@ -60,17 +60,20 @@ namespace WebSiteUI.Controllers
         {
             return RedirectToAction("Index", "SignUp");
         }
+        
+
+        
         public ActionResult Logout()
         {
-          
-                Request.Cookies.Remove("user");
-                FormsAuthentication.SignOut();
-                Session.Abandon();
-                Session.Clear();
-                Response.Cookies.Clear();
-                Session.RemoveAll();
-                Session["user"] = null;
-                return RedirectToAction("Index", "Home");
+
+            Request.Cookies.Remove("user");
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            Session.Clear();
+            Response.Cookies.Clear();
+            Session.RemoveAll();
+            Session["user"] = null;
+            return RedirectToAction("Index", "Home");
         }
     }
 }
