@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,9 @@ namespace ClassLibrary.Concrate
 {
    public class EF_DBContext : DbContext
     {
-        public EF_DBContext() : base("EF_DBContext")
+        public EF_DBContext() : base("name=EF_DBContext")
         {
-
+        //    Database.SetInitializer<Context>(new DBinitializer<Context>());
         }
             
         public DbSet<Person> People { get; set; }

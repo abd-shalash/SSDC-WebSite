@@ -61,26 +61,29 @@ namespace WebSiteUI.Controllers
                 last_name = model.Lname,
                 password = model.Password,
                 gender = model.Gender,
-                organization = new organization
-                {
-                    organization_id = tempOrg.organization_id,
-                    organization_name = tempOrg.organization_name,
-                    organization_type = tempOrg.organization_type
+                organization = tempOrg,
+                //new organization
+                //{
+                //    organization_id = tempOrg.organization_id,
+                //    organization_name = tempOrg.organization_name,
+                //    organization_type = tempOrg.organization_type
 
-                },
-                department = new department
-                {
-                    department_id = tempDep.department_id,
-                    department_name = tempDep.department_name,
-                    organization_type = tempDep.organization_type
-                    
-                },
+                //},
+                department = tempDep,
+                //new department
+                //{
+                //    department_id = tempDep.department_id,
+                //    department_name = tempDep.department_name,
+                //    organization_type = tempDep.organization_type
 
-                position = new position
-                {
-                    position_id = tempPos.position_id,
-                    position_name = tempPos.position_name
-                }
+                //},
+
+                position = tempPos,
+                //new position
+                //{
+                //    position_id = tempPos.position_id,
+                //    position_name = tempPos.position_name
+                //}
             };
             try
             {
@@ -88,19 +91,25 @@ namespace WebSiteUI.Controllers
                 {
                     //  bool created = repository.addUser(newuser);
                     var tempBool = repository.users.FirstOrDefault(i => i.email == newuser.email);
-                    if (tempBool.email != newuser.email) {
+                    if (tempBool != null) {
+                        ModelState.AddModelError("", "ERROR a user with that email exsist ");
+                        return View(model);
+                    }
+                        
+                    
                     repository.users.Add(newuser);
                     //repository.users.Local.savesave();
                     repository.SaveChanges();
                     return RedirectToAction("Login", "Account");
-                    }
+                    
+                    
                 }
-                else { ModelState.AddModelError("", "error user name already taken try another one "); }
+                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
             }
             catch (DataException /* dex */)
             {
                 
-                ModelState.AddModelError("", "error user name already taken try another one ");
+                ModelState.AddModelError("", "error  ");
 
              
             }
