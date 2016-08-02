@@ -1,11 +1,9 @@
 ﻿using ClassLibrary.Entities;
-using ClassLibrary.DAL;
 using SSDC_WebSite.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +13,9 @@ namespace ClassLibrary.Concrate
     {
         public EF_DBContext() : base("EF_DBContext")
         {
-            //Database.SetInitializer<Context>(new DBInitializer<Context>());
-        }
 
+        }
+            
         public DbSet<Person> People { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Facility> Facilities { get; set; }

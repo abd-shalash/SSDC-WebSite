@@ -42,7 +42,7 @@
                     <td>@item.code_no</td>
                     <td>@item.booking_date</td>
                     <td>@item.booking_status</td>
-                    <td>@item.dryrun_date</td>
+                    <td>@item.dryrun_date/2/2016</td>
                     <td>@item.event_type</td>
                 </tr>
             }
@@ -65,20 +65,14 @@
             </tr>
         </thead>
         <tbody>
-            
-                @foreach (var item in p.bookings.Where(b=>b.booking_status=="done"))
-            {
-                <tr>
-                    <td>@item.topic</td>
-                    <td>@item.code_no</td>
-                    <td>@item.booking_date</td>
-                    <td>@item.booking_status</td>
-                    <td>@item.dryrun_date</td>
-                    <td>@item.event_type</td>
-                </tr>
-                }
-            
-           
+            <tr>
+                <td>102</td>
+                <td>mla</td>
+                <td>1/1/2016</td>
+                <td>yeah</td>
+                <td>1/2/2016</td>
+                <td>fulloption</td>
+            </tr>
 
 
         </tbody>
