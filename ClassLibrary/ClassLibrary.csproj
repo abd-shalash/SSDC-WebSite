@@ -122,6 +122,7 @@
     <Compile Include="Concrate\EF_userRepo.cs" />
     <Compile Include="Concrate\EF_user_groupRepo.cs" />
     <Compile Include="Concrate\LoginAuthenticationProvider.cs" />
+    <Compile Include="DAL\DBInitializer.cs" />
     <Compile Include="Entities\DB\AccountViewModels.cs" />
     <Compile Include="Entities\DB\additional_service.cs" />
     <Compile Include="Entities\DB\booking.cs" />

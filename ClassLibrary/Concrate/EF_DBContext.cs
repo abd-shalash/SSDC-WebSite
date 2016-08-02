@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Entities;
+using ClassLibrary.DAL;
 using SSDC_WebSite.Models;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,11 @@ namespace ClassLibrary.Concrate
 {
    public class EF_DBContext : DbContext
     {
-        public EF_DBContext() : base("name=EF_DBContext")
+        public EF_DBContext() : base("EF_DBContext")
         {
-        //    Database.SetInitializer<Context>(new DBinitializer<Context>());
+            //Database.SetInitializer<Context>(new DBInitializer<Context>());
         }
-            
+
         public DbSet<Person> People { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Facility> Facilities { get; set; }
