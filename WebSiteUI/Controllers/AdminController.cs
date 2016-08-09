@@ -166,11 +166,7 @@ namespace WebSiteUI.Controllers
             return View();
 
         }
-        public ActionResult AdminOrganizationTypeIndex()
-        {
-            return View();
 
-        }
         public ActionResult AdminOperationIndex()
         {
             return View();

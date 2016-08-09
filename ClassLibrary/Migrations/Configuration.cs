@@ -256,7 +256,7 @@ namespace ClassLibrary.Migrations
                 new operation
                 {
                     operation_id = 5,
-                    operation_name = "AdminOrganizationTypeIndex"
+                    operation_name = "AdminBookingIndex"
                 },
             };
             operationslist.ForEach(o => context.operations.AddOrUpdate(p => p.operation_id, o));
