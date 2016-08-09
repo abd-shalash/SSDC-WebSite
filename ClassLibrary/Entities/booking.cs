@@ -14,13 +14,13 @@ namespace SSDC_WebSite.Models
     using System.ComponentModel.DataAnnotations;
     public partial class booking
     {
-        //[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        //public booking()
-        //{
-        //    this.booking_assigned_user = new HashSet<booking_assigned_user>();
-        //    this.booking_object = new HashSet<booking_object>();
-        //    this.field_result = new HashSet<field_result>();
-        //}
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public booking()
+        {
+            this.booking_assigned_user = new HashSet<booking_assigned_user>();
+            this.booking_object = new HashSet<booking_object>();
+            this.field_result = new HashSet<field_result>();
+        }
         [Key]
         public int booking_id { get; set; }
         public DateTime booking_date { get; set; }
