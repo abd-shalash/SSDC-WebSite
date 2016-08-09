@@ -234,7 +234,30 @@ namespace ClassLibrary.Migrations
                 {
                     operation_id = 1,
                     operation_name = "AdminUserIndex"
-                }
+                },
+                new operation
+                {
+                    operation_id = 2,
+                    operation_name = "AdminPositionIndex"
+                },
+
+                new operation
+                {
+                    operation_id = 3,
+                    operation_name = "AdminOrganizationIndex"
+                },
+
+                new operation
+                {
+                    operation_id = 4,
+                    operation_name = "AdminDepartmentIndex"
+                },
+
+                new operation
+                {
+                    operation_id = 5,
+                    operation_name = "AdminOrganizationTypeIndex"
+                },
             };
             operationslist.ForEach(o => context.operations.AddOrUpdate(p => p.operation_id, o));
             context.SaveChanges();
