@@ -233,7 +233,7 @@ namespace ClassLibrary.Migrations
                 new operation
                 {
                     operation_id = 1,
-                    operation_name = "operation name1"
+                    operation_name = "AdminUserIndex"
                 }
             };
             operationslist.ForEach(o => context.operations.AddOrUpdate(p => p.operation_id, o));

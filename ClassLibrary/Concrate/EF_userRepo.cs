@@ -36,7 +36,28 @@ namespace ClassLibrary.Concrate
         }
         public void UpdateUser(user newuser)
         {
-            context.Entry(newuser).State = EntityState.Modified;
+            // context.Entry(newuser).State = EntityState.Modified;
+            if (newuser.user_id ==0)
+            {
+                context.users.Add(newuser);
+
+            }
+            else
+            {
+                user userupdate = context.users.Find(newuser.user_id);
+                if (userupdate!=null)
+                {
+                    userupdate.first_name = newuser.first_name;
+                    userupdate.last_name = newuser.last_name;
+                    userupdate.gender = newuser.gender;
+                    userupdate.email = newuser.email;
+                    userupdate.mobile_number = newuser.mobile_number;
+                    userupdate.password = newuser.password;
+                    userupdate.work_number = newuser.work_number;
+                    
+                }
+            }
+            context.SaveChanges();
         }
 
         public void Save()

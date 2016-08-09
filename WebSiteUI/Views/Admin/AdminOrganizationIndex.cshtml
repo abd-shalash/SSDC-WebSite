@@ -1,0 +1,34 @@
+﻿@model IEnumerable<SSDC_WebSite.Models.organization>
+
+@{
+    ViewBag.Title = "AdminOrganizationIndex";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>AdminOrganizationIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.organization_name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.organization_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.organization_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.organization_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.organization_id })
+        </td>
+    </tr>
+}
+
+</table>

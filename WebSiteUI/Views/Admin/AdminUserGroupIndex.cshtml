@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SSDC_WebSite.Models.user_group>
+
+@{
+    ViewBag.Title = "AdminUserGroupIndex";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>AdminUserGroupIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.user_group_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.user_group_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.user_group_id })
+        </td>
+    </tr>
+}
+
+</table>

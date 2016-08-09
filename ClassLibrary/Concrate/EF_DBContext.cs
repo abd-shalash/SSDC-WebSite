@@ -44,8 +44,42 @@ namespace ClassLibrary.Concrate
         public DbSet<booking_assigned_user> booking_assigned_users { get; set; }
         public DbSet<booking> bookings { get; set; }
         public DbSet<additional_service> additional_services { get; set; }
-      //  public DbSet<additional_service> additional_services { get; set; }
+        //  public DbSet<additional_service> additional_services { get; set; }
+        public void UpdateUser(user newuser)
+        {
+            // context.Entry(newuser).State = EntityState.Modified;
+            if (newuser.user_id == 0)
+            {
+                users.Add(newuser);
 
+            }
+            else
+            {
+                user userupdate = users.Find(newuser.user_id);
+                if (userupdate != null)
+                {
+                    userupdate.first_name = newuser.first_name;
+                    userupdate.last_name = newuser.last_name;
+                    userupdate.gender = newuser.gender;
+                    userupdate.email = newuser.email;
+                    userupdate.mobile_number = newuser.mobile_number;
+                    userupdate.password = newuser.password;
+                    userupdate.work_number = newuser.work_number;
+
+                }
+            }
+            SaveChanges();
+        }
+        public user DeleteUser(int userId)
+        {
+            user DBdelete = users.Find(userId);
+            if (DBdelete!=null)
+            {
+                users.Remove(DBdelete);
+                SaveChanges();
+            }
+            return DBdelete;
+        }
         //TESTING TEAM
     }
 }

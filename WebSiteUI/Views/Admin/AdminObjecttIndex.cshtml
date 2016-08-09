@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SSDC_WebSite.Models.objectt>
+
+@{
+    ViewBag.Title = "AdminObjecttIndex";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>AdminObjecttIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.object_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.object_location)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.object_location)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.object_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.object_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.object_id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1028,6 +1028,22 @@
     <Content Include="Views\ViewsUser\ViewRequest.cshtml" />
     <Content Include="Views\ViewsUser\Calender.cshtml" />
     <Content Include="Views\ViewsUser\UserProfile.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\AdminUserIndex.cshtml" />
+    <Content Include="Views\Admin\EditUser.cshtml" />
+    <Content Include="Views\Admin\DetailsUser.cshtml" />
+    <Content Include="Views\Admin\AdminPositionIndex.cshtml" />
+    <Content Include="Views\Admin\AdminOrganizationIndex.cshtml" />
+    <Content Include="Views\Admin\AdminObjecttIndex.cshtml" />
+    <Content Include="Views\Admin\AdminGroupIndex.cshtml" />
+    <Content Include="Views\Admin\AdminFormIndex.cshtml" />
+    <Content Include="Views\Admin\AdminFieldIndex.cshtml" />
+    <Content Include="Views\Admin\AdminDepartmentIndex.cshtml" />
+    <Content Include="Views\Admin\AdminBookingIndex.cshtml" />
+    <Content Include="Views\Admin\AdminUserGroupIndex.cshtml" />
+    <Content Include="Views\Admin\AdminTemplateIndex.cshtml" />
+    <Content Include="Views\Admin\AdminPropertyTypeIndex.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
