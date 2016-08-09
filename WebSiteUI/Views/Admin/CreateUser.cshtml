@@ -1,0 +1,86 @@
+﻿@model WebSiteUI.Models.CreateUserModel
+
+@using ClassLibrary.Concrate
+@using SSDC_WebSite.Models
+
+@{
+
+
+    EF_organizationRepo OrgRepo = new EF_organizationRepo();
+    List<organization> Organizations = OrgRepo.organizations.ToList();
+
+
+    EF_departmentRepo DepRepo = new EF_departmentRepo();
+    List<department> Departments = DepRepo.departments.ToList();
+    //Departments = DepRepo.departments.Cast;
+
+    EF_positionRepo PosRepo = new EF_positionRepo();
+    List<position> Positions = PosRepo.positions.ToList();
+
+
+}
+@{
+    ViewBag.Title = "CreateUser";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>CreateUser</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>user</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.ValidationSummary()
+        <div class="form-group">
+            <label>User email:</label>
+            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>User password:</label>
+            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>User first Name:</label>
+            @Html.TextBoxFor(Model => Model.Fname, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>User mobile number:</label>
+            @Html.TextBoxFor(Model => Model.phone_number, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>User Last Name:</label>
+            @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label>User Gender: 1 for male 0 for female</label>
+            @Html.TextBoxFor(Model => Model.Gender, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label>User organization:</label>
+            @Html.DropDownListFor(Model => Model.OrganizationID, new SelectList(Organizations, "organization_id", "organization_name", "organization_type_organization_type_id"))
+        </div>
+        <div class="form-group">
+            <label>User department:</label>
+            @Html.DropDownListFor(Model => Model.DepartmentID, new SelectList(Departments, "department_id", "department_name", "organization_type_organization_type_id"))
+        </div>
+        <div class="form-group">
+            <label>User title:</label>
+
+            @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
+
+        </div>
+
+
+        <input type="submit" value="CreateUser" class="btn btn-primary" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
