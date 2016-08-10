@@ -986,9 +986,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NAVUserController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
-    <Compile Include="Controllers\UserListController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\ViewsUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1008,13 +1006,11 @@
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\ListUser\List.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Event\EventListView.cshtml" />
     <Content Include="Views\Event\EventPartialView.cshtml">
       <BrowseToURL>~/EventList/ListPartial</BrowseToURL>
     </Content>
-    <Content Include="Views\ListUser\ListPartial.cshtml" />
     <Content Include="Views\Home\index.cshtml" />
     <Content Include="Views\Event\EventSummaryView.cshtml" />
     <Content Include="Views\Event\EventDetailsView.cshtml" />

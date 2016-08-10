@@ -6,24 +6,25 @@ using System.Web;
 using System.Web.Mvc;
 using WebSiteUI.Models;
 using ClassLibrary.Entities;
+using ClassLibrary.Concrate;
 
 namespace WebSiteUI.Controllers
 {
     public class FacilityController : Controller
     {
-        private readonly IFacilityRepository facilityRepository;
+        private EF_DBContext repository = new EF_DBContext();
         public int PageSize = 3;
 
-        public FacilityController(IFacilityRepository facilityRepository)
-        {
-            this.facilityRepository = facilityRepository;
-        }
+        //public FacilityController(IFacilityRepository facilityRepository)
+        //{
+        //    this.facilityRepository = facilityRepository;
+        //}
 
         public ActionResult FacilityListView()
         {
             FacilityModel model = new FacilityModel
             {
-                Facilities = facilityRepository.facilities.OrderBy(p=>p.FaName)
+                Facilities = repository.Facilities.OrderBy(p=>p.FaName)
             };
             return View(model);
         }
@@ -32,7 +33,7 @@ namespace WebSiteUI.Controllers
         {
             FacilityModel model = new FacilityModel
             {
-                Facilities = facilityRepository.facilities.OrderBy(p => p.FaName)
+                Facilities = repository.Facilities.OrderBy(p => p.FaName)
                 .Skip((page-1) * PageSize)
                 .Take(PageSize),
                 pageinfo = new PagingInfo
@@ -50,7 +51,7 @@ namespace WebSiteUI.Controllers
 
             Facility facility = new Facility();
 
-            facility = facilityRepository.facilities.FirstOrDefault(e => e.ID == id);
+            facility = repository.Facilities.FirstOrDefault(e => e.ID == id);
 
             return View(facility);
         }

@@ -1,4 +1,5 @@
 ﻿using ClassLibrary.Abstract;
+using ClassLibrary.Concrate;
 using ClassLibrary.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,14 @@ using WebSiteUI.Models;
 namespace WebSiteUI.Controllers
 {
     public class EventController : Controller
-    {   
-        private readonly IEventRepository repository;
+    {
+        private EF_DBContext repository = new EF_DBContext();
         public int pageSize = 3;
 
-        public EventController(IEventRepository repo)
-        {
-            repository = repo;
-        }
+        //public EventController(IEventRepository repo)
+        //{
+        //    repository = repo;
+        //}
 
         public ViewResult EventListView()
         {

@@ -12,7 +12,7 @@ namespace ClassLibrary.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "ClassLibrary.Concrate.EF_DBContext";
         }
 
@@ -192,53 +192,53 @@ namespace ClassLibrary.Migrations
             group_operationList.ForEach(o => context.group_operations.AddOrUpdate(p => p.group_operation_id, o));
             context.SaveChanges();
             /////
-            //var events = new List<Event>
-            //{
-            //    new Event
-            //    {
-            //        ID = 1,
-            //        eventDescription = "akjdakflakfgadlkjgdlfadkskg",
-            //        eventName = "test event 1"
-            //    },
-            //     new Event
-            //    {
-            //        ID = 2,
-            //        eventDescription = "lkdf;;;;234234234",
-            //        eventName = "test event 2"
-            //    },
-            //    new Event
-            //    {
-            //        ID = 3,
-            //        eventDescription = "23423423423",
-            //        eventName = "test event 3"
-            //    }
-            //};
-            //events.ForEach(e => context.Events.AddOrUpdate(p => p.ID, e));
-            //context.SaveChanges();
-            //////
-            //var facilitys = new List<Facility>
-            //{
-            //    new Facility
-            //    {
-            //        ID = 1,
-            //        FaDescription = "akjdakflakfgadlkjgdlfadkskg",
-            //        FaName = "test Facility 1"
-            //    },
-            //     new Facility
-            //    {
-            //        ID = 2,
-            //        FaDescription = "lkdf;;;;234234234",
-            //        FaName = "test Facility 2"
-            //    },
-            //    new Facility
-            //    {
-            //        ID = 3,
-            //        FaDescription = "23423423423",
-            //        FaName = "test Facility 3"
-            //    }
-            //};
-            //facilitys.ForEach(e => context.Facilities.AddOrUpdate(p => p.ID, e));
-            //context.SaveChanges();
+            var events = new List<Event>
+            {
+                new Event
+                {
+                    ID = 1,
+                    eventDescription = "akjdakflakfgadlkjgdlfadkskg",
+                    eventName = "test event 1"
+                },
+                 new Event
+                {
+                    ID = 2,
+                    eventDescription = "lkdf;;;;234234234",
+                    eventName = "test event 2"
+                },
+                new Event
+                {
+                    ID = 3,
+                    eventDescription = "23423423423",
+                    eventName = "test event 3"
+                }
+            };
+            events.ForEach(e => context.Events.AddOrUpdate(p => p.ID, e));
+            context.SaveChanges();
+            ////
+            var facilitys = new List<Facility>
+            {
+                new Facility
+                {
+                    ID = 1,
+                    FaDescription = "akjdakflakfgadlkjgdlfadkskg",
+                    FaName = "test Facility 1"
+                },
+                 new Facility
+                {
+                    ID = 2,
+                    FaDescription = "lkdf;;;;234234234",
+                    FaName = "test Facility 2"
+                },
+                new Facility
+                {
+                    ID = 3,
+                    FaDescription = "23423423423",
+                    FaName = "test Facility 3"
+                }
+            };
+            facilitys.ForEach(e => context.Facilities.AddOrUpdate(p => p.ID, e));
+            context.SaveChanges();
             //////
             var fromlist = new List<form>
             {
