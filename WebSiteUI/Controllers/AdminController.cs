@@ -115,7 +115,7 @@ namespace WebSiteUI.Controllers
 
             return View(model);
         }
-        public ActionResult EditUser(int? id)
+        public ViewResult EditUser(int? id)
         {
 
             if (id == null)
@@ -124,38 +124,25 @@ namespace WebSiteUI.Controllers
             }
             user student = repository.users.Find(id);
             if (student == null) { return View(); }
-
+            
             return View(student);
         }
-        [HttpPost, ActionName("EditUser")]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditUserPost(int? id)
+        [HttpPost]
+        public ActionResult EditUser(user id)
         {
-            if (id==null)
+            repository.UpdateUser(id);
+            if (ModelState.IsValid)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-
+                repository.UpdateUser(id);
+                TempData["message"] = string.Format("{0} has been updated", id.first_name);
+                return RedirectToAction("AdminUserIndex");
             }
-            var userUpdate = repository.users.Find(id);
-            if (TryUpdateModel(userUpdate))
+            else
             {
-                try
-                {
-                    
-                    
-                    repository.SaveChanges();
-                    TempData["message"] = string.Format("{0} has been updated", userUpdate.first_name);
-                    return RedirectToAction("AdminUserIndex");
-                }
-                catch (DataException)
-                {
-                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-
-                    
-                }
+                ///data values are wrong somewhow
+                return RedirectToAction("AdminUserIndex");
             }
-
-            return View(userUpdate);
+            return View(id);
         }
         public ActionResult DetailsUser(int? id)
         {

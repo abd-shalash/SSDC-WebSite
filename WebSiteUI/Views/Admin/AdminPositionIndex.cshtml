@@ -4,35 +4,31 @@
     ViewBag.Title = "AdminPositionIndex";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<div class="panel panel-default">
-    <h2 class="panel panel-heading">AdminPositionIndex</h2>
 
-    <div class="panel-body">
-        <table class="table table-striped table-condensed table-bordered">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.position_name)
-                </th>
-                <th></th>
-            </tr>
+<h2>AdminPositionIndex</h2>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.position_name)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.position_id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.position_id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.position_id })
-                    </td>
-                </tr>
-            }
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.position_name)
+        </th>
+        <th></th>
+    </tr>
 
-        </table>
-    </div>
-    <div class="panel-footer">
-        @Html.ActionLink("Create New", "Create")
-    </div>
-</div>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.position_name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.position_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.position_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.position_id })
+        </td>
+    </tr>
+}
+
+</table>
