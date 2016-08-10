@@ -12,7 +12,7 @@ namespace ClassLibrary.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "ClassLibrary.Concrate.EF_DBContext";
         }
 
