@@ -114,13 +114,31 @@ namespace ClassLibrary.Migrations
                     organization = context.organizations.FirstOrDefault(p=>p.organization_id==1),
                     position = context.positions.FirstOrDefault(u=>u.position_id==1),
                     department = context.departments.FirstOrDefault(d=>d.department_id==2)
-                }
+                },
+                new user
+                {
+                    user_id = 2,
+                    id_number = 1337,
+                    work_number = 98798,
+                    mobile_number = 123123,
+                    first_name = "sir",
+                    last_name = "admin",
+                    email = "admin@admin.com",
+                    password = "admin",
+                    gender = 1,
+                    organization = context.organizations.FirstOrDefault(p=>p.organization_id==0),
+                    position = context.positions.FirstOrDefault(u=>u.position_id==3),
+                    department = context.departments.FirstOrDefault(d=>d.department_id==1),
+
+                    /*context.groups.(g=>g.group_id==2);*/
+            //user_group = groupsList
+        },
+
 
             };
 
             users.ForEach(o => context.users.AddOrUpdate(p => p.email, o));
             context.SaveChanges();
-            ////
             var groupsList = new List<group>
             {
                 new group
@@ -128,30 +146,40 @@ namespace ClassLibrary.Migrations
                     group_id = 1,
                     group_name = "normal user"
                 },
-                                new group
+
+                new group
                 {
                     group_id = 2,
-                    group_name = "admin"
+                    group_name = "admin",
+                    
                 }
             };
             groupsList.ForEach(o => context.groups.AddOrUpdate(p => p.group_id, o));
             context.SaveChanges();
-            ////
             var usergroupsList = new List<user_group>
             {
                     new user_group
                     {
                         user_group_id = 1,
-
+                        group = context.groups.FirstOrDefault(g=>g.group_id==1),
+                        user = context.users.FirstOrDefault(u=>u.user_id==1)
                     },
                     new user_group
                     {
                         user_group_id = 2,
+                        group = context.groups.FirstOrDefault(g=>g.group_id==2),
+                        user = context.users.FirstOrDefault(u=>u.user_id==2)
+
 
                     }
             };
             usergroupsList.ForEach(o => context.user_groups.AddOrUpdate(p => p.user_group_id, o));
             context.SaveChanges();
+
+            ////
+
+            ////
+
             /////
             var group_operationList = new List<group_operation>
             {
