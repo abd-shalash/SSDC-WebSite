@@ -114,31 +114,13 @@ namespace ClassLibrary.Migrations
                     organization = context.organizations.FirstOrDefault(p=>p.organization_id==1),
                     position = context.positions.FirstOrDefault(u=>u.position_id==1),
                     department = context.departments.FirstOrDefault(d=>d.department_id==2)
-                },
-                new user
-                {
-                    user_id = 2,
-                    id_number = 1337,
-                    work_number = 98798,
-                    mobile_number = 123123,
-                    first_name = "sir",
-                    last_name = "admin",
-                    email = "admin@admin.com",
-                    password = "admin",
-                    gender = 1,
-                    organization = context.organizations.FirstOrDefault(p=>p.organization_id==0),
-                    position = context.positions.FirstOrDefault(u=>u.position_id==3),
-                    department = context.departments.FirstOrDefault(d=>d.department_id==1),
-
-                    /*context.groups.(g=>g.group_id==2);*/
-            //user_group = groupsList
-        },
-
+                }
 
             };
 
             users.ForEach(o => context.users.AddOrUpdate(p => p.email, o));
             context.SaveChanges();
+            ////
             var groupsList = new List<group>
             {
                 new group
@@ -146,40 +128,30 @@ namespace ClassLibrary.Migrations
                     group_id = 1,
                     group_name = "normal user"
                 },
-
-                new group
+                                new group
                 {
                     group_id = 2,
-                    group_name = "admin",
-                    
+                    group_name = "admin"
                 }
             };
             groupsList.ForEach(o => context.groups.AddOrUpdate(p => p.group_id, o));
             context.SaveChanges();
+            ////
             var usergroupsList = new List<user_group>
             {
                     new user_group
                     {
                         user_group_id = 1,
-                        group = context.groups.FirstOrDefault(g=>g.group_id==1),
-                        user = context.users.FirstOrDefault(u=>u.user_id==1)
+
                     },
                     new user_group
                     {
                         user_group_id = 2,
-                        group = context.groups.FirstOrDefault(g=>g.group_id==2),
-                        user = context.users.FirstOrDefault(u=>u.user_id==2)
-
 
                     }
             };
             usergroupsList.ForEach(o => context.user_groups.AddOrUpdate(p => p.user_group_id, o));
             context.SaveChanges();
-
-            ////
-
-            ////
-
             /////
             var group_operationList = new List<group_operation>
             {
@@ -191,7 +163,7 @@ namespace ClassLibrary.Migrations
             };
             group_operationList.ForEach(o => context.group_operations.AddOrUpdate(p => p.group_operation_id, o));
             context.SaveChanges();
-            /////
+            ///
             var events = new List<Event>
             {
                 new Event
@@ -239,7 +211,7 @@ namespace ClassLibrary.Migrations
             };
             facilitys.ForEach(e => context.Facilities.AddOrUpdate(p => p.ID, e));
             context.SaveChanges();
-            //////
+            ////
             var fromlist = new List<form>
             {
                 new form
@@ -298,10 +270,10 @@ namespace ClassLibrary.Migrations
                     field_name = "field name1",
                     field_type = "field type1",
                     field_desc = "field desc1"
-                             
+
         }
     };
-    fieldlist.ForEach(e => context.fields.AddOrUpdate(p => p.field_id, e));
+            fieldlist.ForEach(e => context.fields.AddOrUpdate(p => p.field_id, e));
             context.SaveChanges();
             /////
             var property_typelist = new List<property_type>
@@ -313,7 +285,7 @@ namespace ClassLibrary.Migrations
 
                 }
    };
-   property_typelist.ForEach(e => context.property_types.AddOrUpdate(p => p.property_type_id, e));
+            property_typelist.ForEach(e => context.property_types.AddOrUpdate(p => p.property_type_id, e));
             context.SaveChanges();
             /////
             var propertieslist = new List<property>
@@ -327,7 +299,7 @@ namespace ClassLibrary.Migrations
 
                 }
    };
-   propertieslist.ForEach(e => context.properties.AddOrUpdate(p => p.property_id, e));
+            propertieslist.ForEach(e => context.properties.AddOrUpdate(p => p.property_id, e));
             context.SaveChanges();
             /////
             var object_propertyList = new List<object_property>
@@ -335,7 +307,7 @@ namespace ClassLibrary.Migrations
                 new object_property
                 {
                     object_property_id = 1
-                    
+
                 }
             };
             object_propertyList.ForEach(o => context.object_propertyies.AddOrUpdate(p => p.object_property_id, o));
@@ -371,7 +343,7 @@ namespace ClassLibrary.Migrations
                 //    start_date = DateTime.Now,
                 //    end_date = DateTime.Now,
                 //    topic = "sp",
-                    
+
                 //}
             };
             var booking_objectList = new List<booking_object>
@@ -384,7 +356,7 @@ namespace ClassLibrary.Migrations
             };
             booking_objectList.ForEach(o => context.booking_objects.AddOrUpdate(p => p.booking_object_id, o));
             context.SaveChanges();
-        
+
 
 
 

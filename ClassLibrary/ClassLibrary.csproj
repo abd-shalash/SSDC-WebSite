@@ -176,13 +176,9 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
-    <Compile Include="Migrations\201608101540551_DBv1.0.cs" />
-    <Compile Include="Migrations\201608101540551_DBv1.0.Designer.cs">
-      <DependentUpon>201608101540551_DBv1.0.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608101618279_DBv1.2.cs" />
-    <Compile Include="Migrations\201608101618279_DBv1.2.Designer.cs">
-      <DependentUpon>201608101618279_DBv1.2.cs</DependentUpon>
+    <Compile Include="Migrations\201608101842372_first.cs" />
+    <Compile Include="Migrations\201608101842372_first.Designer.cs">
+      <DependentUpon>201608101842372_first.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -195,11 +191,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608101540551_DBv1.0.resx">
-      <DependentUpon>201608101540551_DBv1.0.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608101618279_DBv1.2.resx">
-      <DependentUpon>201608101618279_DBv1.2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608101842372_first.resx">
+      <DependentUpon>201608101842372_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
