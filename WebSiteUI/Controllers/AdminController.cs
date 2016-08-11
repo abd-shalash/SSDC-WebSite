@@ -28,6 +28,10 @@ namespace WebSiteUI.Controllers
         {
             return View(repository.operations);
         }
+        /// <summary>
+        /// //////////
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminUserIndex()
         {
             return View(repository.users);
@@ -120,6 +124,7 @@ namespace WebSiteUI.Controllers
 
             if (id == null)
             {
+
                 return View();
             }
             user student = repository.users.Find(id);
@@ -127,22 +132,35 @@ namespace WebSiteUI.Controllers
             
             return View(student);
         }
-        [HttpPost]
-        public ActionResult EditUser(user id)
+        [HttpPost, ActionName("EditUser")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditUserPost(int? id)
         {
-            repository.UpdateUser(id);
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                repository.UpdateUser(id);
-                TempData["message"] = string.Format("{0} has been updated", id.first_name);
-                return RedirectToAction("AdminUserIndex");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             }
-            else
+            var userUpdate = repository.users.Find(id);
+            if (TryUpdateModel(userUpdate))
             {
-                ///data values are wrong somewhow
-                return RedirectToAction("AdminUserIndex");
+                try
+                {
+
+
+                    repository.SaveChanges();
+                    TempData["message"] = string.Format("{0} has been updated", userUpdate.first_name);
+                    return RedirectToAction("AdminUserIndex");
+                }
+                catch (DataException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+
+
+                }
             }
-            return View(id);
+
+            return View(userUpdate);
         }
         public ActionResult DetailsUser(int? id)
         {
@@ -176,14 +194,8 @@ namespace WebSiteUI.Controllers
             }
             return RedirectToAction("AdminUserIndex");
         }
-        public ActionResult Calender()
-        {
-            return View();
-        }
-        public ActionResult AdminProfile()
-        {
-            return View();
-        }
+    
+        
         /// <summary>
         /// ///////////////////////////////////////////
         /// </summary>
@@ -192,10 +204,198 @@ namespace WebSiteUI.Controllers
         {
             return View(repository.positions);
         }
+        public ActionResult DetailsPosition(int? id)
+        {
+            if (id==null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            position newpos = repository.positions.Find(id);
+            if (newpos==null)
+            {
+                return HttpNotFound();
+            }
+            return View(newpos);
+        }
+        public ActionResult DeletePosition(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            position DeletedPos = repository.positions.Find(id);
+            if (DeletedPos == null)
+            {
+                return HttpNotFound();
+            }
+            if (DeletedPos != null)
+            {
+                repository.positions.Remove(repository.positions.Find(id));
+                repository.SaveChanges();
+
+                TempData["message"] = string.Format("{0} was deleted ", DeletedPos.position_name);
+            }
+            return RedirectToAction("AdminUserIndex"); 
+        }
+        public ActionResult EditPosition(int? id)
+        {
+
+            if (id == null)
+            {
+                return View();
+            }
+            position EditPos = repository.positions.Find(id);
+            if (EditPos == null) { return View(); }
+
+            return View(EditPos);
+            
+        }
+        [HttpPost, ActionName("EditPosition")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPositionPost(int? id)
+        {
+
+            var EditPos = repository.positions.Find(id);
+            if (TryUpdateModel(EditPos))
+            {
+                try
+                {
+                    repository.SaveChanges();
+                    //var EditPos = repository.positions.Find(id);
+                    TempData["message"] = string.Format("{0} has been updated", EditPos.position_name);
+                 //   return RedirectToAction("AdminUserIndex");
+                }
+                catch (DataException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                    return View(id);
+                }
+            }
+
+
+                return RedirectToAction("AdminPositionIndex");
+            
+
+           
+        }
+        public ActionResult CreatePosition()
+        {
+            var model = new position();
+            return View(model);
+        }
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult CreatePosition(position model)
+        {
+
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    
+
+
+                    repository.positions.Add(model);
+                    //repository.users.Local.savesave();
+                    repository.SaveChanges();
+                    return View(model);
+
+
+                }
+                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
+            }
+            catch (DataException /* dex */)
+            {
+
+                ModelState.AddModelError("", "error  ");
+
+
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminOrganizationIndex()
         {
             return View(repository.organizations);
         }
+        public ActionResult CreateOrganization(int? id)
+        {
+            var model = new organization();
+            return View(model);
+        }
+        [HttpPost, ActionName("CreateOrganization")]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateOrganizationPost(organization id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+
+
+                    repository.organizations.Add(id);
+                    //repository.users.Local.savesave();
+                    repository.SaveChanges();
+                    return View(id);
+
+
+                }
+                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
+            }
+            catch (DataException /* dex */)
+            {
+
+                ModelState.AddModelError("", "error  ");
+
+
+            }
+
+            return View(id);
+        }
+        public ActionResult DetailsOrganization()
+
+        {
+           
+            return View();
+
+        }
+        public ActionResult EditOrganization(int? id)
+        {
+            var model = new organization();
+            return View(model);
+        }
+        public ActionResult DeleteOrganization(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            organization DeletedOrg = repository.organizations.Find(id);
+            if (DeletedOrg == null)
+            {
+                return HttpNotFound();
+            }
+            if (DeletedOrg != null)
+            {
+                repository.organizations.Remove(repository.organizations.Find(id));
+                repository.SaveChanges();
+
+                TempData["message"] = string.Format("{0} was deleted ", DeletedOrg.organization_name);
+            }
+            return RedirectToAction("AdminOrganizationIndex");
+
+        }
+
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminObjecttIndex()
         {
             return View(repository.objectts);

@@ -2,11 +2,10 @@
 
 @using ClassLibrary.Concrate
 @using SSDC_WebSite.Models
+
 @{
     ViewBag.Title = "Index";
-}
-@{
-
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 
     EF_organizationRepo OrgRepo = new EF_organizationRepo();
     List<organization> Organizations = OrgRepo.organizations.ToList();

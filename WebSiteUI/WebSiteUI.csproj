@@ -1050,6 +1050,10 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+    <Content Include="Views\Admin\DetailsPosition.cshtml" />
+    <Content Include="Views\Admin\EditPosition.cshtml" />
+    <Content Include="Views\Admin\CreatePosition.cshtml" />
+    <Content Include="Views\Admin\CreateOrganization.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

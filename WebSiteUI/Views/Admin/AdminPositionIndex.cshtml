@@ -24,16 +24,16 @@
                         @Html.DisplayFor(modelItem => item.position_name)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.position_id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.position_id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.position_id })
+                        @Html.ActionLink("Edit", "EditPosition", new { id = item.position_id }) |
+                        @Html.ActionLink("Details", "DetailsPosition", new { id = item.position_id }) |
+                        @Html.ActionLink("Delete", "DeletePosition", new { id = item.position_id })
                     </td>
                 </tr>
             }
 
         </table>
         <div class="panel-footer">
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New", "CreatePosition")
         </div>
     </div>
 </div>

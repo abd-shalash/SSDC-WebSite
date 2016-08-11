@@ -1,0 +1,27 @@
+﻿@model SSDC_WebSite.Models.position
+
+@{
+    ViewBag.Title = "DetailsPosition";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailsPosition</h2>
+
+<div>
+    <h4>position</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.position_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.position_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.position_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
