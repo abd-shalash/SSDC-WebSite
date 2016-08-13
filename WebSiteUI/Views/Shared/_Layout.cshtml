@@ -1,53 +1,61 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Static/css/webflow.css" rel="stylesheet" type="text/css" />
-    <link href="~/Static/css/nassers-stupendous-site.webflow.css" rel="stylesheet" type="text/css" />
-    <link href="~/Static/css/normalize.css" rel="stylesheet" type="text/css" />
+
+    <title>@ViewBag.Title - </title>
+
+    <link href="~/Content/MyStyle.css" rel="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
-   <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="navigation bg-info">
-        <div class="w-container bg-info">
 
-            <a class="w-nav-brand brand-link" href="@Url.Action("Index", "Home")">
-                @*<span><img src="##" /></span>*@
-            </a>
+    <nav class="navbar navbar-default navbar-fixed-top">
 
-            <nav role="navigation" class="w-nav-menu nav-menu ">
-                <a href="@Url.Action("Index", "Home")" class="w-nav-link nav-link">Home</a>
-                <a href="@Url.Action("FacilityListView", "Facility")" class="w-nav-link nav-link">Facility</a>
-                <a href="@Url.Action("EventListView", "Event")" class="w-nav-link nav-link">Events</a>
-                <a href="#calendar" class="w-nav-link nav-link">Location</a>
-                @if (Session["user"] == null)
-                {
-                <a href="@Url.Action("CreateUser", "SignUp")" class="w-nav-link nav-link">signup</a>
-                <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
-                }
-                @if (Session["user"] != null)
-                {
-                <a href="@Url.Action("Index", "User")" class="w-nav-link nav-link ">logged in as: @Session["user"]</a>
-                <a href="@Url.Action("Logout", "Account")" class="w-nav-link nav-link " value="Logout"> logout</a>
-                }
-            </nav>
+        <div class="container">
 
-            <div class="w-nav-button nav-link menu">
-                <div class="w-icon-nav-menu"></div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")"> <img src="~/Content/img/logo.png" /> </a>
+            </div>
+
+            <!--/.nav-collapse -->
+            <div id="navbar" class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav">
+
+                    <li> <a href="@Url.Action("FacilityListView", "Facility")">    Facility            </a> </li>
+                    <li> <a href="@Url.Action("EventListView", "Event")">          Events              </a> </li>
+                    <li> <a href="map" )>                                            Map                 </a> </li>
+                    <li> <a href="calendar" )>                                       Calendar            </a> </li>
+
+                    @if (Session["user"] == null)
+                    {
+                        <li class="active"> <a href="@Url.Action("CreateUser", "SignUp")">     Sign Up     </a> </li>
+                        <li class="active"> <a href="@Url.Action("Login", "Account")">          Login       </a> </li>
+                    }
+                    @if (Session["user"] != null)
+                    {
+                        <li class="active"> <a href="@Url.Action("Logout", "Account")">                 @Session["user"]    </a> </li>
+                        <li class="active"> <a href="@Url.Action("AdminOrganizationIndex", "Admin")">   Admin               </a> </li>
+                    }
+
+                </ul>
+
             </div>
 
         </div>
-    </div>
 
-    <!-- Footer Bar -->
+    </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
