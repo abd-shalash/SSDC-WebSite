@@ -144,6 +144,7 @@
     <Content Include="Content\img\homeImg.jpg" />
     <Content Include="Content\img\logo.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\SSDCStyle.css" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff2" />
