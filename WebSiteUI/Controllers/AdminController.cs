@@ -1,5 +1,6 @@
 ﻿using ClassLibrary.Abstract;
 using ClassLibrary.Concrate;
+using ClassLibrary.Entities.DB;
 using SSDC_WebSite.Models;
 using System;
 using System.Collections.Generic;
@@ -358,17 +359,62 @@ namespace WebSiteUI.Controllers
 
             return View(id);
         }
-        public ActionResult DetailsOrganization()
+        public ActionResult DetailsOrganization(int? id)
 
         {
-           
-            return View();
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            organization detailsOrg = repository.organizations.Find(id);
+            if (detailsOrg == null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsOrg);
 
         }
         public ActionResult EditOrganization(int? id)
         {
-            var model = new organization();
-            return View(model);
+
+            if (id == null)
+            {
+                return View();
+            }
+            organization EditOrg = repository.organizations.Find(id);
+            if (EditOrg == null) { return View(); }
+
+            return View(EditOrg);
+        }
+        [HttpPost, ActionName("EditOrganization")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditOrganizationPost(int? id)
+        {
+
+            if (id == null) { return View(); }
+            var EditOrg = repository.organizations.Find(id);
+            if (TryUpdateModel(EditOrg))
+            {
+                try
+                {
+                    repository.SaveChanges();
+                    //var EditPos = repository.positions.Find(id);
+                    TempData["message"] = string.Format("{0} has been updated", EditOrg.organization_name);
+                    //   return RedirectToAction("AdminUserIndex");
+                }
+                catch (DataException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                    return View(id);
+                }
+            }
+
+
+            return RedirectToAction("AdminOrganizationIndex");
+
+
+
         }
         public ActionResult DeleteOrganization(int? id)
         {
@@ -415,16 +461,254 @@ namespace WebSiteUI.Controllers
             return View(repository.fields);
 
         }
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminDepartmentIndex()
         {
             return View(repository.departments);
 
         }
+        public ActionResult CreateDepartment(int? id)
+        {
+            var model = new department();
+            return View(model);
+        }
+        [HttpPost, ActionName("CreateDepartment")]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateDepartment(department id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+
+
+                    repository.departments.Add(id);
+                    //repository.users.Local.savesave();
+                    repository.SaveChanges();
+                    return View(id);
+
+
+                }
+                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
+            }
+            catch (DataException /* dex */)
+            {
+
+                ModelState.AddModelError("", "error  ");
+
+
+            }
+
+            return View(id);
+        }
+        public ActionResult DetailsDepartment(int? id)
+
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            department detailsDep = repository.departments.Find(id);
+            if (detailsDep == null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsDep);
+
+        }
+        public ActionResult EditDepartment(int? id)
+        {
+
+            if (id == null)
+            {
+                return View();
+            }
+            department EditDep= repository.departments.Find(id);
+            if (EditDep == null) { return View(); }
+
+            return View(EditDep);
+        }
+        [HttpPost, ActionName("EditDepartment")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditDepartmentPost(int? id)
+        {
+
+            if (id == null) { return View(); }
+            var EditDep = repository.departments.Find(id);
+            if (TryUpdateModel(EditDep))
+            {
+                try
+                {
+                    repository.SaveChanges();
+                    //var EditPos = repository.positions.Find(id);
+                    TempData["message"] = string.Format("{0} has been updated", EditDep.department_name);
+                    //   return RedirectToAction("AdminUserIndex");
+                }
+                catch (DataException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                    return View(id);
+                }
+            }
+
+
+            return RedirectToAction("AdminDepartmentIndex");
+
+
+
+        }
+        public ActionResult DeleteDepartment(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            department DeletedDep = repository.departments.Find(id);
+            if (DeletedDep == null)
+            {
+                return HttpNotFound();
+            }
+            if (DeletedDep != null)
+            {
+                repository.departments.Remove(DeletedDep);
+                repository.SaveChanges();
+
+                TempData["message"] = string.Format("{0} was deleted ", DeletedDep.department_name);
+            }
+            return RedirectToAction("AdminDepartmentIndex");
+
+        }
+        /// <summary>
+        /// /
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminBookingIndex()
         {
             return View(repository.bookings);
 
         }
+        public ActionResult CreateBooking(int? id)
+        {
+            var model = new booking();
+            return View(model);
+        }
+        [HttpPost, ActionName("CreateBooking")]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateBooking(booking id)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+
+
+                    repository.bookings.Add(id);
+                    //repository.users.Local.savesave();
+                    repository.SaveChanges();
+                    return View(id);
+
+
+                }
+                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
+            }
+            catch (DataException /* dex */)
+            {
+
+                ModelState.AddModelError("", "error  ");
+
+
+            }
+
+            return View(id);
+        }
+        public ActionResult DetailsBooking(int? id)
+
+        {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            booking detailsBooking = repository.bookings.Find(id);
+            if (detailsBooking == null)
+            {
+                return HttpNotFound();
+            }
+            return View(detailsBooking);
+
+        }
+        public ActionResult EditBooking(int? id)
+        {
+
+            if (id == null)
+            {
+                return View();
+            }
+            booking EditBooking = repository.bookings.Find(id);
+            if (EditBooking == null) { return View(); }
+
+            return View(EditBooking);
+        }
+        [HttpPost, ActionName("EditBooking")]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditBookingPost(int? id)
+        {
+
+            if (id == null) { return View(); }
+            var EditBooking = repository.bookings.Find(id);
+            if (TryUpdateModel(EditBooking))
+            {
+                try
+                {
+                    repository.SaveChanges();
+                    //var EditPos = repository.positions.Find(id);
+                    TempData["message"] = string.Format("{0} has been updated", EditBooking.booking_id);
+                    //   return RedirectToAction("AdminUserIndex");
+                }
+                catch (DataException)
+                {
+                    ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                    return View(id);
+                }
+            }
+
+
+            return RedirectToAction("AdminDepartmentIndex");
+
+
+
+        }
+        public ActionResult DeleteBooking(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            booking DeletedBooking = repository.bookings.Find(id);
+            if (DeletedBooking == null)
+            {
+                return HttpNotFound();
+            }
+            if (DeletedBooking != null)
+            {
+                repository.bookings.Remove(DeletedBooking);
+                repository.SaveChanges();
+
+                TempData["message"] = string.Format("{0} was deleted ", DeletedBooking.booking_id);
+            }
+            return RedirectToAction("AdminDepartmentIndex");
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AdminUserGroupIndex()
         {
             return View(repository.user_groups);

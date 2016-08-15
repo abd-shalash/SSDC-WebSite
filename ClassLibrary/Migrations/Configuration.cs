@@ -30,7 +30,19 @@ namespace ClassLibrary.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var participant_level = new List<participant_level>
+            {
+                new participant_level
+                {
+                    participant_level_id = 1,
+                    participant_level_name = "level one",
+                    participant_type = "type one"
 
+                }
+            };
+            participant_level.ForEach(o => context.participant_levels.AddOrUpdate(p => p.participant_level_id, o));
+            context.SaveChanges();
+            ////
 
             var organi_type = new List<organization_type>
             {

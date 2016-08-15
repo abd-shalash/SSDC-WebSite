@@ -1,0 +1,27 @@
+﻿@model SSDC_WebSite.Models.department
+
+@{
+    ViewBag.Title = "DetailsDepartment";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailsDepartment</h2>
+
+<div>
+    <h4>department</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.department_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.department_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditDepartment", new { id = Model.department_id }) |
+    @Html.ActionLink("Back to List", "AdminDepartmentIndex")
+</p>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ClassLibrary.Concrate;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -9,6 +11,7 @@ namespace WebSiteUI.Controllers
 {
     public class UserController : Controller
     {
+        EF_DBContext repo = new EF_DBContext();
         UserModel mod = new UserModel { SelectedTab = "Profile" };
         public UserController()
         {
@@ -51,8 +54,32 @@ namespace WebSiteUI.Controllers
                 mod.SelectedTab = "Profile";
                 return View(mod);
             }
-            return View();
+            return View(mod);
         }
-
+        [HttpPost, ActionName("Index")]
+        [ValidateAntiForgeryToken]
+        public ActionResult IndexPost()
+        {   
+            var userEmail = Session["email"];
+            if (userEmail == null)
+            {
+                mod.SelectedTab = "Profile";
+                return View();
+            }
+            try
+            {
+                var editU = repo.users.FirstOrDefault(u => u.email == (string)userEmail);
+                if (TryUpdateModel(editU))
+                {
+                    repo.SaveChanges();
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                return View(mod);
+            }
+            return View(mod);
+        }
     }
 }

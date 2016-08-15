@@ -29,9 +29,9 @@
                             @Html.DisplayFor(modelItem => item.department_name)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.department_id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.department_id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.department_id })
+                            @Html.ActionLink("Edit", "EditDepartment", new { id = item.department_id }) |
+                            @Html.ActionLink("Details", "DetailsDepartment", new { id = item.department_id }) |
+                            @Html.ActionLink("Delete", "DeleteDepartment", new { id = item.department_id })
                         </td>
                     </tr>
                 }
@@ -40,7 +40,7 @@
     </div>
     <div class="panel-footer">
         <div class="btn btn-default">
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New", "CreateDepartment")
         </div>
         </div>
     </div>

@@ -1,0 +1,27 @@
+﻿@model SSDC_WebSite.Models.organization
+
+@{
+    ViewBag.Title = "DetailsOrganization";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailsOrganization</h2>
+
+<div>
+    <h4>organization</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.organization_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.organization_name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.organization_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

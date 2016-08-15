@@ -1,0 +1,123 @@
+﻿@model SSDC_WebSite.Models.booking
+
+@{
+    ViewBag.Title = "DetailsBooking";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>DetailsBooking</h2>
+
+<div>
+    <h4>booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.start_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.start_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.end_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.topic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.topic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_of_participant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_of_participant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.code_no)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code_no)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.booking_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.booking_status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.meeting_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.meeting_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dryrun_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dryrun_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.event_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.event_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.staff_needed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.staff_needed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.additional_requirement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.additional_requirement)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditBooking", new { id = Model.booking_id }) |
+    @Html.ActionLink("Back to List", "AdminBookingIndex")
+</p>

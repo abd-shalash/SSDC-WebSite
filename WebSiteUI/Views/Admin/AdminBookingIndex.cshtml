@@ -100,9 +100,9 @@
                             @Html.DisplayFor(modelItem => item.additional_requirement)
                         </td>
                         <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.booking_id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.booking_id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.booking_id })
+                            @Html.ActionLink("Edit", "EditBooking", new { id = item.booking_id }) |
+                            @Html.ActionLink("Details", "DetailsBooking", new { id = item.booking_id }) |
+                            @Html.ActionLink("Delete", "DeleteBooking", new { id = item.booking_id })
                         </td>
                     </tr>
                 }
@@ -112,7 +112,7 @@
     <div class="panel-footer">
         <div class="btn btn-default">
 
-            @Html.ActionLink("Create New", "Create")
+            @Html.ActionLink("Create New", "CreateBooking")
         </div>
     </div>
 

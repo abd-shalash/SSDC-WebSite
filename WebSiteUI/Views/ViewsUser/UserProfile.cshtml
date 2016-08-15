@@ -3,7 +3,7 @@
 @using SSDC_WebSite.Models
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()*@
 
 
         user p = new user();
@@ -16,7 +16,7 @@
 
         }
     <div class="form-horizontal">
-        <h4>user</h4>
+      
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => p.user_id)
@@ -93,6 +93,3 @@
     </div>
 }
         
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

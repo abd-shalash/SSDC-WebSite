@@ -988,6 +988,7 @@
     <Compile Include="Controllers\NAVUserController.cs" />
     <Compile Include="Controllers\SignupController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ViewsUserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1054,6 +1055,16 @@
     <Content Include="Views\Admin\EditPosition.cshtml" />
     <Content Include="Views\Admin\CreatePosition.cshtml" />
     <Content Include="Views\Admin\CreateOrganization.cshtml" />
+    <Content Include="Views\Admin\EditOrganization.cshtml" />
+    <Content Include="Views\Admin\DetailsOrganization.cshtml" />
+    <Content Include="Views\Admin\CreateDepartment.cshtml" />
+    <Content Include="Views\Admin\DetailsDepartment.cshtml" />
+    <Content Include="Views\Admin\EditDepartment.cshtml" />
+    <Content Include="Views\Admin\DeleteDepartment.cshtml" />
+    <Content Include="Views\Admin\CreateBooking.cshtml" />
+    <Content Include="Views\Admin\DetailsBooking.cshtml" />
+    <Content Include="Views\Admin\EditBooking.cshtml" />
+    <Content Include="Views\Admin\DeleteBooking.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
