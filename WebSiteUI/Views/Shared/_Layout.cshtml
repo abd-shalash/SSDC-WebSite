@@ -15,104 +15,7 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-    @*<nav class="navbar navbar-light bg-faded">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-        </ul>
-    </nav>*@
-
-    @*<nav class="navbar navbar-light bg-faded">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-            &#9776;
-        </button>
-        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-            <a class="navbar-brand" href="<img src="~/Content/logo.png"/>">Princess Noura University Simulation &amp; Skills Development Center</a>
-            <ul class="nav navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("Index", "Home")"> Home <span class="sr-only"> (current) </span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("FacilityListView", "Facility")">Facility</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("FacilityListView", "Facility")">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("EventListView", "Event")">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>*@
-
-
-    @*<nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </nav>*@
-
-
-    @*<nav class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://disputebills.com">
-                    <img src="http://res.cloudinary.com/candidbusiness/image/upload/v1455406304/dispute-bills-chicago.png" alt="Dispute Bills">
-                </a>
-            </div>
-            <div id="navbar3" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
-        <!--/.container-fluid -->
-    </nav>*@
-
+    <!-- Navigation Bar -->
    <div id="Header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="navigation bg-info">
         <div class="w-container bg-info">
 
@@ -126,7 +29,9 @@
 
             </a>*@
 
-  
+            <a class="w-nav-brand brand-link" href="@Url.Action("Index", "Home")">
+                <span><img src="~/Content/img/logo.png" />></span>
+            </a>
 
             <nav role="navigation" class="w-nav-menu nav-menu ">
                 <a href="@Url.Action("Index", "Home")" class="w-nav-link nav-link">Home</a>
@@ -139,8 +44,8 @@
                 <a href="@Url.Action("Login", "Account")" class="w-nav-link nav-link">Login</a>
                 }
                 @if (Session["user"] != null)
-                {              
-                <a href="@Url.Action("Index", "User")" class="w-nav-link nav-link ">logged in as: @Session["user"]</a>             
+                {
+                <a href="@Url.Action("Index", "User")" class="w-nav-link nav-link ">logged in as: @Session["user"]</a>
                 <a href="@Url.Action("Logout", "Account")" class="w-nav-link nav-link " value="Logout"> logout</a>
                 }
             </nav>
@@ -152,7 +57,7 @@
         </div>
     </div>
 
-
+    <!-- Footer Bar -->
     <div class="container body-content">
         @RenderBody()
         <hr />
