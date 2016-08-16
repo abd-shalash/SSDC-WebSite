@@ -3,13 +3,23 @@
     Layout = "";
 }
 
-@foreach (var item in Model.Facilities)
-{
-    <div class="horizontal well">
-        <strong class="panel panel-primary">Facility Name:  @item.FaName</strong>
-        <br />
-        <span>Event Description: @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })</span>                                           
-        <br />
-    </div>
-}
+@*@foreach (var item in Model.Facilities)
+    {
+        <div class="horizontal well">
+            <strong class="panel panel-primary">Facility Name:  @item.FaName</strong>
+            <br />
+            <span>Facility Description: @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })</span>
+            <br />
+        </div>
+    }*@
 
+<ol class="rectangle-list">
+    @foreach (var item in Model.Facilities)
+    {
+        <li>
+            Facility Name:  @item.FaName<br />
+            Facility Description: @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })
+        </li>
+    }
+</ol>
+<div><a href="/calendar">SEE ALL FACILITIES &gt;</a></div>

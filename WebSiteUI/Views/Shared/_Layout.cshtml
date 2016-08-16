@@ -10,7 +10,7 @@
 
     <link href="~/Content/stylesheet.css" rel="stylesheet" />
     <link href="~/Content/stylesheet_home.css" rel="stylesheet" />
-
+    <link href="~/Content/SSDCStyle.css" rel="stylesheet" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -118,11 +118,11 @@
                         <ul class="nav navbar-nav col-lg-12 col-md-12 col-sm-12 col-xs-12" role="menu">
 
                             <li>
-                                <a href="#">Home</a>
+                                <a href="@Url.Action("Index", "Home")">Home</a>
                             </li>
 
                             <li>
-                                <a href="#">News</a>
+                                <a href="#">Simulation</a>
                             </li>
 
                             <li>
@@ -169,11 +169,15 @@
                                 <ul role="menu" class="dropdown">
 
                                     <li role="menuitem">
-                                        <a href="#">About</a>
+                                        <a href="@Url.Action("Index", "Home")">Home</a>
                                     </li>
 
                                     <li role="menuitem">
-                                        <a href="#">Facility</a>
+                                        <a href="#">Simulation</a>
+                                    </li>
+
+                                    <li role="menuitem">
+                                        <a href="#">Life Support</a>
                                     </li>
 
                                     <li role="menuitem">
@@ -181,11 +185,7 @@
                                     </li>
 
                                     <li role="menuitem">
-                                        <a href="#">Map</a>
-                                    </li>
-
-                                    <li role="menuitem">
-                                        <a href="#">Contact</a>
+                                        <a href="#">About</a>
                                     </li>
 
                                 </ul>
