@@ -137,13 +137,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assests\Audio\audio.wav" />
+    <Content Include="Assests\Image\homeImg.jpg" />
+    <Content Include="Assests\Image\homeImg.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="Content\img\homeImg.jpg" />
-    <Content Include="Content\img\logo.png" />
+    <Content Include="Assests\Icon\homeImg.jpg" />
+    <Content Include="Assests\Icon\logo.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\SSDCStyle.css" />
     <Content Include="Content\stylesheet.css" />
@@ -1068,6 +1071,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assests\PackageAppXManifest\" />
+    <Folder Include="Assests\Text\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">

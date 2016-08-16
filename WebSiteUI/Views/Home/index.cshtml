@@ -6,10 +6,19 @@
     <meta charset="utf-8">
     <title>Nasser&#39;s Stupendous Site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="generator" content="Webflow">
+
     <link rel="stylesheet" type="text/css" href="~/Static/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="~/Static/css/webflow.css">
     <link rel="stylesheet" type="text/css" href="~/Static/css/nassers-stupendous-site.webflow.css">
+
+    <link href="~/Content/stylesheet.css" rel="stylesheet" />
+    <link href="~/Content/stylesheet_home.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link type="text/css" href="https://www.google.com/uds/api/search/1.0/8bdfc79787aa2b2b1ac464140255872c/default+en.css" rel="stylesheet">
+    <link type="text/css" href="https://www.google.com/cse/style/look/v2/default.css" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
     <script>
         WebFont.load({
@@ -19,43 +28,94 @@
         });
     </script>
     <script type="text/javascript" src="~/Static/js/modernizr.js"></script>
-    <link rel="shortcut icon" type="image/x-icon" href="~/Static/images/New icon.ico">
-    <link rel="apple-touch-icon" href="~/Static/images/metric-webclip.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="fullbox">
-        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
+        <section id="hero">
+            <div id="carousel-sim-home" class="carousel slide carousel-fade" data-ride="carousel" data-interval="6500">
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <h4>"This company is the best. I am so happy with the result!"<br><span style="font-style:normal;">Michael Roe, Vice President, Comment Box</span></h4>
-                </div>
-                <div class="item">
-                    <h4>"One word... WOW!!"<br><span style="font-style:normal;">John Doe, Salesman, Rep Inc</span></h4>
-                </div>
-                <div class="item">
-                    <h4>"Could I... BE any more happy with this company?"<br><span style="font-style:normal;">Chandler Bing, Actor, FriendsAlot</span></h4>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+
+                    <div class="item active" id="first">
+                        <img src="~/Assests/Image/homeImg.png">
+                        <div class="carousel-caption col-lg-3 col-md-5 col-sm-10 col-xs-12">
+                            <!-- Controls -->
+                            <div class="row">
+                                <div class="carousel-control-container col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h3>Education</h3>
+                                    <p>Advancing patient safety by educating and training tomorrow's healthcare leaders.</p>
+                                    <a href="/courses" class="more-link">› Find out more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" id="second">
+                        <img src="~/Assests/Image/homeImg.png">
+                        <div class="carousel-caption col-lg-3 col-md-5 col-sm-10 col-xs-12">
+                            <!-- Controls -->
+                            <div class="row">
+                                <div class="carousel-control-container col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-7 col-xs-12">
+                                    <h3>Innovation</h3>
+                                    <p>Using the most advanced simulation technology to improve patient safety.</p>
+                                    <a href="/facility" class="more-link">› Find out more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item" id="third">
+                        <img src="~/Assests/Image/homeImg.png">
+                        <div class="carousel-caption col-lg-3 col-md-5 col-sm-10 col-xs-12">
+                            <!-- Controls -->
+                            <div class="row">
+                                <div class="carousel-control-container col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="prev">
+                                        <i class="fa fa-chevron-left"></i>
+                                    </a>
+                                    <a class="control-arrow" href="#carousel-sim-home" data-slide="next">
+                                        <i class="fa fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <h3>Research</h3>
+                                    <p>Overcoming patient safety challenges through the use of medical simulation.</p>
+                                    <a href="/bibliography" class="more-link">› Find out more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
         <div id="facility" class="w-section section">
             <div class="w-container">
                 <h2>Facility</h2>
