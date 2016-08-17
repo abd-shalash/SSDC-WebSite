@@ -13,13 +13,30 @@
         </div>
     }*@
 
-<ol class="rectangle-list">
+<ol class="rounded-list">
     @foreach (var item in Model.Facilities)
     {
         <li>
             Facility Name:  @item.FaName<br />
-            Facility Description: @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })
+            Facility Description:
+            <a>
+                @Html.ActionLink(item.FaDescription, "FacilityDetailsView", new { item.ID })<br />
+            </a>
         </li>
-    }
-</ol>
-<div><a href="/calendar">SEE ALL FACILITIES &gt;</a></div>
+    </ol>
+    @*<div><a href="/calendar">SEE ALL FACILITIES &gt;</a></div>
+
+        <ol class="rounded-list">
+            <li><a href="">List item</a></li>
+            <li><a href="">List item</a></li>
+            <li>
+                <a href="">List item</a>
+                <ol>
+                    <li><a href="">List sub item</a></li>
+                    <li><a href="">List sub item</a></li>
+                    <li><a href="">List sub item</a></li>
+                </ol>
+            </li>
+            <li><a href="">List item</a></li>
+            <li><a href="">List item</a></li>
+        </ol>*@
