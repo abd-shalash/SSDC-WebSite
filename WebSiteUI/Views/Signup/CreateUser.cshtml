@@ -18,6 +18,9 @@
     EF_positionRepo PosRepo = new EF_positionRepo();
     List<position> Positions = PosRepo.positions.ToList();
 
+    EF_DBContext repo = new EF_DBContext();
+    List<Gender> Genders = repo.genders.ToList();
+
 
 }
 <h2>Index</h2>
@@ -49,8 +52,8 @@
             @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label>User Gender: 1 for male 0 for female</label>
-            @Html.TextBoxFor(Model => Model.Gender, new { @class = "form-control" })
+            <label>User organization:</label>
+            @Html.DropDownListFor(Model => Model.Gender, new SelectList(Genders, "Id", "MyGender"))
         </div>
 
         <div class="form-group">

@@ -158,6 +158,7 @@
     <Compile Include="Entities\field_option.cs" />
     <Compile Include="Entities\field_result.cs" />
     <Compile Include="Entities\form.cs" />
+    <Compile Include="Entities\Gender.cs" />
     <Compile Include="Entities\group.cs" />
     <Compile Include="Entities\group_operation.cs" />
     <Compile Include="Entities\objectt.cs" />
@@ -176,6 +177,10 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
+    <Compile Include="Migrations\201608180804498_123.cs" />
+    <Compile Include="Migrations\201608180804498_123.Designer.cs">
+      <DependentUpon>201608180804498_123.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -185,6 +190,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608180804498_123.resx">
+      <DependentUpon>201608180804498_123.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

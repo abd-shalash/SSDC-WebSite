@@ -49,7 +49,7 @@ namespace ClassLibrary.Concrate
                 {
                     userupdate.first_name = newuser.first_name;
                     userupdate.last_name = newuser.last_name;
-                    userupdate.gender = newuser.gender;
+                    userupdate.userGender = newuser.userGender;
                     userupdate.email = newuser.email;
                     userupdate.mobile_number = newuser.mobile_number;
                     userupdate.password = newuser.password;

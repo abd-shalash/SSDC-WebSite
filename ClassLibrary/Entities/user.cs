@@ -29,7 +29,8 @@ namespace SSDC_WebSite.Models
         public string email { get; set; }
         public Nullable<int> work_number { get; set; }
         public int mobile_number { get; set; }
-        public int gender { get; set; }
+        //public int gender { get; set; }
+        public virtual Gender userGender { set; get; }
         public Nullable<int> id_number { get; set; }
         public string password { get; set; }
     
