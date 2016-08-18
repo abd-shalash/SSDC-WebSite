@@ -13,7 +13,7 @@ namespace ClassLibrary.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201608180804498_123"; }
+            get { return "201608180828039_123"; }
         }
         
         string IMigrationMetadata.Source
