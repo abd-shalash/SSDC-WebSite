@@ -20,55 +20,78 @@
 
 
 }
-<h2>Index</h2>
 
-<div class="panel panel-default">
-    @using (Html.BeginForm())
-    {
 
-        @Html.ValidationSummary()
-        <div class="form-group">
-            <label>User email:</label>
-            @Html.TextBoxFor(Model=>Model.Email, new  { @class = "form-control" })
-        </div>
-
-        <div class="form-group">
-            <label>User password:</label>
-            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User first Name:</label>
-            @Html.TextBoxFor(Model => Model.Fname, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User mobile number:</label>
-            @Html.TextBoxFor(Model => Model.phone_number, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User Last Name:</label>
-            @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User Gender: 1 for male 0 for female</label>
-            @Html.TextBoxFor(Model => Model.Gender, new { @class = "form-control" })
-        </div>
-
-        <div class="form-group">
-            <label>User organization:</label>
-            @Html.DropDownListFor(Model => Model.OrganizationID, new SelectList(Organizations, "organization_id", "organization_name", "organization_type_organization_type_id"))
-        </div>
-        <div class="form-group">
-            <label>User department:</label>
-            @Html.DropDownListFor(Model => Model.DepartmentID, new SelectList(Departments, "department_id", "department_name", "organization_type_organization_type_id"))
-        </div>
-        <div class="form-group">
-            <label>User title:</label>
-
-            @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
-           
-        </div>
+    <div class="panel panel-default">
         
+            <div class="panel page-header"><h3>Sign Up</h3></div>
 
-            <input type="submit" value="CreateUser" class="btn btn-primary" />
-                }
+        <div class="jumbotron">
+            <div class="panel-body">
+
+
+                <form role="form">
+                    @using (Html.BeginForm())
+            {
+
+            @Html.ValidationSummary()
+
+                        <div class="form-group-lg">
+                            <label>First Name:</label>
+                            @Html.TextBoxFor(Model => Model.Fname, new { @class = "form-control" })
+
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name:</label>
+                            @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group-lg">
+                            <label>Password:</label>
+                            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Contact #:</label>
+                            @Html.TextBoxFor(Model => Model.phone_number, new { @class = "form-control" })
+                        </div>
+
+                            <div class="form-group">
+                                <label>Gender: 1 for male 0 for female</label>
+                                @Html.TextBoxFor(Model => Model.Gender, new { @class = "form-control" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>Organization:</label>
+                                @Html.DropDownListFor(Model => Model.OrganizationID, new SelectList(Organizations, "organization_id", "organization_name", "organization_type_organization_type_id"))
+                            </div>
+                            <div class="form-group">
+                                <label>Department:</label>
+                                @Html.DropDownListFor(Model => Model.DepartmentID, new SelectList(Departments, "department_id", "department_name", "organization_type_organization_type_id"))
+                            </div>
+                            <div class="form-group">
+                                <label>Title JOB:</label>
+
+                                @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
+
+                            </div>
+
+                            
+                                <div class="btn btn-default">
+                                    <input type="submit" value="Sign Up" />
+                                </div>
+                            
+
+                    }
+                </form>
+
+            </div>
+        </div>
+
+
+
 </div>
+
