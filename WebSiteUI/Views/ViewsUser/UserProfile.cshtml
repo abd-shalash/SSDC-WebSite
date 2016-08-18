@@ -6,17 +6,17 @@
     @*@Html.AntiForgeryToken()*@
 
 
-user p = new user();
-if (Session != null)
-{
-    string temps = Session["user"].ToString();
-    EF_DBContext repo = new EF_DBContext();
-    p = repo.users.FirstOrDefault(i => i.email == temps);
+        user p = new user();
+        if (Session["user"] != null)
+        {
+            string temps = Session["user"].ToString();
+            EF_DBContext repo = new EF_DBContext();
+            p = repo.users.FirstOrDefault(i => i.email == temps);
 
 
-}
+        }
     <div class="form-horizontal">
-
+      
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => p.user_id)
@@ -62,10 +62,10 @@ if (Session != null)
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => p.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => p.userGender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => p.gender, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => p.gender, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => p.userGender, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => p.userGender, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -92,4 +92,4 @@ if (Session != null)
         </div>
     </div>
 }
-
+        
