@@ -24,53 +24,6 @@
 
 }
 
-@*<div class="panel panel-default">
-    @using (Html.BeginForm())
-    {
-
-        @Html.ValidationSummary()
-        <div class="form-group">
-            <label>User email:</label>
-            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
-        </div>
-
-        <div class="form-group">
-            <label>User password:</label>
-            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User first Name:</label>
-            @Html.TextBoxFor(Model => Model.Fname, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User mobile number:</label>
-            @Html.TextBoxFor(Model => Model.phone_number, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User Last Name:</label>
-            @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
-        </div>
-        <div class="form-group">
-            <label>User organization:</label>
-            @Html.DropDownListFor(Model => Model.Gender, new SelectList(Genders, "Id", "MyGender"))
-        </div>
-
-        <div class="form-group">
-            <label>User organization:</label>
-            @Html.DropDownListFor(Model => Model.OrganizationID, new SelectList(Organizations, "organization_id", "organization_name", "organization_type_organization_type_id"))
-        </div>
-        <div class="form-group">
-            <label>User department:</label>
-            @Html.DropDownListFor(Model => Model.DepartmentID, new SelectList(Departments, "department_id", "department_name", "organization_type_organization_type_id"))
-        </div>
-        <div class="form-group">
-            <label>User title:</label>
-            @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
-        </div>
-        <input type="submit" value="CreateUser" class="btn btn-primary" />
-    }
-</div>*@
-
 <section id="content-body">
     <div class="container">
         <div class="container">

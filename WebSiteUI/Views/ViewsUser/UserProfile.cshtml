@@ -6,17 +6,17 @@
     @*@Html.AntiForgeryToken()*@
 
 
-        user p = new user();
-        if (Session != null)
-        {
-            string temps = Session["user"].ToString();
-            EF_DBContext repo = new EF_DBContext();
-            p = repo.users.FirstOrDefault(i => i.email == temps);
+user p = new user();
+if (Session != null)
+{
+    string temps = Session["user"].ToString();
+    EF_DBContext repo = new EF_DBContext();
+    p = repo.users.FirstOrDefault(i => i.email == temps);
 
 
-        }
+}
     <div class="form-horizontal">
-      
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => p.user_id)
@@ -92,4 +92,4 @@
         </div>
     </div>
 }
-        
+

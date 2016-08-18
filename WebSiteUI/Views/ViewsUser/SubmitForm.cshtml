@@ -1,147 +1,285 @@
 ﻿
-<body>
-    <hr>
-    <header><strong>Room Booking</strong></header>
+@{
+    ViewBag.Title = "SubmitForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-    <header><strong>General Information</strong></header>
-    <hr>
-    <form>
-        <table width="700" border="0">
-            <tbody>
-                <tr>
-                    <td><label>Today's Date</label>  <input type="date"> </td>
-                    <td><label>Date(s) requested for <br>simaulation event</label>  <input type="date"></td>
-                </tr>
-                <br>
-                <tr>
-                    <td><label>Time of the event</label>   </td>
-                    <td>
-                        <table width="300" border="0">
+
+
+@*<section id="content-body">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div id="login-block" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-6 col-md-6 col-sm-8 col-xs-10">
+
+                    <form>
+                        <table width="700" border="0">
                             <tbody>
                                 <tr>
-                                    <td><label>Start: <input type="time"></label></td>
-                                    <td><label>End: <input type="time"></label></td>
+                                    <td><label>Today's Date</label>  <input type="date"> </td>
+                                    <td><label>Date(s) requested for <br>simaulation event</label>  <input type="date"></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Time of the event</label>   </td>
+                                    <td>
+                                        <table width="300" border="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td><label>Start: <input type="time"></label></td>
+                                                    <td><label>End: <input type="time"></label></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Requestor's name and title:</label> </td>
+                                    <td>
+                                        <label>Orgnization</label>
+                                        <div class="form-group">
+                                            <label for="sel1"></label>
+                                            <select class="form-control" id="sel1">
+                                                <option>PNU</option>
+                                                <option>KAAUH</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Requstore's contact information:</label></td>
+                                    <td><label>Email:<input type="email"></label> <div id="margin"><label>Telephone:<input type="tel"></label></div></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Requestor's name and title:</label> </td>
-                    <td>
-                        <label>Orgnization</label>
-                        <div class="form-group">
-                            <label for="sel1"></label>
-                            <select class="form-control" id="sel1">
-                                <option>PNU</option>
-                                <option>KAAUH</option>
-                                <option>Other</option>
+                        <br>
+                        <div id="button_style"><button type="button">Edit</button></div>
+                        <hr>
+                        <label>
+                            Discipline
+                            <div class="form-group">
+                                <label for="sel1">(Select one)</label>
+                                <select class="form-control" id="sel1">
+                                    <option>Medicine</option>
+                                    <option>Nursing</option>
+                                    <option>Dentistry</option>
+                                    <option>Pharmacist</option>
+                                    <option>Physiotherapist</option>
 
+                                </select>
+                            </div>
+                        </label>
+                        <br>
+                        <br>
 
-                            </select>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label>Requstore's contact information:</label></td>
-                    <td><label>Email:<input type="email"></label> <div id="margin"><label>Telephone:<input type="tel"></label></div></td>
-                </tr>
-            </tbody>
-        </table>
+                        <table width="1115" border="1">
+                            <tbody>
+                                <tr>
+                                    <td><label>Parcticipant<br>Type</label></td>
+                                    <td>
+                                        <label>
+                                            Eductional event:<br>
+                                        </label>
+                                        <p>
+                                            <label>
+                                                <h6>
+                                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_0">
+                                                    Undergraduate
+                                                </h6>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <h6>
+                                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_1">
+                                                    Graduate
+                                                </h6>
+                                            </label>
+                                            <br>
+                                            <label>
+                                                <h6>
+                                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_2">
+                                                    Post-Licensiure/continung Education
+                                                </h6>
+                                            </label>
+                                            <br>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <label>
+                                            Organzational meeting:<br>
+                                            <h6><input type="checkbox">Staff of faculty meeting</h6>
+                                        </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <label>Number of parcticipant</label> <input type="number">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <label><h4>Room Type</h4></label>
+                        <br>
+                        <table width="85%" border="0" cellspacing="0" cellpadding="0">
 
+                            <tr>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Auditoriom</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Meeting Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Classroom</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Emergency Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Operation Room</td>
+                            </tr>
 
-        <br>
-
-        <div id="button_style"><button type="button">Edit</button></div>
-        <hr>
-        <label>
-            Discipline
-            <div class="form-group">
-                <label for="sel1">(Select one)</label>
-                <select class="form-control" id="sel1">
-                    <option>Medicine</option>
-                    <option>Nursing</option>
-                    <option>Dentistry</option>
-                    <option>Pharmacist</option>
-                    <option>Physiotherapist</option>
-
-                </select>
+                            <br>
+                            <tr>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Intenceve care Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Inpatint Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Out patint Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Labour and Delivery Room</td>
+                                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Clinic</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <input type="submit">
+                    </form>
+                </div>
             </div>
-        </label>
-        <br>
-        <br>
+        </div>
+    </div>
+</section>*@
 
-        <table width="1115" border="1">
-            <tbody>
-                <tr>
-                    <td><label>Parcticipant<br>Type</label></td>
-                    <td>
-                        <label>
-                            Eductional event:<br>
-                        </label>
-                        <p>
-                            <label>
-                                <h6>
-                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_0">
-                                    Undergraduate
-                                </h6>
-                            </label>
-                            <br>
-                            <label>
-                                <h6>
-                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_1">
-                                    Graduate
-                                </h6>
-                            </label>
-                            <br>
-                            <label>
-                                <h6>
-                                    <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_2">
-                                    Post-Licensiure/continung Education
-                                </h6>
-                            </label>
-                            <br>
-                        </p>
-                    </td>
-                    <td>
-                        <label>
-                            Organzational meeting:<br>
-                            <h6><input type="checkbox">Staff of faculty meeting</h6>
-                        </label>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <label>Number of parcticipant</label> <input type="number">
-        <br>
-        <br>
-        <br>
-        <br>
-        <label><h4>Room Type</h4></label>
-        <br>
-        <table width="85%" border="0" cellspacing="0" cellpadding="0">
 
+<form>
+    <table width="700" border="0">
+        <tbody>
             <tr>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Auditoriom</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Meeting Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Classroom</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Emergency Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Operation Room</td>
+                <td><label>Today's Date</label>  <input type="date"> </td>
+                <td><label>Date(s) requested for <br>simaulation event</label>  <input type="date"></td>
             </tr>
-
-            <br>
             <tr>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Intenceve care Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Inpatint Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Out patint Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Labour and Delivery Room</td>
-                <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Clinic</td>
+                <td><label>Time of the event</label>   </td>
+                <td>
+                    <table width="300" border="0">
+                        <tbody>
+                            <tr>
+                                <td><label>Start: <input type="time"></label></td>
+                                <td><label>End: <input type="time"></label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
             </tr>
-        </table>
+            <tr>
+                <td><label>Requestor's name and title:</label> </td>
+                <td>
+                    <label>Orgnization</label>
+                    <div class="form-group">
+                        <label for="sel1"></label>
+                        <select class="form-control" id="sel1">
+                            <option>PNU</option>
+                            <option>KAAUH</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Requstore's contact information:</label></td>
+                <td><label>Email:<input type="email"></label> <div id="margin"><label>Telephone:<input type="tel"></label></div></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div id="button_style"><button type="button">Edit</button></div>
+    <hr>
+    <label>
+        Discipline
+        <div class="form-group">
+            <label for="sel1">(Select one)</label>
+            <select class="form-control" id="sel1">
+                <option>Medicine</option>
+                <option>Nursing</option>
+                <option>Dentistry</option>
+                <option>Pharmacist</option>
+                <option>Physiotherapist</option>
+
+            </select>
+        </div>
+    </label>
+    <br>
+    <br>
+
+    <table width="1115" border="1">
+        <tbody>
+            <tr>
+                <td><label>Parcticipant<br>Type</label></td>
+                <td>
+                    <label>
+                        Eductional event:<br>
+                    </label>
+                    <p>
+                        <label>
+                            <h6>
+                                <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_0">
+                                Undergraduate
+                            </h6>
+                        </label>
+                        <br>
+                        <label>
+                            <h6>
+                                <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_1">
+                                Graduate
+                            </h6>
+                        </label>
+                        <br>
+                        <label>
+                            <h6>
+                                <input type="radio" name="RadioGroup2" value="radio" id="RadioGroup2_2">
+                                Post-Licensiure/continung Education
+                            </h6>
+                        </label>
+                        <br>
+                    </p>
+                </td>
+                <td>
+                    <label>
+                        Organzational meeting:<br>
+                        <h6><input type="checkbox">Staff of faculty meeting</h6>
+                    </label>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <label>Number of parcticipant</label> <input type="number">
+    <br>
+    <br>
+    <br>
+    <br>
+    <label><h4>Room Type</h4></label>
+    <br>
+    <table width="85%" border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+            <td><img src="~/Assests/Image/homeImg.jpg" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Auditoriom</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Meeting Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Classroom</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Emergency Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Operation Room</td>
+        </tr>
+
         <br>
-        <br>
-        <input type="submit">
-    </form>
-</body>
-</html>
+        <tr>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Intenceve care Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Inpatint Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Out patint Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Labour and Delivery Room</td>
+            <td><img src="images/ImgResponsive_Placeholder.png" class="img-rounded img-responsive" alt="Placeholder image"><br><input type="checkbox">Clinic</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <input type="submit">
+</form>
