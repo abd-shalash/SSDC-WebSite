@@ -176,14 +176,6 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
-    <Compile Include="Migrations\201608101842372_first.cs" />
-    <Compile Include="Migrations\201608101842372_first.Designer.cs">
-      <DependentUpon>201608101842372_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608160656288_Nasser.cs" />
-    <Compile Include="Migrations\201608160656288_Nasser.Designer.cs">
-      <DependentUpon>201608160656288_Nasser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -193,14 +185,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608101842372_first.resx">
-      <DependentUpon>201608101842372_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608160656288_Nasser.resx">
-      <DependentUpon>201608160656288_Nasser.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
