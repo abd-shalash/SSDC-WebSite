@@ -177,9 +177,9 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
-    <Compile Include="Migrations\201608180828039_123.cs" />
-    <Compile Include="Migrations\201608180828039_123.Designer.cs">
-      <DependentUpon>201608180828039_123.cs</DependentUpon>
+    <Compile Include="Migrations\201608180938103_one.cs" />
+    <Compile Include="Migrations\201608180938103_one.Designer.cs">
+      <DependentUpon>201608180938103_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -192,8 +192,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608180828039_123.resx">
-      <DependentUpon>201608180828039_123.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608180938103_one.resx">
+      <DependentUpon>201608180938103_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
