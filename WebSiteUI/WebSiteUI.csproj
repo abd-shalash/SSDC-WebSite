@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assests\Audio\audio.wav" />
+    <Content Include="Assests\Icon\logo.jpg" />
     <Content Include="Assests\Image\homeImg.jpg" />
     <Content Include="Assests\Image\homeImg.png" />
     <Content Include="Controllers\Content\bootstrap-theme.css" />
@@ -1084,6 +1085,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Assests\PackageAppXManifest\" />
     <Folder Include="Assests\Text\" />
+    <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary\ClassLibrary.csproj">
