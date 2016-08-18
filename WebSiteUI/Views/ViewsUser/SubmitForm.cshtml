@@ -1,4 +1,15 @@
-﻿
+﻿@model SSDC_WebSite.Models.user
+@using ClassLibrary.Concrate
+@using SSDC_WebSite.Models
+@using (Html.BeginForm()) {
+    user p = new user();
+    if (Session["user"]!=null)
+    {
+
+        string temps = Session["user"].ToString();
+        EF_DBContext repo = new EF_DBContext();
+        p = repo.users.FirstOrDefault(i => i.email == temps);
+    }
 <body>
     <hr>
     <header><strong>Room Booking</strong></header>
@@ -9,7 +20,7 @@
         <table width="700" border="0">
             <tbody>
                 <tr>
-                    <td><label>Today's Date</label>  <input type="date"> </td>
+                    <td><label>Today's Date @DateTime.Now</label>  <input type="date"> </td>
                     <td><label>Date(s) requested for <br>simaulation event</label>  <input type="date"></td>
                 </tr>
                 <br>
@@ -27,9 +38,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Requestor's name and title:</label> </td>
+                    <td><label>Requestor's name and title: @p.first_name @p.last_name @p.position</label> </td>
                     <td>
-                        <label>Orgnization</label>
+                        <label>Orgnization: @p.organization</label>
                         <div class="form-group">
                             <label for="sel1"></label>
                             <select class="form-control" id="sel1">
@@ -43,8 +54,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><label>Requstore's contact information:</label></td>
-                    <td><label>Email:<input type="email"></label> <div id="margin"><label>Telephone:<input type="tel"></label></div></td>
+                    <td><label>Requstore's contact information: @p.work_number</label></td>
+                    <td><label>Email: @p.email<input type="email"></label> <div id="margin"><label>Telephone: @p.mobile_number<input type="tel"></label></div></td>
                 </tr>
             </tbody>
         </table>
@@ -145,3 +156,4 @@
     </form>
 </body>
 </html>
+    }
