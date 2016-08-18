@@ -10,6 +10,5 @@ namespace WebSiteUI.Models
     {
         public IEnumerable<Facility> Facilities { get; set; }
         public PagingInfo pageinfo { set; get; }
-
     }
 }
