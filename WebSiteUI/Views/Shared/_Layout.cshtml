@@ -63,14 +63,14 @@
                                     {
                                         <li>
                                             <i class="fa fa-cogs"></i>
-                                            <a href="@Url.Action("Index", "Admin")"> @Session["user"] </a>
+                                            <a href="@Url.Action("Index", "Admin")"> Signed In As: @Session["user"] </a>
                                         </li>
                                     }
                                     else
                                     {
                                         <li>
                                             <i class="fa fa-user "></i>
-                                            <a href="@Url.Action("Index", "User")"> @Session["user"] </a>
+                                            <a href="@Url.Action("Index", "User")"> Signed In As: @Session["user"] </a>
                                         </li>
                                     }
                                     <li>
