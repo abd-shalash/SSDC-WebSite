@@ -202,8 +202,8 @@ namespace ClassLibrary.Migrations
                 new Event
                 {
                     ID = 1,
-                    eventDescription = "akjdakflakfgadlkjgdlfadkskg",
-                    eventName = "test event 1"
+                    eventDescription = "Basic Life Support",
+                    eventName = "BLS"
                 },
                  new Event
                 {
