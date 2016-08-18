@@ -4,8 +4,8 @@
 @using SSDC_WebSite.Models
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "CreateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 
     EF_organizationRepo OrgRepo = new EF_organizationRepo();
     List<organization> Organizations = OrgRepo.organizations.ToList();
@@ -23,16 +23,15 @@
 
 
 }
-<h2>Index</h2>
 
-<div class="panel panel-default">
+@*<div class="panel panel-default">
     @using (Html.BeginForm())
     {
 
         @Html.ValidationSummary()
         <div class="form-group">
             <label>User email:</label>
-            @Html.TextBoxFor(Model=>Model.Email, new  { @class = "form-control" })
+            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
         </div>
 
         <div class="form-group">
@@ -66,12 +65,71 @@
         </div>
         <div class="form-group">
             <label>User title:</label>
-
             @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
-           
         </div>
-        
+        <input type="submit" value="CreateUser" class="btn btn-primary" />
+    }
+</div>*@
 
-            <input type="submit" value="CreateUser" class="btn btn-primary" />
-                }
-</div>
+<section id="content-body">
+    <div class="container">
+        <div class="container">
+            <div class="row">
+                <div id="login-block" class="col-lg-offset-3 col-md-offset-3 col-sm-offset-2 col-xs-offset-1 col-lg-6 col-md-6 col-sm-8 col-xs-10">
+                    <h2 class="text-center">SSDC Simulation Center</h2>
+                    <h3 class="text-center">Create an account</h3>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary()
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">First Name</label>
+                            @Html.TextBoxFor(Model => Model.Fname, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Last Name</label>
+                            @Html.TextBoxFor(Model => Model.Lname, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Email</label>
+                            @Html.TextBoxFor(Model => Model.Email, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Password</label>
+                            @Html.TextBoxFor(Model => Model.Password, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Mobile</label>
+                            @Html.TextBoxFor(Model => Model.phone_number, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Gender</label>
+                            @Html.DropDownListFor(Model => Model.Gender, new SelectList(Genders, "Id", "MyGender"))
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Organization</label>
+                            @Html.DropDownListFor(Model => Model.OrganizationID, new SelectList(Organizations, "organization_id", "organization_name", "organization_type_organization_type_id"))
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Department</label>
+                            @Html.DropDownListFor(Model => Model.DepartmentID, new SelectList(Departments, "department_id", "department_name", "organization_type_organization_type_id"))
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label required" for="fos_user_registration_form_username">Title</label>
+                            @Html.DropDownListFor(Model => Model.PositionID, new SelectList(Positions, "position_id", "position_name"))
+                        </div>
+
+                        <input type="submit" value="CreateUser" class="btn btn-primary" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
