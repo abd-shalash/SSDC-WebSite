@@ -3,7 +3,7 @@ namespace ClassLibrary.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class one : DbMigration
+    public partial class first : DbMigration
     {
         public override void Up()
         {
@@ -256,20 +256,22 @@ namespace ClassLibrary.Migrations
                         email = c.String(),
                         work_number = c.Int(),
                         mobile_number = c.Int(nullable: false),
-                        gender = c.Int(nullable: false),
                         id_number = c.Int(),
                         password = c.String(),
                         department_department_id = c.Int(),
                         organization_organization_id = c.Int(),
                         position_position_id = c.Int(),
+                        userGender_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.user_id)
                 .ForeignKey("dbo.departments", t => t.department_department_id)
                 .ForeignKey("dbo.organizations", t => t.organization_organization_id)
                 .ForeignKey("dbo.positions", t => t.position_position_id)
+                .ForeignKey("dbo.Genders", t => t.userGender_Id)
                 .Index(t => t.department_department_id)
                 .Index(t => t.organization_organization_id)
-                .Index(t => t.position_position_id);
+                .Index(t => t.position_position_id)
+                .Index(t => t.userGender_Id);
             
             CreateTable(
                 "dbo.positions",
@@ -339,6 +341,15 @@ namespace ClassLibrary.Migrations
                 .PrimaryKey(t => t.form_id);
             
             CreateTable(
+                "dbo.Genders",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        MyGender = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.participant_level",
                 c => new
                     {
@@ -355,6 +366,7 @@ namespace ClassLibrary.Migrations
                         ID = c.Int(nullable: false, identity: true),
                         eventName = c.String(),
                         eventDescription = c.String(),
+                        imagePath = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -373,6 +385,7 @@ namespace ClassLibrary.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.bookings", "participant_level_participant_level_id", "dbo.participant_level");
+            DropForeignKey("dbo.users", "userGender_Id", "dbo.Genders");
             DropForeignKey("dbo.user_group", "user_user_id", "dbo.users");
             DropForeignKey("dbo.user_group", "group_group_id", "dbo.groups");
             DropForeignKey("dbo.group_operation", "operation_operation_id", "dbo.operations");
@@ -406,6 +419,7 @@ namespace ClassLibrary.Migrations
             DropIndex("dbo.group_operation", new[] { "group_group_id" });
             DropIndex("dbo.user_group", new[] { "user_user_id" });
             DropIndex("dbo.user_group", new[] { "group_group_id" });
+            DropIndex("dbo.users", new[] { "userGender_Id" });
             DropIndex("dbo.users", new[] { "position_position_id" });
             DropIndex("dbo.users", new[] { "organization_organization_id" });
             DropIndex("dbo.users", new[] { "department_department_id" });
@@ -433,6 +447,7 @@ namespace ClassLibrary.Migrations
             DropTable("dbo.Facilities");
             DropTable("dbo.Events");
             DropTable("dbo.participant_level");
+            DropTable("dbo.Genders");
             DropTable("dbo.forms");
             DropTable("dbo.operations");
             DropTable("dbo.group_operation");

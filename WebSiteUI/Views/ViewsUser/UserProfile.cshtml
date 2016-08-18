@@ -7,7 +7,7 @@
 
 
         user p = new user();
-        if (Session != null)
+        if (Session["user"] != null)
         {
             string temps = Session["user"].ToString();
             EF_DBContext repo = new EF_DBContext();
@@ -62,10 +62,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => p.gender, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => p.userGender, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => p.gender, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => p.gender, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => p.userGender, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => p.userGender, "", new { @class = "text-danger" })
             </div>
         </div>
 

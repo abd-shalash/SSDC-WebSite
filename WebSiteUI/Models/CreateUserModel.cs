@@ -26,7 +26,7 @@ namespace WebSiteUI.Models
         [Required(ErrorMessage = "Username is required.")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Gender is required.")]
-        public int Gender { get; set; }
+        public Gender Gender { get; set; }
    //     [Required(ErrorMessage = "Organization is required.")]
         public organization organization { get; set; }
    //     [Required(ErrorMessage = "department is required.")]

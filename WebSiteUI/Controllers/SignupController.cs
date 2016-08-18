@@ -60,7 +60,7 @@ namespace WebSiteUI.Controllers
                 mobile_number = model.phone_number,
                 last_name = model.Lname,
                 password = model.Password,
-                gender = model.Gender,
+                userGender = model.Gender,
                 organization = tempOrg,
                 //new organization
                 //{
@@ -87,8 +87,7 @@ namespace WebSiteUI.Controllers
             };
             try
             {
-                if (ModelState.IsValid)
-                {
+              
                     //  bool created = repository.addUser(newuser);
                     var tempBool = repository.users.FirstOrDefault(i => i.email == newuser.email);
                     if (tempBool != null) {
@@ -101,11 +100,8 @@ namespace WebSiteUI.Controllers
                     //repository.users.Local.savesave();
                     repository.SaveChanges();
                     return RedirectToAction("Login", "Account");
-                    
-                    
-                }
-                else { ModelState.AddModelError("", "error make sure that you have filled all the text boxes "); }
-            }
+
+             }
             catch (DataException /* dex */)
             {
                 

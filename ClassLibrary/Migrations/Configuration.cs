@@ -43,6 +43,27 @@ namespace ClassLibrary.Migrations
             participant_level.ForEach(o => context.participant_levels.AddOrUpdate(p => p.participant_level_id, o));
             context.SaveChanges();
             ////
+            //
+            var gender_list = new List<Gender>
+            {
+                new Gender
+                {
+                    Id = 1,
+                    MyGender = "Male"
+
+                },
+
+                new Gender
+                {
+                    Id = 2,
+                    MyGender = "Female"
+
+                }
+            };
+
+            gender_list.ForEach(o => context.genders.AddOrUpdate(p => p.Id, o));
+            context.SaveChanges();
+            
 
             var organi_type = new List<organization_type>
             {
@@ -122,7 +143,7 @@ namespace ClassLibrary.Migrations
                     last_name = "shalash",
                     email = "abd_shalash@hotmail.com",
                     password = "123",
-                    gender = 1,
+                    userGender = gender_list[0],
                     organization = context.organizations.FirstOrDefault(p=>p.organization_id==1),
                     position = context.positions.FirstOrDefault(u=>u.position_id==1),
                     department = context.departments.FirstOrDefault(d=>d.department_id==2)
@@ -181,8 +202,8 @@ namespace ClassLibrary.Migrations
                 new Event
                 {
                     ID = 1,
-                    eventDescription = "akjdakflakfgadlkjgdlfadkskg",
-                    eventName = "test event 1"
+                    eventDescription = "Basic Life Support",
+                    eventName = "BLS"
                 },
                  new Event
                 {

@@ -63,7 +63,7 @@ namespace WebSiteUI.Controllers
                 mobile_number = model.phone_number,
                 last_name = model.Lname,
                 password = model.Password,
-                gender = model.Gender,
+                userGender = model.Gender,
                 organization = tempOrg,
                 //new organization
                 //{
