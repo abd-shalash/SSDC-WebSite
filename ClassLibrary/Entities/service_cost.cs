@@ -22,7 +22,7 @@ namespace SSDC_WebSite.Models
         public decimal total_cost { get; set; }
         public decimal user_cost { get; set; }
     
-        public virtual department department { get; set; }
-        public virtual organization organization { get; set; }
+        public virtual Department department { get; set; }
+        public virtual Organization organization { get; set; }
     }
 }

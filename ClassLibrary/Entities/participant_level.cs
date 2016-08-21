@@ -12,12 +12,12 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class participant_level
+    public partial class ParticipantLevel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public participant_level()
+        public ParticipantLevel()
         {
-            this.bookings = new HashSet<booking>();
+            this.bookings = new HashSet<Booking>();
         }
         [Key]
         public int participant_level_id { get; set; }
@@ -25,6 +25,6 @@ namespace SSDC_WebSite.Models
         public string participant_level_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking> bookings { get; set; }
+        public virtual ICollection<Booking> bookings { get; set; }
     }
 }

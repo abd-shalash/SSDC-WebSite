@@ -8,10 +8,29 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_field_optionRepo : Ifield_optionRepo
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_field_optionRepo : IFieldOption
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<field_option> field_options
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        public IEnumerable<FieldOption> FieldOptions
         {
             get
             {

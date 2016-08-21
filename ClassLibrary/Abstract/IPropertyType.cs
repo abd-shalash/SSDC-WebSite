@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Abstract
 {
-    public interface Igroup_operationRepo
+    public interface IPropertyTypee
     {
-        IEnumerable<group_operation> group_operations { get; }
+        IEnumerable<PropertyTypee> IPropertyTypees { get; }
     }
 }

@@ -9,12 +9,11 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_object_propertyRepo : Iobject_propertyRepo
+    public class EF_object_propertyRepo : IObjectProperty
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<object_property> object_properties
+        public IEnumerable<ObjectProperty> ObjectProperties
         {
-            
             get
             {
                 return context.object_propertyies;

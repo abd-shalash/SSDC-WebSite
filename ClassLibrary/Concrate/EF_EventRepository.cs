@@ -9,9 +9,28 @@ using ClassLibrary.Abstract;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_EventRepository : IEventRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_EventRepository : IEvent
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         private readonly EF_DBContext context = new EF_DBContext();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         public IEnumerable<Event> Events
         {
             get

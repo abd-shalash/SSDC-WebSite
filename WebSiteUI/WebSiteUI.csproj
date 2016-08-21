@@ -33,6 +33,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\WebSiteUI.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -969,7 +970,6 @@
     <Content Include="Static\css\nassers-stupendous-site.webflow.css" />
     <Content Include="Static\css\normalize.css" />
     <Content Include="Static\css\webflow.css" />
-    <Content Include="Static\HtmlPage1.html" />
     <Content Include="Static\images\04f14af5199093cdd29a89eb295febf5.jpeg" />
     <Content Include="Static\images\analytics-graphic2.png" />
     <Content Include="Static\images\bryant-square.jpg" />

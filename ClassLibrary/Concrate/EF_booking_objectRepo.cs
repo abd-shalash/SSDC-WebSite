@@ -9,11 +9,29 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-   public class EF_booking_objectRepo :Ibooking_objectRepo
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_booking_objectRepo :IBookingObject
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         private readonly EF_DBContext context = new EF_DBContext();
 
-        public IEnumerable<booking_object> booking_objects
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        public IEnumerable<BookingObject> BookingObjects
         {
             get
             {

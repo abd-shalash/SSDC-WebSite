@@ -6,11 +6,26 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Abstract
 {
+    /// <summary>
+    /// Interface: Authentication
+    /// </summary>
+    /// <remarks>
+    /// Defines the methods in an authentication process.
+    /// </remarks>
     public interface IAuthentication
     {
-        bool Authenticate(string username, string password);
-        bool Logout();
+        /// <summary>
+        /// Complete a login process with the provided username and password.
+        /// </summary>
+        /// <param name="Username">Username</param>
+        /// <param name="Password">Password</param>
+        /// <returns></returns>
+        bool Login(string Username, string Password);
 
-        //Test (PC) after revert
+        /// <summary>
+        /// Complete a login process for the current logged in user.
+        /// </summary>
+        /// <returns></returns>
+        bool Logout();
     }
 }

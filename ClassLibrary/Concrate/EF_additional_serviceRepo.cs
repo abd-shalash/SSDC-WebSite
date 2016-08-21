@@ -8,16 +8,18 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_additional_serviceRepo : Iadditional_serviceRepo
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_additional_serviceRepo : IServices
     {
+        /// <summary>
+        /// The context
+        /// </summary>
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<additional_service> additional_services
-        {
-
-            get
-            {
-                return context.additional_services;
-            }
-        }
+        public IEnumerable<additional_service> AdditionalServices{get{return context.additional_services;}}
     }
 }

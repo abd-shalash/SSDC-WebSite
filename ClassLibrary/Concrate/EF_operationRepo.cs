@@ -8,10 +8,10 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_operationRepo : IoperationRepo
+    public class EF_operationRepo : IOperation
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<operation> operations
+        public IEnumerable<Operation> Operations
         {
             get
             {

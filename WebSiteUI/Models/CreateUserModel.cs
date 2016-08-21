@@ -28,11 +28,11 @@ namespace WebSiteUI.Models
         [Required(ErrorMessage = "Gender is required.")]
         public Gender Gender { get; set; }
    //     [Required(ErrorMessage = "Organization is required.")]
-        public organization organization { get; set; }
+        public Organization organization { get; set; }
    //     [Required(ErrorMessage = "department is required.")]
-        public department department { get; set; }
+        public Department department { get; set; }
      //   [Required(ErrorMessage = "title is required.")]
-        public position title { get; set; }
+        public Position title { get; set; }
 
 
         public int  PositionID { get; set; }

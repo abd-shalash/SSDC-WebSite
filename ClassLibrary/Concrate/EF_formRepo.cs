@@ -9,15 +9,9 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_formRepo : IformRepo
+    public class EF_formRepo : IForm
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<form> forms
-        {
-            get
-            {
-                return context.forms;
-            }
-        }
+        public IEnumerable<Form> Forms{get{return context.forms;}}
     }
 }

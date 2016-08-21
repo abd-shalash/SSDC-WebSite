@@ -45,13 +45,13 @@ namespace WebSiteUI.Controllers
         {
            
 
-            position tempPos = new position();
+            Position tempPos = new Position();
             tempPos = repository.positions.FirstOrDefault(p => p.position_id == model.PositionID);
 
-            department tempDep = new department();
+            Department tempDep = new Department();
             tempDep = repository.departments.FirstOrDefault(p => p.department_id == model.DepartmentID);
 
-            organization tempOrg = new organization();
+            Organization tempOrg = new Organization();
             tempOrg = repository.organizations.FirstOrDefault(p => p.organization_id == model.OrganizationID);
             user newuser = new user
             {

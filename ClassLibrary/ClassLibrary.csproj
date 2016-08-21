@@ -20,6 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ClassLibrary.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -90,30 +91,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Iadditional_serviceRepo.cs" />
+    <Compile Include="Abstract\IServices.cs" />
     <Compile Include="Abstract\IAuthentication.cs" />
-    <Compile Include="Abstract\IbookingRepo.cs" />
-    <Compile Include="Abstract\Ibooking_assigned_userRepo.cs" />
-    <Compile Include="Abstract\Ibooking_objectRepo.cs" />
-    <Compile Include="Abstract\IdepartmentRepo.cs" />
-    <Compile Include="Abstract\IEventRepository.cs" />
-    <Compile Include="Abstract\IFacilityRepository.cs" />
-    <Compile Include="Abstract\IfieldRepo.cs" />
-    <Compile Include="Abstract\Ifield_optionRepo.cs" />
-    <Compile Include="Abstract\Ifield_resultRepo.cs" />
-    <Compile Include="Abstract\IformRepo.cs" />
-    <Compile Include="Abstract\IgroupRepo.cs" />
-    <Compile Include="Abstract\Igroup_operationRepo.cs" />
-    <Compile Include="Abstract\IobjecttRepo.cs" />
-    <Compile Include="Abstract\Iobject_propertyRepo.cs" />
-    <Compile Include="Abstract\Iobject_typeRepo.cs" />
-    <Compile Include="Abstract\IoperationRepo.cs" />
-    <Compile Include="Abstract\IorganizationRepo.cs" />
-    <Compile Include="Abstract\Iorganization_typeRepo.cs" />
-    <Compile Include="Abstract\Iparticipant_levelRepo.cs" />
-    <Compile Include="Abstract\IpositionRepo.cs" />
-    <Compile Include="Abstract\IpropertyRepo.cs" />
-    <Compile Include="Abstract\Iproperty_typeRepo.cs" />
+    <Compile Include="Abstract\IBooking.cs" />
+    <Compile Include="Abstract\IBookingUser.cs" />
+    <Compile Include="Abstract\IBookingObject.cs" />
+    <Compile Include="Abstract\IDepartment.cs" />
+    <Compile Include="Abstract\IEvent.cs" />
+    <Compile Include="Abstract\IFacility.cs" />
+    <Compile Include="Abstract\IField.cs" />
+    <Compile Include="Abstract\IFieldOption.cs" />
+    <Compile Include="Abstract\IFieldResult.cs" />
+    <Compile Include="Abstract\IForm.cs" />
+    <Compile Include="Abstract\IGroup.cs" />
+    <Compile Include="Abstract\IGroupOperation.cs" />
+    <Compile Include="Abstract\IObjectt.cs" />
+    <Compile Include="Abstract\IObjectProperty.cs" />
+    <Compile Include="Abstract\IObjectType.cs" />
+    <Compile Include="Abstract\IOperation.cs" />
+    <Compile Include="Abstract\IOrganization.cs" />
+    <Compile Include="Abstract\IOrganizationType.cs" />
+    <Compile Include="Abstract\IParticipantLevel.cs" />
+    <Compile Include="Abstract\IPosition.cs" />
+    <Compile Include="Abstract\IProperty.cs" />
+    <Compile Include="Abstract\IPropertyType.cs" />
     <Compile Include="Abstract\Iservice_costRepo.cs" />
     <Compile Include="Abstract\ItemplateRepo.cs" />
     <Compile Include="Abstract\IuserRepo.cs" />
@@ -147,7 +148,6 @@
     <Compile Include="Concrate\EF_userRepo.cs" />
     <Compile Include="Concrate\EF_user_groupRepo.cs" />
     <Compile Include="Concrate\LoginAuthenticationProvider.cs" />
-    <Compile Include="DAL\DBInitializer.cs" />
     <Compile Include="Entities\additional_service.cs" />
     <Compile Include="Entities\booking.cs" />
     <Compile Include="Entities\bookingABD.cs" />
@@ -177,23 +177,21 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
-    <Compile Include="Migrations\201608180938103_one.cs" />
-    <Compile Include="Migrations\201608180938103_one.Designer.cs">
-      <DependentUpon>201608180938103_one.cs</DependentUpon>
+    <Compile Include="Migrations\201608211322113_ssdcDB.cs" />
+    <Compile Include="Migrations\201608211322113_ssdcDB.Designer.cs">
+      <DependentUpon>201608211322113_ssdcDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Binders\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608180938103_one.resx">
-      <DependentUpon>201608180938103_one.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608211322113_ssdcDB.resx">
+      <DependentUpon>201608211322113_ssdcDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

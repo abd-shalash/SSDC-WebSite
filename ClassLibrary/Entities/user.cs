@@ -35,13 +35,13 @@ namespace SSDC_WebSite.Models
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking> bookings { get; set; }
+        public virtual ICollection<Booking> bookings { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_assigned_user> booking_assigned_user { get; set; }
-        public virtual department department { get; set; }
-        public virtual organization organization { get; set; }
-        public virtual position position { get; set; }
+        public virtual ICollection<BookingUsers> booking_assigned_user { get; set; }
+        public virtual Department department { get; set; }
+        public virtual Organization organization { get; set; }
+        public virtual Position position { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_group> user_group { get; set; }
     }

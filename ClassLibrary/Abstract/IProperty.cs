@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary.Abstract
 {
-    public interface IformRepo
+    public interface IProperty
     {
-        IEnumerable<form> forms { get; }
+        IEnumerable<Property> properties { get; }
     }
 }

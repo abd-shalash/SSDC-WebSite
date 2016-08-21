@@ -9,10 +9,29 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_departmentRepo : IdepartmentRepo
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_departmentRepo : IDepartment
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<department> departments
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        public IEnumerable<Department> Departments
         {
             get
             {

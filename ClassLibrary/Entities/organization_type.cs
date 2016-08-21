@@ -12,21 +12,21 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class organization_type
+    public partial class OrganizationType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public organization_type()
+        public OrganizationType()
         {
-            this.departments = new HashSet<department>();
-            this.organizations = new HashSet<organization>();
+            this.departments = new HashSet<Department>();
+            this.organizations = new HashSet<Organization>();
         }
         [Key]
         public int organization_type_id { get; set; }
         public string organization_type_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<department> departments { get; set; }
+        public virtual ICollection<Department> departments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<organization> organizations { get; set; }
+        public virtual ICollection<Organization> organizations { get; set; }
     }
 }

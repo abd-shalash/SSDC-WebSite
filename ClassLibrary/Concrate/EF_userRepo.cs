@@ -40,7 +40,6 @@ namespace ClassLibrary.Concrate
             if (newuser.user_id ==0)
             {
                 context.users.Add(newuser);
-
             }
             else
             {
@@ -68,9 +67,7 @@ namespace ClassLibrary.Concrate
         public bool addUser(user user)
         {
             context.users.Add(user);
-
             return true;
         }
-
     }
 }

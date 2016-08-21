@@ -8,13 +8,29 @@ using ClassLibrary.Entities;
 
 namespace ClassLibrary.Concrate
 {
-
-    public class EF_FacilityRepository: IFacilityRepository
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    public class EF_FacilityRepository: IFacility
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
         private readonly EF_DBContext context = new EF_DBContext();
- 
 
-       public IEnumerable<Facility> facilities
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        public IEnumerable<Facility> Facilities
         {
             get
             {

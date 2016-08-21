@@ -12,12 +12,12 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class group
+    public partial class Group
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public group()
+        public Group()
         {
-            this.group_operation = new HashSet<group_operation>();
+            this.group_operation = new HashSet<GroupOperation>();
             this.user_group = new HashSet<user_group>();
         }
         [Key]
@@ -25,7 +25,7 @@ namespace SSDC_WebSite.Models
         public string group_name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<group_operation> group_operation { get; set; }
+        public virtual ICollection<GroupOperation> group_operation { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_group> user_group { get; set; }
     }

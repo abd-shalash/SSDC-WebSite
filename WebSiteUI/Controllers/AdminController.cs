@@ -48,13 +48,13 @@ namespace WebSiteUI.Controllers
         {
 
 
-            position tempPos = new position();
+            Position tempPos = new Position();
             tempPos = repository.positions.FirstOrDefault(p => p.position_id == model.PositionID);
 
-            department tempDep = new department();
+            Department tempDep = new Department();
             tempDep = repository.departments.FirstOrDefault(p => p.department_id == model.DepartmentID);
 
-            organization tempOrg = new organization();
+            Organization tempOrg = new Organization();
             tempOrg = repository.organizations.FirstOrDefault(p => p.organization_id == model.OrganizationID);
             user newuser = new user
             {
@@ -211,7 +211,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            position newpos = repository.positions.Find(id);
+            Position newpos = repository.positions.Find(id);
             if (newpos==null)
             {
                 return HttpNotFound();
@@ -224,7 +224,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            position DeletedPos = repository.positions.Find(id);
+            Position DeletedPos = repository.positions.Find(id);
             if (DeletedPos == null)
             {
                 return HttpNotFound();
@@ -245,7 +245,7 @@ namespace WebSiteUI.Controllers
             {
                 return View();
             }
-            position EditPos = repository.positions.Find(id);
+            Position EditPos = repository.positions.Find(id);
             if (EditPos == null) { return View(); }
 
             return View(EditPos);
@@ -281,12 +281,12 @@ namespace WebSiteUI.Controllers
         }
         public ActionResult CreatePosition()
         {
-            var model = new position();
+            var model = new Position();
             return View(model);
         }
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult CreatePosition(position model)
+        public ActionResult CreatePosition(Position model)
         {
 
             try
@@ -326,12 +326,12 @@ namespace WebSiteUI.Controllers
         }
         public ActionResult CreateOrganization(int? id)
         {
-            var model = new organization();
+            var model = new Organization();
             return View(model);
         }
         [HttpPost, ActionName("CreateOrganization")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateOrganizationPost(organization id)
+        public ActionResult CreateOrganizationPost(Organization id)
         {
             try
             {
@@ -367,7 +367,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            organization detailsOrg = repository.organizations.Find(id);
+            Organization detailsOrg = repository.organizations.Find(id);
             if (detailsOrg == null)
             {
                 return HttpNotFound();
@@ -382,7 +382,7 @@ namespace WebSiteUI.Controllers
             {
                 return View();
             }
-            organization EditOrg = repository.organizations.Find(id);
+            Organization EditOrg = repository.organizations.Find(id);
             if (EditOrg == null) { return View(); }
 
             return View(EditOrg);
@@ -422,7 +422,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            organization DeletedOrg = repository.organizations.Find(id);
+            Organization DeletedOrg = repository.organizations.Find(id);
             if (DeletedOrg == null)
             {
                 return HttpNotFound();
@@ -472,12 +472,12 @@ namespace WebSiteUI.Controllers
         }
         public ActionResult CreateDepartment(int? id)
         {
-            var model = new department();
+            var model = new Department();
             return View(model);
         }
         [HttpPost, ActionName("CreateDepartment")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateDepartment(department id)
+        public ActionResult CreateDepartment(Department id)
         {
             try
             {
@@ -513,7 +513,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            department detailsDep = repository.departments.Find(id);
+            Department detailsDep = repository.departments.Find(id);
             if (detailsDep == null)
             {
                 return HttpNotFound();
@@ -528,7 +528,7 @@ namespace WebSiteUI.Controllers
             {
                 return View();
             }
-            department EditDep= repository.departments.Find(id);
+            Department EditDep= repository.departments.Find(id);
             if (EditDep == null) { return View(); }
 
             return View(EditDep);
@@ -568,7 +568,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            department DeletedDep = repository.departments.Find(id);
+            Department DeletedDep = repository.departments.Find(id);
             if (DeletedDep == null)
             {
                 return HttpNotFound();
@@ -594,12 +594,12 @@ namespace WebSiteUI.Controllers
         }
         public ActionResult CreateBooking(int? id)
         {
-            var model = new booking();
+            var model = new Booking();
             return View(model);
         }
         [HttpPost, ActionName("CreateBooking")]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateBooking(booking id)
+        public ActionResult CreateBooking(Booking id)
         {
             try
             {
@@ -635,7 +635,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            booking detailsBooking = repository.bookings.Find(id);
+            Booking detailsBooking = repository.bookings.Find(id);
             if (detailsBooking == null)
             {
                 return HttpNotFound();
@@ -650,7 +650,7 @@ namespace WebSiteUI.Controllers
             {
                 return View();
             }
-            booking EditBooking = repository.bookings.Find(id);
+            Booking EditBooking = repository.bookings.Find(id);
             if (EditBooking == null) { return View(); }
 
             return View(EditBooking);
@@ -690,7 +690,7 @@ namespace WebSiteUI.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            booking DeletedBooking = repository.bookings.Find(id);
+            Booking DeletedBooking = repository.bookings.Find(id);
             if (DeletedBooking == null)
             {
                 return HttpNotFound();

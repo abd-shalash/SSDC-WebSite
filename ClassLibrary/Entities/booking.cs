@@ -12,14 +12,14 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class booking
+    public partial class Booking
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public booking()
+        public Booking()
         {
-            this.booking_assigned_user = new HashSet<booking_assigned_user>();
-            this.booking_object = new HashSet<booking_object>();
-            this.field_result = new HashSet<field_result>();
+            this.booking_assigned_user = new HashSet<BookingUsers>();
+            this.booking_object = new HashSet<BookingObject>();
+            this.field_result = new HashSet<FieldResult>();
         }
         [Key]
         public int booking_id { get; set; }
@@ -38,15 +38,15 @@ namespace SSDC_WebSite.Models
         public string additional_requirement { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_assigned_user> booking_assigned_user { get; set; }
-        public virtual department department { get; set; }
+        public virtual ICollection<BookingUsers> booking_assigned_user { get; set; }
+        public virtual Department department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_object> booking_object { get; set; }
-        public virtual organization organization { get; set; }
-        public virtual participant_level participant_level { get; set; }
+        public virtual ICollection<BookingObject> booking_object { get; set; }
+        public virtual Organization organization { get; set; }
+        public virtual ParticipantLevel participant_level { get; set; }
         public virtual user user { get; set; }
         
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<field_result> field_result { get; set; }
+        public virtual ICollection<FieldResult> field_result { get; set; }
     }
 }
