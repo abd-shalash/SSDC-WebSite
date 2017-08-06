@@ -12,13 +12,13 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class field_result
+    public partial class FieldResult
     {
         [Key]
         public int field_result_id { get; set; }
         public string result { get; set; }
     
-        public virtual booking booking { get; set; }
-        public virtual field field { get; set; }
+        public virtual Booking booking { get; set; }
+        public virtual Field field { get; set; }
     }
 }

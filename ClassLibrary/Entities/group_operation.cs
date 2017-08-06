@@ -12,12 +12,12 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class group_operation
+    public partial class GroupOperation
     {
         [Key]
         public int group_operation_id { get; set; }
     
-        public virtual group group { get; set; }
-        public virtual operation operation { get; set; }
+        public virtual Group group { get; set; }
+        public virtual Operation operation { get; set; }
     }
 }

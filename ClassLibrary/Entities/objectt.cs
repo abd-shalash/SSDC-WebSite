@@ -12,13 +12,13 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class objectt
+    public partial class Objectt
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public objectt()
+        public Objectt()
         {
-            this.booking_object = new HashSet<booking_object>();
-            this.object_property = new HashSet<object_property>();
+            this.booking_object = new HashSet<BookingObject>();
+            this.object_property = new HashSet<ObjectProperty>();
         }
         [Key]
         public int object_id { get; set; }
@@ -30,10 +30,10 @@ namespace SSDC_WebSite.Models
         public string object_location { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<booking_object> booking_object { get; set; }
-        public virtual object_type object_type { get; set; }
+        public virtual ICollection<BookingObject> booking_object { get; set; }
+        public virtual ObjectType object_type { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<object_property> object_property { get; set; }
+        public virtual ICollection<ObjectProperty> object_property { get; set; }
         public virtual template template { get; set; }
     }
 }

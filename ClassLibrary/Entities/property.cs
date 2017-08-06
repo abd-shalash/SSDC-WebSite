@@ -17,7 +17,7 @@ namespace SSDC_WebSite.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public property()
         {
-            this.object_property = new HashSet<object_property>();
+            this.object_property = new HashSet<ObjectProperty>();
         }
         [Key]
         public int property_id { get; set; }
@@ -26,7 +26,7 @@ namespace SSDC_WebSite.Models
         public string property_brand { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<object_property> object_property { get; set; }
+        public virtual ICollection<ObjectProperty> object_property { get; set; }
         public virtual property_type property_type { get; set; }
     }
 }

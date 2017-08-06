@@ -9,15 +9,9 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_group_operationRepo : Igroup_operationRepo
+    public class EF_group_operationRepo : IGroupOperation
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<group_operation> group_operations
-        {
-            get
-            {
-                return context.group_operations;
-            }
-        }
+        public IEnumerable<GroupOperation> GroupOperations { get { return context.group_operations; } }
     }
 }

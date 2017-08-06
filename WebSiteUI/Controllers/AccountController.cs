@@ -40,7 +40,7 @@ namespace WebSiteUI.Controllers
             if (ModelState.IsValid)
             {
                 // if the correct username and password is valid
-                if (auth.Authenticate(model.email, model.password))
+                if (auth.Login(model.email, model.password))
                 {
                     Session["user"] = (string)model.email;
                         //new Person() { Fname = model.UserName };

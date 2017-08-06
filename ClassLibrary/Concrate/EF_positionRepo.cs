@@ -8,11 +8,10 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_positionRepo : IpositionRepo
+    public class EF_positionRepo : IPosition
     {
         private readonly EF_DBContext context = new EF_DBContext();
-
-        public IEnumerable<position> positions
+        public IEnumerable<Position> Positions
         {
             get
             {

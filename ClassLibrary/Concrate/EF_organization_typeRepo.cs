@@ -8,10 +8,10 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_organization_typeRepo : Iorganization_typeRepo
+    public class EF_organization_typeRepo : IOrganizationType
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public IEnumerable<organization_type> organization_types
+        public IEnumerable<OrganizationType> OrganizationTypes
         {
             get
             {

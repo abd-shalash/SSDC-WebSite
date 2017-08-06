@@ -12,11 +12,11 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class field_option
+    public partial class FieldOption
     {
         [Key]
         public int field_option_id { get; set; }
         public string field_option_name { get; set; }
-        public virtual field field { get; set; }
+        public virtual Field field { get; set; }
     }
 }

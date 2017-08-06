@@ -17,7 +17,7 @@ namespace SSDC_WebSite.Models
         [Key]
         public int user_group_id { get; set; }
     
-        public virtual group group { get; set; }
+        public virtual Group group { get; set; }
         public virtual user user { get; set; }
     }
 }

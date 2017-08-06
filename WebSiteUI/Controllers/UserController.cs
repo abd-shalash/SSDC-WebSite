@@ -54,7 +54,6 @@ namespace WebSiteUI.Controllers
                 mod.SelectedTab = "Profile";
                 return View(mod);
             }
-            return View(mod);
         }
         [HttpPost, ActionName("Index")]
         [ValidateAntiForgeryToken]

@@ -11,24 +11,18 @@ namespace ClassLibrary.Concrate
     {
         private readonly EF_DBContext context = new EF_DBContext();
 
-       
-        public bool Authenticate(string Email, string password)
-        {   
+        public bool Login(string Email, string password)
+        {
             try
             {
                 var result = context.users.FirstOrDefault(p =>( p.password == (password) && p.email == (Email)));
-               
                 if (result == null)
                     return false;
-
-  
             }
             catch (Exception e)
             {
                 Console.WriteLine("Login error with ",e);
-            
             }
-           
             return true;
         }
 

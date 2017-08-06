@@ -12,19 +12,19 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class operation
+    public partial class Operation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public operation()
+        public Operation()
         {
-            this.group_operation = new HashSet<group_operation>();
+            this.group_operation = new HashSet<GroupOperation>();
         }
         [Key]
         public int operation_id { get; set; }
         public string operation_name { get; set; }
     
-        public virtual form form { get; set; }
+        public virtual Form form { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<group_operation> group_operation { get; set; }
+        public virtual ICollection<GroupOperation> group_operation { get; set; }
     }
 }

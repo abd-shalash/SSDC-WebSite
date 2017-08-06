@@ -15,15 +15,15 @@
 
 
     EF_organizationRepo OrgRepo = new EF_organizationRepo();
-    List<organization> Organizations = OrgRepo.organizations.ToList();
+    List<Organization> Organizations = OrgRepo.Organizations.ToList();
 
 
     EF_departmentRepo DepRepo = new EF_departmentRepo();
-    List<department> Departments = DepRepo.departments.ToList();
+    List<Department> Departments = DepRepo.Departments.ToList();
     //Departments = DepRepo.departments.Cast;
 
     EF_positionRepo PosRepo = new EF_positionRepo();
-    List<position> Positions = PosRepo.positions.ToList();
+    List<Position> Positions = PosRepo.Positions.ToList();
 
 
 }

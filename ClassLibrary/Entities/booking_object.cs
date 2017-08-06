@@ -12,12 +12,12 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class booking_object
+    public partial class BookingObject
     {
         [Key]
         public int booking_object_id { get; set; }
     
-        public virtual booking booking { get; set; }
-        public virtual objectt objectt { get; set; }
+        public virtual Booking booking { get; set; }
+        public virtual Objectt objectt { get; set; }
     }
 }

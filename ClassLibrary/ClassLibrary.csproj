@@ -20,6 +20,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\ClassLibrary.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -38,21 +40,18 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Win32.Primitives.4.0.1\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Net.Http.4.1.0\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Net.Http, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.2\lib\net46\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
@@ -67,20 +66,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.2.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.0.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.0.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.1.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -90,30 +85,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\Iadditional_serviceRepo.cs" />
+    <Compile Include="Abstract\IServices.cs" />
     <Compile Include="Abstract\IAuthentication.cs" />
-    <Compile Include="Abstract\IbookingRepo.cs" />
-    <Compile Include="Abstract\Ibooking_assigned_userRepo.cs" />
-    <Compile Include="Abstract\Ibooking_objectRepo.cs" />
-    <Compile Include="Abstract\IdepartmentRepo.cs" />
-    <Compile Include="Abstract\IEventRepository.cs" />
-    <Compile Include="Abstract\IFacilityRepository.cs" />
-    <Compile Include="Abstract\IfieldRepo.cs" />
-    <Compile Include="Abstract\Ifield_optionRepo.cs" />
-    <Compile Include="Abstract\Ifield_resultRepo.cs" />
-    <Compile Include="Abstract\IformRepo.cs" />
-    <Compile Include="Abstract\IgroupRepo.cs" />
-    <Compile Include="Abstract\Igroup_operationRepo.cs" />
-    <Compile Include="Abstract\IobjecttRepo.cs" />
-    <Compile Include="Abstract\Iobject_propertyRepo.cs" />
-    <Compile Include="Abstract\Iobject_typeRepo.cs" />
-    <Compile Include="Abstract\IoperationRepo.cs" />
-    <Compile Include="Abstract\IorganizationRepo.cs" />
-    <Compile Include="Abstract\Iorganization_typeRepo.cs" />
-    <Compile Include="Abstract\Iparticipant_levelRepo.cs" />
-    <Compile Include="Abstract\IpositionRepo.cs" />
-    <Compile Include="Abstract\IpropertyRepo.cs" />
-    <Compile Include="Abstract\Iproperty_typeRepo.cs" />
+    <Compile Include="Abstract\IBooking.cs" />
+    <Compile Include="Abstract\IBookingUser.cs" />
+    <Compile Include="Abstract\IBookingObject.cs" />
+    <Compile Include="Abstract\IDepartment.cs" />
+    <Compile Include="Abstract\IEvent.cs" />
+    <Compile Include="Abstract\IFacility.cs" />
+    <Compile Include="Abstract\IField.cs" />
+    <Compile Include="Abstract\IFieldOption.cs" />
+    <Compile Include="Abstract\IFieldResult.cs" />
+    <Compile Include="Abstract\IForm.cs" />
+    <Compile Include="Abstract\IGroup.cs" />
+    <Compile Include="Abstract\IGroupOperation.cs" />
+    <Compile Include="Abstract\IObjectt.cs" />
+    <Compile Include="Abstract\IObjectProperty.cs" />
+    <Compile Include="Abstract\IObjectType.cs" />
+    <Compile Include="Abstract\IOperation.cs" />
+    <Compile Include="Abstract\IOrganization.cs" />
+    <Compile Include="Abstract\IOrganizationType.cs" />
+    <Compile Include="Abstract\IParticipantLevel.cs" />
+    <Compile Include="Abstract\IPosition.cs" />
+    <Compile Include="Abstract\IProperty.cs" />
+    <Compile Include="Abstract\IPropertyType.cs" />
     <Compile Include="Abstract\Iservice_costRepo.cs" />
     <Compile Include="Abstract\ItemplateRepo.cs" />
     <Compile Include="Abstract\IuserRepo.cs" />
@@ -147,7 +142,6 @@
     <Compile Include="Concrate\EF_userRepo.cs" />
     <Compile Include="Concrate\EF_user_groupRepo.cs" />
     <Compile Include="Concrate\LoginAuthenticationProvider.cs" />
-    <Compile Include="DAL\DBInitializer.cs" />
     <Compile Include="Entities\additional_service.cs" />
     <Compile Include="Entities\booking.cs" />
     <Compile Include="Entities\bookingABD.cs" />
@@ -177,24 +171,12 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
-    <Compile Include="Migrations\201608180938103_one.cs" />
-    <Compile Include="Migrations\201608180938103_one.Designer.cs">
-      <DependentUpon>201608180938103_one.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Binders\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608180938103_one.resx">
-      <DependentUpon>201608180938103_one.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

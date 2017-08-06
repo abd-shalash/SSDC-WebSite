@@ -12,13 +12,13 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class field
+    public partial class Field
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public field()
+        public Field()
         {
-            this.field_option = new HashSet<field_option>();
-            this.field_result = new HashSet<field_result>();
+            this.field_option = new HashSet<FieldOption>();
+            this.field_result = new HashSet<FieldResult>();
         }
         [Key]
         public int field_id { get; set; }
@@ -27,9 +27,9 @@ namespace SSDC_WebSite.Models
         public string field_desc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<field_option> field_option { get; set; }
+        public virtual ICollection<FieldOption> field_option { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<field_result> field_result { get; set; }
+        public virtual ICollection<FieldResult> field_result { get; set; }
         public virtual template template { get; set; }
     }
 }

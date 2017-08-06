@@ -9,7 +9,7 @@ using System.Runtime.Remoting.Contexts;
 
 namespace ClassLibrary.Concrate
 {
-    public class EF_propertyRepo : IpropertyRepo
+    public class EF_propertyRepo : IProperty
     {
         private readonly EF_DBContext context = new EF_DBContext();
         public IEnumerable<property> properties

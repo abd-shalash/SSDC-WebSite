@@ -9,16 +9,9 @@ using SSDC_WebSite.Models;
 
 namespace ClassLibrary.Concrate
 {
-   public class EF_object_typeRepo : Iobject_typeRepo
+    public class EF_object_typeRepo : IObjectType
     {
         private readonly EF_DBContext context = new EF_DBContext();
-
-        public IEnumerable<object_type> object_types
-        {
-            get
-            {
-                return context.object_types;
-            }
-        }
+        public IEnumerable<ObjectType> ObjectTypes{get{return context.object_types;}}
     }
 }
