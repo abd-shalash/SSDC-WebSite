@@ -27,6 +27,6 @@ namespace SSDC_WebSite.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ObjectProperty> object_property { get; set; }
-        public virtual IPropertyType property_type { get; set; }
+        public virtual property_type property_type { get; set; }
     }
 }

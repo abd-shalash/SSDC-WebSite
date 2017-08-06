@@ -9,6 +9,6 @@ namespace ClassLibrary.Abstract
 {
     public interface IProperty
     {
-        IEnumerable<Property> properties { get; }
+        IEnumerable<property> properties { get; }
     }
 }

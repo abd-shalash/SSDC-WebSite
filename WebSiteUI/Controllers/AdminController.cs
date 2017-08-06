@@ -46,8 +46,6 @@ namespace WebSiteUI.Controllers
         [AllowAnonymous]
         public ActionResult CreateUser(CreateUserModel model)
         {
-
-
             Position tempPos = new Position();
             tempPos = repository.positions.FirstOrDefault(p => p.position_id == model.PositionID);
 

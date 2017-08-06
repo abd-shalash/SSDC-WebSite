@@ -9,6 +9,6 @@ namespace ClassLibrary.Abstract
 {
     public interface IPropertyTypee
     {
-        IEnumerable<PropertyTypee> IPropertyTypees { get; }
+        IEnumerable<property_type> IPropertyTypees { get; }
     }
 }

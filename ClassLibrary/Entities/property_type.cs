@@ -12,10 +12,10 @@ namespace SSDC_WebSite.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    public partial class IPropertyType
+    public partial class property_type
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public IPropertyType()
+        public property_type()
         {
             this.properties = new HashSet<property>();
         }

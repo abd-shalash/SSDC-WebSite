@@ -29,7 +29,7 @@ namespace ClassLibrary.Migrations
         ///    new Person { FullName = "Rowan Miller" }
         ///  );
         /// </summary>
-        protected override void Seed(ClassLibrary.Concrate.EF_DBContext context)
+        protected override void Seed(Concrate.EF_DBContext context)
         {
 
             var participant_level = new List<ParticipantLevel>
@@ -66,13 +66,13 @@ namespace ClassLibrary.Migrations
                 new OrganizationType
                 {
                  organization_type_id = 1,
-                 organization_type_name = "outside PNU"
+                 organization_type_name = "Outside PNU"
                 },
 
                 new OrganizationType
                 {
                  organization_type_id = 2,
-                 organization_type_name = "inside PNU"
+                 organization_type_name = "Inside PNU"
                 }
             };
             organi_type.ForEach(o => context.organization_types.AddOrUpdate(p => p.organization_type_id, o));
@@ -83,7 +83,13 @@ namespace ClassLibrary.Migrations
                 new Organization
                 {
                     organization_id = 1,
-                    organization_name ="alfaisal",
+                    organization_name ="PNU",
+                    organization_type = context.organization_types.FirstOrDefault(p=>p.organization_type_id ==1)
+                },
+                new Organization
+                {
+                    organization_id = 1,
+                    organization_name ="KAAUH",
                     organization_type = context.organization_types.FirstOrDefault(p=>p.organization_type_id ==1)
                 }
             };
@@ -95,17 +101,32 @@ namespace ClassLibrary.Migrations
                 new Position
                 {
                     position_id = 1,
-                    position_name = "student",
+                    position_name = "Student",
                 },
                 new Position
                 {
                     position_id = 2,
-                    position_name = "instructor",
+                    position_name = "Instructor",
                 },
                 new Position
                 {
                     position_id = 3,
-                    position_name = "engineer",
+                    position_name = "Engineer",
+                },
+                new Position
+                {
+                    position_id = 3,
+                    position_name = "Adminstration",
+                },
+                new Position
+                {
+                    position_id = 3,
+                    position_name = "Technician",
+                },
+                new Position
+                {
+                    position_id = 3,
+                    position_name = "Management",
                 }
             };
             poositions.ForEach(o => context.positions.AddOrUpdate(p => p.position_id, o));
@@ -116,10 +137,9 @@ namespace ClassLibrary.Migrations
                 new Department
                 {
                     department_id = 1,
-                    department_name = "ssdc",
+                    department_name = "SSDC",
                     organization_type = context.organization_types.FirstOrDefault(p=>p.organization_type_id ==2)
                 }
-
             };
             departs.ForEach(o => context.departments.AddOrUpdate(p => p.department_id, o));
             context.SaveChanges();
@@ -152,7 +172,7 @@ namespace ClassLibrary.Migrations
                     group_id = 1,
                     group_name = "normal user"
                 },
-                                new Group
+                new Group
                 {
                     group_id = 2,
                     group_name = "admin"
@@ -163,15 +183,15 @@ namespace ClassLibrary.Migrations
 
             var usergroupsList = new List<user_group>
             {
-                    new user_group
-                    {
-                        user_group_id = 1,
+                new user_group
+                {
+                    user_group_id = 1,
 
-                    },
-                    new user_group
-                    {
-                        user_group_id = 2,
-                    }
+                },
+                new user_group
+                {
+                    user_group_id = 2,
+                }
             };
             usergroupsList.ForEach(o => context.user_groups.AddOrUpdate(p => p.user_group_id, o));
             context.SaveChanges();
@@ -297,9 +317,9 @@ namespace ClassLibrary.Migrations
             fieldlist.ForEach(e => context.fields.AddOrUpdate(p => p.field_id, e));
             context.SaveChanges();
 
-            var property_typelist = new List<IPropertyType>
+            var property_typelist = new List<property_type>
             {
-                new IPropertyType
+                new property_type
                 {
                     property_type_id = 1,
                     property_type_name = "property type name1"

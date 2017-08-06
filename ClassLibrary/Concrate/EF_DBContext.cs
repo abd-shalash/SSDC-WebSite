@@ -27,7 +27,7 @@ namespace ClassLibrary.Concrate
         public DbSet<template> templates { get; set; }
         public DbSet<service_cost> service_costs { get; set; }
         public DbSet<property> properties { get; set; }
-        public DbSet<IPropertyType> property_types { get; set; }
+        public DbSet<property_type> property_types { get; set; }
         public DbSet<Position> positions { get; set; }
         public DbSet<OrganizationType> organization_types { get; set; }
         public DbSet<Organization> organizations { get; set; }

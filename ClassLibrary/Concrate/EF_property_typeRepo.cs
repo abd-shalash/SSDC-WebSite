@@ -10,15 +10,16 @@ using System.Runtime.Remoting.Contexts;
 using ClassLibrary.Entities;
 namespace ClassLibrary.Concrate
 {
-    public class EF_property_typeRepo: Abstract.IPropertyTypee
+    public class EF_property_typeRepo: property_type
     {
         private readonly EF_DBContext context = new EF_DBContext();
-        public  IEnumerable<SSDC_WebSite.Models.IPropertyType> PropertyTypes
+        public  IEnumerable<property_type> PropertyTypes
         {
             get
             {
                 return context.property_types;
             }
         }
+        
     }
 }
