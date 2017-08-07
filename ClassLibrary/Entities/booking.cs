@@ -14,7 +14,6 @@ namespace SSDC_WebSite.Models
     using System.ComponentModel.DataAnnotations;
     public partial class Booking
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Booking()
         {
             this.booking_assigned_user = new HashSet<BookingUsers>();
@@ -36,17 +35,12 @@ namespace SSDC_WebSite.Models
         public string event_type { get; set; }
         public string staff_needed { get; set; }
         public string additional_requirement { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingUsers> booking_assigned_user { get; set; }
         public virtual Department department { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BookingObject> booking_object { get; set; }
         public virtual Organization organization { get; set; }
         public virtual ParticipantLevel participant_level { get; set; }
         public virtual user user { get; set; }
-        
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<FieldResult> field_result { get; set; }
     }
 }

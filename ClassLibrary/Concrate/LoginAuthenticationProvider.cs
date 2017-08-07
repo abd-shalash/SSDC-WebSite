@@ -15,7 +15,7 @@ namespace ClassLibrary.Concrate
         {
             try
             {
-                var result = context.users.FirstOrDefault(p =>( p.password == (password) && p.email == (Email)));
+                var result = context.users.FirstOrDefault(p => ( p.password == (password) && p.email == (Email) ) );
                 if (result == null)
                     return false;
             }

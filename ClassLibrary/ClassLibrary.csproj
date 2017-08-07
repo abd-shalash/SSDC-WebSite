@@ -171,12 +171,35 @@
     <Compile Include="Entities\user_group.cs" />
     <Compile Include="Entities\Event.cs" />
     <Compile Include="Entities\Facility.cs" />
+    <Compile Include="Migrations\201708061403520_update.cs" />
+    <Compile Include="Migrations\201708061403520_update.Designer.cs">
+      <DependentUpon>201708061403520_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708061606374_update1.cs" />
+    <Compile Include="Migrations\201708061606374_update1.Designer.cs">
+      <DependentUpon>201708061606374_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708061910554_updateuser.cs" />
+    <Compile Include="Migrations\201708061910554_updateuser.Designer.cs">
+      <DependentUpon>201708061910554_updateuser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708061403520_update.resx">
+      <DependentUpon>201708061403520_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708061606374_update1.resx">
+      <DependentUpon>201708061606374_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708061910554_updateuser.resx">
+      <DependentUpon>201708061910554_updateuser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

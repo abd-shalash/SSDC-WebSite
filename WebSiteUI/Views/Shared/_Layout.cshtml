@@ -37,7 +37,7 @@
 
                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
                         <h1 id="logo">
-                            <a href="@Url.Action("Index", "Home")"> @*<img src="~/Assests/Icon/logo.jpg" alt="Simulation and Skill Development Center" title="SSDC" />*@ </a>
+                            <a href="@Url.Action("Index", "Home")"> <img src="~/Assests/Icon/logo.jpg" alt="Simulation and Skill Development Center" title="SSDC" /> </a>
                         </h1>
                     </div>
 
@@ -58,22 +58,19 @@
                                         <a href="@Url.Action("Login", "Account")"> Login </a>
                                     </li>
                                 }
-                                @if (Session["user"] != null)
+                                else
                                 {
-                                    if ((string)Session["user"] == "admin")
+                                    if ((int)Session["Position"] == 1)
                                     {
                                         <li>
                                             <i class="fa fa-cogs"></i>
-                                            <a href="@Url.Action("Index", "Admin")"> Signed In As: @Session["user"] </a>
+                                            <a href="@Url.Action("Index", "Admin")"> Admin: @Session["user"] </a>
                                         </li>
                                     }
-                                    else
-                                    {
-                                        <li>
-                                            <i class="fa fa-user "></i>
-                                            <a href="@Url.Action("Index", "User")"> Signed In As: @Session["user"] </a>
-                                        </li>
-                                    }
+                                    <li>
+                                        <i class="fa fa-user "></i>
+                                        <a href="@Url.Action("Index", "User")"> Signed In As: @Session["user"] </a>
+                                    </li>
                                     <li>
                                         <i class="fa fa-sign-out"></i>
                                         <a href="@Url.Action("Logout", "Account")"> Logout </a>
@@ -149,9 +146,8 @@
         </nav>
 
     </div>
-
-    <!--Footer-->
     @RenderBody()
+    <!--Footer-->
     <footer id="sim-footer">
 
         <div class="container">

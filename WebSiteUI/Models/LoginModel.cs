@@ -14,5 +14,6 @@ namespace WebSiteUI.Models
         [Required(ErrorMessage = "Password is required.")]
         [StringLength(20, MinimumLength = 3)]
         public string password { get; set; }
+        public int MyProperty { get; set; }
     }
 }

@@ -16,6 +16,8 @@ namespace WebSiteUI.Controllers
     {
         LoginAuthenticationProvider auth;
 
+        private EF_DBContext repository = new EF_DBContext();
+
         public AccountController(LoginAuthenticationProvider auth)
         {
             this.auth = auth;
@@ -30,12 +32,10 @@ namespace WebSiteUI.Controllers
             return View();
         }
 
-
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(LoginModel model, string returnUrl)
         {
-            
             // if the model is loaded correctly
             if (ModelState.IsValid)
             {
@@ -43,7 +43,8 @@ namespace WebSiteUI.Controllers
                 if (auth.Login(model.email, model.password))
                 {
                     Session["user"] = (string)model.email;
-                        //new Person() { Fname = model.UserName };
+                    var user = repository.users.FirstOrDefault(u => u.email == model.email);
+                    Session["Position"] = user.position_id;
                     FormsAuthentication.SetAuthCookie(model.email, false);
                     return Redirect(returnUrl ?? Url.Action("index", "Home"));
                 }
@@ -61,11 +62,8 @@ namespace WebSiteUI.Controllers
             return RedirectToAction("Index", "SignUp");
         }
         
-
-        
         public ActionResult Logout()
         {
-
             Request.Cookies.Remove("user");
             FormsAuthentication.SignOut();
             Session.Abandon();

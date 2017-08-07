@@ -37,8 +37,8 @@ namespace ClassLibrary.Migrations
                 new ParticipantLevel
                 {
                     participant_level_id = 1,
-                    participant_level_name = "level one",
-                    participant_type = "type one"
+                    participant_level_name = "Level 1",
+                    participant_type = "Type 1"
                 }
             };
             participant_level.ForEach(o => context.participant_levels.AddOrUpdate(p => p.participant_level_id, o));
@@ -65,14 +65,14 @@ namespace ClassLibrary.Migrations
             {
                 new OrganizationType
                 {
-                 organization_type_id = 1,
-                 organization_type_name = "Outside PNU"
+                     organization_type_id = 1,
+                     organization_type_name = "Outside PNU"
                 },
 
                 new OrganizationType
                 {
-                 organization_type_id = 2,
-                 organization_type_name = "Inside PNU"
+                     organization_type_id = 2,
+                     organization_type_name = "Inside PNU"
                 }
             };
             organi_type.ForEach(o => context.organization_types.AddOrUpdate(p => p.organization_type_id, o));
@@ -101,31 +101,31 @@ namespace ClassLibrary.Migrations
                 new Position
                 {
                     position_id = 1,
-                    position_name = "Student",
-                },
-                new Position
-                {
-                    position_id = 2,
-                    position_name = "Instructor",
-                },
-                new Position
-                {
-                    position_id = 3,
-                    position_name = "Engineer",
-                },
-                new Position
-                {
-                    position_id = 3,
                     position_name = "Adminstration",
                 },
                 new Position
                 {
-                    position_id = 3,
-                    position_name = "Technician",
+                    position_id = 2,
+                    position_name = "Student",
                 },
                 new Position
                 {
                     position_id = 3,
+                    position_name = "Instructor",
+                },
+                new Position
+                {
+                    position_id = 4,
+                    position_name = "Engineer",
+                },
+                new Position
+                {
+                    position_id = 5,
+                    position_name = "Technician",
+                },
+                new Position
+                {
+                    position_id = 6,
                     position_name = "Management",
                 }
             };
@@ -150,16 +150,17 @@ namespace ClassLibrary.Migrations
                 {
                     user_id = 1,
                     id_number = 1,
-                    work_number = 1234321,
-                    mobile_number = 123123,
-                    first_name = "abdulrahman",
-                    last_name = "shalash",
-                    email = "abd_shalash@hotmail.com",
-                    password = "123",
+                    work_number = 0123456789,
+                    mobile_number = 0123456789,
+                    first_name = "admin",
+                    last_name = "admin",
+                    email = "admin@admin.com",
+                    password = "P@$$w0rd!",
                     userGender = gender_list[0],
+                    position_id = 1,
                     organization = context.organizations.FirstOrDefault(p=>p.organization_id==1),
                     position = context.positions.FirstOrDefault(u=>u.position_id==1),
-                    department = context.departments.FirstOrDefault(d=>d.department_id==2)
+                    department = context.departments.FirstOrDefault(d=>d.department_id==1)
                 }
             };
             users.ForEach(o => context.users.AddOrUpdate(p => p.email, o));
@@ -170,12 +171,12 @@ namespace ClassLibrary.Migrations
                 new Group
                 {
                     group_id = 1,
-                    group_name = "normal user"
+                    group_name = "User"
                 },
                 new Group
                 {
                     group_id = 2,
-                    group_name = "admin"
+                    group_name = "Admin"
                 }
             };
             groupsList.ForEach(o => context.groups.AddOrUpdate(p => p.group_id, o));
@@ -211,20 +212,20 @@ namespace ClassLibrary.Migrations
                 new Event
                 {
                     ID = 1,
-                    eventDescription = "Basic Life Support",
-                    eventName = "BLS"
+                    eventDescription = "Description for Event 1",
+                    eventName = "Event 1"
                 },
-                 new Event
+                new Event
                 {
                     ID = 2,
-                    eventDescription = "lkdf;;;;234234234",
-                    eventName = "test event 2"
+                    eventDescription = "Description for Event 2",
+                    eventName = "Event 2"
                 },
                 new Event
                 {
                     ID = 3,
-                    eventDescription = "23423423423",
-                    eventName = "test event 3"
+                    eventDescription = "Description for Event 3",
+                    eventName = "Event 3"
                 }
             };
             events.ForEach(e => context.Events.AddOrUpdate(p => p.ID, e));
@@ -235,20 +236,20 @@ namespace ClassLibrary.Migrations
                 new Facility
                 {
                     ID = 1,
-                    FaDescription = "akjdakflakfgadlkjgdlfadkskg",
-                    FaName = "test Facility 1"
+                    FaDescription = "Description for Facility 1",
+                    FaName = "Facility 1"
                 },
-                 new Facility
+                new Facility
                 {
                     ID = 2,
-                    FaDescription = "lkdf;;;;234234234",
-                    FaName = "test Facility 2"
+                    FaDescription = "Description for Facility 2",
+                    FaName = "Facility 2"
                 },
                 new Facility
                 {
                     ID = 3,
-                    FaDescription = "23423423423",
-                    FaName = "test Facility 3"
+                    FaDescription = "Description for Facility 3",
+                    FaName = "Facility 3"
                 }
             };
             facilitys.ForEach(e => context.Facilities.AddOrUpdate(p => p.ID, e));
@@ -259,12 +260,12 @@ namespace ClassLibrary.Migrations
                 new Form
                 {
                     form_id = 1,
-                    form_name = "test form"
+                    form_name = "Form 1"
                 },
                 new Form
                 {
                     form_id = 2,
-                    form_name = "test form2"
+                    form_name = "Form 2"
                 }
             };
             fromlist.ForEach(e => context.forms.AddOrUpdate(p => p.form_id, e));
@@ -275,30 +276,27 @@ namespace ClassLibrary.Migrations
                 new Operation
                 {
                     operation_id = 1,
-                    operation_name = "AdminUserIndex"
+                    operation_name = "User"
                 },
                 new Operation
                 {
                     operation_id = 2,
-                    operation_name = "AdminPositionIndex"
+                    operation_name = "Position"
                 },
-
                 new Operation
                 {
                     operation_id = 3,
-                    operation_name = "AdminOrganizationIndex"
+                    operation_name = "Organization"
                 },
-
                 new Operation
                 {
                     operation_id = 4,
-                    operation_name = "AdminDepartmentIndex"
+                    operation_name = "Department"
                 },
-
                 new Operation
                 {
                     operation_id = 5,
-                    operation_name = "AdminBookingIndex"
+                    operation_name = "Booking"
                 },
             };
             operationslist.ForEach(o => context.operations.AddOrUpdate(p => p.operation_id, o));
@@ -309,9 +307,9 @@ namespace ClassLibrary.Migrations
                 new Field
                 {
                     field_id = 1,
-                    field_name = "field name1",
-                    field_type = "field type1",
-                    field_desc = "field desc1"
+                    field_name = "Field 1",
+                    field_type = "Field Type",
+                    field_desc = "Field Description"
                 }
             };
             fieldlist.ForEach(e => context.fields.AddOrUpdate(p => p.field_id, e));
@@ -322,7 +320,7 @@ namespace ClassLibrary.Migrations
                 new property_type
                 {
                     property_type_id = 1,
-                    property_type_name = "property type name1"
+                    property_type_name = "Property Type"
                 }
             };
             property_typelist.ForEach(e => context.property_types.AddOrUpdate(p => p.property_type_id, e));
@@ -373,18 +371,19 @@ namespace ClassLibrary.Migrations
             additional_service_idList.ForEach(o => context.additional_services.AddOrUpdate(p => p.additional_service_id, o));
             context.SaveChanges();
 
-
             var bookingsList = new List<Booking>
             {
-                //new booking
-                //{
-                //    booking_id = 1,
-                //    booking_date = DateTime.Now,
-                //    start_date = DateTime.Now,
-                //    end_date = DateTime.Now,
-                //    topic = "sp",
-                //}
+                new Booking
+                {
+                    booking_id = 1,
+                    booking_date = DateTime.Now,
+                    start_date = DateTime.Now,
+                    end_date = DateTime.Now,
+                    topic = "sp",
+                }
             };
+            bookingsList.ForEach(o => context.bookings.AddOrUpdate(p => p.booking_id, o));
+            context.SaveChanges();
 
             var booking_objectList = new List<BookingObject>
             {
